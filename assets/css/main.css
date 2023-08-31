@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container-top{
+    margin-top: 70px;
+
+    min-height: calc(100vh - 70px);
+    max-height: calc(100% - 70px);
+}
+
+
+@media (min-width: 768px) {
+    .container-top{
+        margin-top: 65px;
+
+        min-height: calc(100vh - 65px);
+        height: calc(100% - 65px);
+
+    }
+}
