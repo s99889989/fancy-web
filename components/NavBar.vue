@@ -61,11 +61,64 @@
                   <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/plugins/unreal_core/UnrealCoreIndex">UnrealCore</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/plugins/fancy_core/FancyCoreIndex">FancyCore</NuxtLink>
+                  <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/plugins/fancy_rpg/FancyRPGIndex">FancyRPG</NuxtLink>
                 </li>
+
                 <li>
                   <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/plugins/custom_display/CustomDisplayIndex">CustomDisplay</NuxtLink>
                 </li>
+
+                <li aria-labelledby="dropdownNavbarLink">
+                  <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    FancySeries<svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg></button>
+                  <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_core/FancyCoreIndex">FancyCore</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_pack/FancyPackIndex">FancyPack</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_chat/FancyChatIndex">FancyChat</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_team/FancyTeamIndex">FancyTeam</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_mobs/FancyMobsIndex">FancyMobs</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_drop/FancyDropIndex">FancyDrop</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_action/FancyActionIndex">FancyAction</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_items/FancyItemsIndex">FancyItems</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_equipment/FancyEquipmentIndex">FancyEquipment</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_attributes/FancyAttributesIndex">FancyAttributes</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_gui/FancyGUIIndex">FancyGUI</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_classes/FancyClassesIndex">FancyClasses</NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_hud/FancyHUDIndex">FancyHUD</NuxtLink>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+
               </ul>
             </div>
           </li>

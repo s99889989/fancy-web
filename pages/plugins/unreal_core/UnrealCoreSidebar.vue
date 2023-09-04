@@ -1,5 +1,22 @@
 <script setup lang="ts">
 
+import {integer} from "vscode-languageserver-types";
+
+const emit = defineEmits(['update'])
+
+const currentPath = ref(0)
+const setView = (data: integer) => {
+  currentPath.value = data;
+}
+
+const pageName = computed(()=>{
+  return currentPath.value;
+})
+
+watch(pageName, (newValue)=>{
+  emit('update', newValue);
+})
+
 </script>
 
 <template>
@@ -15,27 +32,31 @@
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
         <li>
-          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-
+          <a href="#" @click="setView(0)" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="ml-3">Introduce</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" @click="setView(1)" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <span class="ml-3">Commands</span>
           </a>
         </li>
         <li>
-          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a href="#" @click="setView(2)" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
             <span class="flex-1 ml-3 whitespace-nowrap">Permissions</span>
 
           </a>
         </li>
         <li>
-          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a href="#" @click="setView(3)" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
             <span class="flex-1 ml-3 whitespace-nowrap">DownLoad</span>
 
           </a>
         </li>
         <li>
-          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a href="#" @click="setView(4)" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
             <span class="flex-1 ml-3 whitespace-nowrap">API</span>
           </a>
