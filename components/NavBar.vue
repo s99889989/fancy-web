@@ -11,27 +11,27 @@
       <NuxtLink class="dark:text-gray-400 flex items-center text-center text-xl font-bold " to="/face/Home">FancyWeb</NuxtLink>
       <div class="flex md:order-2">
 
-        <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-          <span class="sr-only">Open user menu</span>
-          <img class="w-8 h-8 rounded-full" src="https://crafatar.com/avatars/5ee41d51-9137-4a84-8968-55676f9763a8" alt="user photo">
-        </button>
+<!--        <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">-->
+<!--          <span class="sr-only">Open user menu</span>-->
+<!--          <img class="w-8 h-8 rounded-full" src="https://crafatar.com/avatars/5ee41d51-9137-4a84-8968-55676f9763a8" alt="user photo">-->
+<!--        </button>-->
 
-        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
-          <div class="px-4 py-3">
-            <span class="block text-sm text-gray-900 dark:text-white">Steve</span>
-<!--            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>-->
-          </div>
-          <ul class="py-2" aria-labelledby="user-menu-button">
+<!--        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">-->
+<!--          <div class="px-4 py-3">-->
+<!--            <span class="block text-sm text-gray-900 dark:text-white">Steve</span>-->
+<!--&lt;!&ndash;            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>&ndash;&gt;-->
+<!--          </div>-->
+<!--          <ul class="py-2" aria-labelledby="user-menu-button">-->
 
-            <li>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-            </li>
+<!--            <li>-->
+<!--              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>-->
+<!--            </li>-->
 
-            <li>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-            </li>
-          </ul>
-        </div>
+<!--            <li>-->
+<!--              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
 
         <ThemeToggle/>
 
@@ -97,7 +97,7 @@
                         <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_action/FancyActionIndex">FancyAction</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_items/FancyItemsIndex">FancyItems</NuxtLink>
+                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_item/FancyItemsIndex">FancyItem</NuxtLink>
                       </li>
                       <li>
                         <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_equipment/FancyEquipmentIndex">FancyEquipment</NuxtLink>

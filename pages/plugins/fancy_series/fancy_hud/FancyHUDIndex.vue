@@ -1,5 +1,6 @@
 <script setup lang="ts">
-
+import {useFancyHUDPages} from "~/stores/plugins/fancy_series/fancy_hud/useFancyHUDPages";
+const fancyHUDPages = useFancyHUDPages();
 import FancyHUDSidebar from "~/pages/plugins/fancy_series/fancy_hud/FancyHUDSidebar.vue";
 
 </script>

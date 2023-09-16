@@ -1,13 +1,25 @@
 <script setup lang="ts">
-
+import {useFancyClassesPages} from "~/stores/plugins/fancy_series/fancy_classes/useFancyClassesPages";
+const fancyClassesPages = useFancyClassesPages();
 import FancyClassesSidebar from "~/pages/plugins/fancy_series/fancy_classes/FancyClassesSidebar.vue";
+
+import FCL_Commands from "~/pages/plugins/fancy_series/fancy_classes/pages/FCL_Commands.vue";
+
+const currentView = computed(() => {
+  switch (fancyClassesPages.pageName){
+    case 'FCL_Commands':
+        return FCL_Commands;
+    default:
+      return FCL_Commands;
+  }
+})
 
 </script>
 
 <template>
   <FancyClassesSidebar/>
   <div class="dark:bg-dark p-4 sm:ml-64 container-top">
-    <p class="dark:text-white">Classes</p>
+    <component :is="currentView" />
   </div>
 </template>
 
