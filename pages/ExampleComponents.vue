@@ -5,6 +5,17 @@
 <template>
 
   <div class="flex justify-center">
+    <video width="1280" height="720" controls>
+      <source src="/plugins/fancy_series/fancy_gui/PlayerRenderAPI.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="flex justify-center">
+    <img class="w-100" src="/plugins/fancy_series/fancy_gui/menu.png" alt="">
+  </div>
+
+  <div class="flex justify-center">
     <div class="inline-flex rounded-md shadow-sm bg-gray-800">
       <a href="#" aria-current="page" class="px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
         A
