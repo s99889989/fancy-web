@@ -4,9 +4,12 @@ const fancyClassesPages = useFancyClassesPages();
 import FancyClassesSidebar from "~/pages/plugins/fancy_series/fancy_classes/FancyClassesSidebar.vue";
 
 import FCL_Commands from "~/pages/plugins/fancy_series/fancy_classes/pages/FCL_Commands.vue";
+import FCL_Placeholders from "~/pages/plugins/fancy_series/fancy_classes/pages/FCL_Placeholders.vue";
 
 const currentView = computed(() => {
   switch (fancyClassesPages.pageName){
+    case 'FCL_Placeholders':
+      return FCL_Placeholders;
     case 'FCL_Commands':
         return FCL_Commands;
     default:
