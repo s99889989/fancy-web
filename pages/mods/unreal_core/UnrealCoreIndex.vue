@@ -1,6 +1,19 @@
 <script setup lang="ts">
+import {useUnrealCoreModPages} from "~/stores/mods/unreal_core/useUnrealCoreModPages";
+const unrealCoreModPages = useUnrealCoreModPages();
+
+
 
 import UnrealCoreSidebar from "~/pages/mods/unreal_core/UnrealCoreSidebar.vue";
+
+
+const currentView = computed(() => {
+  switch (unrealCoreModPages.pageName){
+    default:
+
+  }
+})
+
 </script>
 
 <template>

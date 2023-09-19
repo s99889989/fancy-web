@@ -1,5 +1,6 @@
 <script setup lang="ts">
-
+import {useFancyClearPages} from "~/stores/mods/fancy_clear/useFancyClearPages";
+const fancyClearPages = useFancyClearPages();
 </script>
 
 <template>
@@ -16,16 +17,26 @@
       <ul class="space-y-2 font-medium">
 
         <li>
-          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-
+          <a @click="fancyClearPages.setPage('FCL_Commands')" href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <span class="ml-3">Commands</span>
           </a>
         </li>
 
         <li>
-          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-
+          <a @click="fancyClearPages.setPage('FCL_Description')" href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <span class="flex-1 ml-3 whitespace-nowrap">Description</span>
+          </a>
+        </li>
+
+        <li>
+          <a @click="fancyClearPages.setPage('FCL_Config')" href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="flex-1 ml-3 whitespace-nowrap">Config</span>
+          </a>
+        </li>
+
+        <li>
+          <a @click="fancyClearPages.setPage('FCL_Video')" href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="flex-1 ml-3 whitespace-nowrap">Video</span>
           </a>
         </li>
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-
+import {useCustomDisplayPages} from "~/stores/plugins/custom_display/useCustomDisplayPages";
+const customDisplayPages = useCustomDisplayPages();
 </script>
 
 <template>

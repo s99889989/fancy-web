@@ -1,6 +1,19 @@
 <script setup lang="ts">
+import {useFancyDiscordPages} from "~/stores/mods/fancy_discord/useFancyDiscordPages";
+const fancyDiscordPages = useFancyDiscordPages();
+
 
 import FancyDiscordSidebar from "~/pages/mods/fancy_discord/FancyDiscordSidebar.vue";
+
+
+
+const currentView = computed(() => {
+  switch (fancyDiscordPages.pageName){
+    default:
+
+  }
+})
+
 </script>
 
 <template>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-
+import {useFancyDiscordPages} from "~/stores/mods/fancy_discord/useFancyDiscordPages";
+const fancyDiscordPages = useFancyDiscordPages();
 </script>
 
 <template>

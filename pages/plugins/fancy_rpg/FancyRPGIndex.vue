@@ -1,6 +1,18 @@
 <script setup lang="ts">
+import {useFancyRPGPages} from "~/stores/plugins/fancy_rpg/useFancyRPGPages";
+const fancyRPGPages = useFancyRPGPages();
+
 
 import FancyRPGSidebar from "~/pages/plugins/fancy_rpg/FancyRPGSidebar.vue";
+
+
+
+const currentView = computed(() => {
+  switch (fancyRPGPages.pageName){
+    default:
+
+  }
+})
 
 </script>
 

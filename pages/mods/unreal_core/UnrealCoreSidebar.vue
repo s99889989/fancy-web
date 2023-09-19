@@ -1,5 +1,6 @@
 <script setup lang="ts">
-
+import {useUnrealCoreModPages} from "~/stores/mods/unreal_core/useUnrealCoreModPages";
+const unrealCoreModPages = useUnrealCoreModPages();
 </script>
 
 <template>
