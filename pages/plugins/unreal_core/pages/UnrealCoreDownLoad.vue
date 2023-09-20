@@ -31,6 +31,18 @@
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+          <p class="text-base dark:text-white">1.0.7.1</p>
+        </th>
+        <td class="px-6 py-4">
+          <p class="text-base dark:text-white">2023/09/20</p>
+        </td>
+        <td class="px-6 py-4">
+          <a href="https://cdn.discordapp.com/attachments/1020195382787059793/1154056047724593222/UnrealCore-Plugin-1.0.7.1.jar"><i class="text-xl dark:text-white fa-regular fa-circle-down"></i></a>
+        </td>
+      </tr>
+
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base dark:text-white">1.0.7</p>
         </th>
         <td class="px-6 py-4">
