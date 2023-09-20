@@ -3,6 +3,9 @@
 </script>
 
 <template>
+  <p class="text-4xl dark:text-white">Description</p>
+
+  <br/>
   <p class="text-3xl dark:text-white">The function of this mod.</p>
   <p class="text-2xl dark:text-white">Regularly check whether the number of creatures or items exceeds the number.</p>
   <p class="text-2xl dark:text-white">Excessive number may lead to a decrease in TPS.</p>

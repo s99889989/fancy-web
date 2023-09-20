@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import {useUnrealCoreModPages} from "~/stores/mods/unreal_core/useUnrealCoreModPages";
+const unrealCoreModPages = useUnrealCoreModPages();
+
 
 import UnrealCoreSidebar from "~/pages/plugins/unreal_core/UnrealCoreSidebar.vue";
 
@@ -6,7 +9,7 @@ import UnrealCoreIntroduce from "~/pages/plugins/unreal_core/pages/UnrealCoreInt
 import UnrealCoreAPI from "~/pages/plugins/unreal_core/pages/UnrealCoreAPI.vue";
 import UnrealCoreCommand from "~/pages/plugins/unreal_core/pages/UnrealCoreCommand.vue";
 import UnrealCoreDownLoad from "~/pages/plugins/unreal_core/pages/UnrealCoreDownLoad.vue";
-import UnrealCorePermissions from "~/pages/plugins/unreal_core/pages/UnrealCorePermissions.vue";
+
 import {integer} from "vscode-languageserver-types";
 
 const currentPath = ref(0)
@@ -16,9 +19,18 @@ const setView = (data: integer) => {
 }
 
 const currentView = computed(() => {
-  const aaa = [UnrealCoreIntroduce, UnrealCoreCommand, UnrealCorePermissions, UnrealCoreDownLoad, UnrealCoreAPI ]
-
-  return aaa[currentPath.value] || UnrealCoreCommand
+  switch (unrealCoreModPages.pageName) {
+    case 'UnrealCoreIntroduce':
+      return UnrealCoreIntroduce;
+    case 'UnrealCoreCommand':
+      return UnrealCoreCommand;
+    case 'UnrealCoreDownLoad':
+      return UnrealCoreDownLoad;
+    case 'UnrealCoreAPI':
+      return UnrealCoreAPI;
+    default:
+      return UnrealCoreIntroduce;
+  }
 })
 
 </script>
