@@ -46,8 +46,10 @@
       <tr>
         <th scope="col" class="px-6 py-3">
           <p class="text-base dark:text-white"></p>
+          <p class="text-base dark:text-white"></p>
         </th>
         <th scope="col" class="px-6 py-3">
+          <p class="text-base dark:text-white"></p>
           <p class="text-base dark:text-white"></p>
         </th>
       </tr>

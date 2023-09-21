@@ -12,7 +12,7 @@ const fancyClearPages = useFancyClearPages();
     </svg>
   </button>
 
-  <aside id="default-sidebar" class="container-top fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+  <aside id="default-sidebar" class="container-sidebar-top fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
         <div class="flex justify-center">
@@ -49,9 +49,6 @@ const fancyClearPages = useFancyClearPages();
       </ul>
     </div>
   </aside>
-
-
-
 
 </template>
 
