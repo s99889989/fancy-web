@@ -1,0 +1,231 @@
+#GUI
+#{window_w}{window_h}
+#{mouse_x}{mouse_y}
+#{background_xs}{background_xe}{background_ys}{background_ye}{background_w}{background_h}
+Gui:
+  #要使用的工具提示
+  Tooltip: example
+  #GUI類型(Inventory, Chest)
+  Type: 'Inventory'
+  #背景透明度(0~255)
+  BackgroundTransparent: 255
+  #背景顏色
+  BackgroundColor: 'ffffff'
+  #GUI圖片
+  BackgroundImage: 'gui/container/menu_1.png'
+  #GUI寬度，設-1為根據圖片尺寸。
+  Width: 205
+  #GUI高度，設-1為根據圖片尺寸。
+  Height: 259
+  #GUI的X偏移
+  X: 0
+  #GUI的Y偏移
+  Y: 0
+
+#GUI上的物件
+ContentList:
+  #頭像
+  Head:
+    Type: Image
+    Image: 'https://crafatar.com/avatars/5ee41d51-9137-4a84-8968-55676f9763a8'
+    Width: 18
+    Height: 18
+    X: 40
+    Y: 16
+  #名稱
+  Name:
+    Type: 'Text'
+    Text:
+    -  '自訂遊戲目錄1'
+    -  '自訂遊戲目錄2'
+    TextSize: '2'
+    Space: 18
+    TextColor: '#6821a9'
+    X: '78'
+    Y: '12'
+
+  #實體
+  #Entity
+  PlayerEntity:
+    Type: Entity
+    EntityType: 'Player'
+    EntityName: 's99889989'
+    EntitySize: 30
+    X: 150
+    Y: 180
+  #是否(選項1)Check10
+  Alipay:
+    Type: Check
+    X: 25
+    Y: 80
+    Check: true
+    OffImage: 'gui/check/check_off.png'
+    OnImage: 'gui/check/check_on.png'
+    Width: 20
+    Height: 20
+    Text: '選項1'
+    TextColor: '00CACA'
+    TextSize: 1
+    TextPlace: 0
+    TextDistance: 0
+  #是否(選項2)Check11:
+  WeChatPay:
+    Type: Check
+    X: 25
+    Y: 100
+    Check: false
+    OffImage: 'gui/check/check_off.png'
+    OnImage: 'gui/check/check_on.png'
+    Width: 20
+    Height: 20
+    Text: '選項2'
+    TextColor: '00CACA'
+    TextSize: 1
+    TextPlace: 0
+    TextDistance: 0
+  #按鈕1
+  Button1:
+    Type: Button
+    Image: 'gui/button/button2_off.png'
+    HoverImage: 'gui/button/button2_on.png'
+    ClickImage: 'gui/button/button2_on.png'
+    Width: 20
+    Height: 12
+    Text: '個人'
+    TextColor: '00CACA'
+    TextSize: 1
+    ToMenu: 'rpg1'
+    Close: false
+    X: 75
+    Y: 105
+  #指令測試(早上)
+  Button2:
+    Type: Button
+    Image: 'gui/button/button2_off.png'
+    HoverImage: 'gui/button/button2_on.png'
+    ClickImage: 'gui/button/button2_on.png'
+    Width: 20
+    Height: 12
+    Text: 'day'
+    TextColor: '00CACA'
+    ConsolesCommand: 'time set day'
+    TextSize: 1
+    Close: false
+    X: 100
+    Y: 105
+  #指令測試(晚上)
+  Button3:
+    Type: Button
+    Image: 'gui/button/button2_off.png'
+    HoverImage: 'gui/button/button2_on.png'
+    ClickImage: 'gui/button/button2_on.png'
+    Width: 20
+    Height: 12
+    Text: 'night'
+    TextColor: '00CACA'
+    Command: 'time set night'
+    TextSize: 1
+    Close: false
+    X: 125
+    Y: 105
+  #打開網頁
+  Button4:
+    Type: Button
+    Image: 'gui/button/button2_off.png'
+    HoverImage: 'gui/button/button2_on.png'
+    ClickImage: 'gui/button/button2_on.png'
+    Width: 20
+    Height: 12
+    Text: '網頁'
+    TextColor: '00CACA'
+    TextSize: 1
+    OpenUrl: 'https://www.churchofjesuschrist.org/?lang=zho'
+    Close: false
+    X: 150
+    Y: 105
+
+  #輸入框
+  Input11:
+    Type: Input
+    X: 100
+    Y: 80
+    Image: 'gui/input/input_1.png'
+    Width: 80
+    Height: 10
+    Title: '名稱: '
+    TitleColor: '577700'
+    TitleSize: 1
+    Prompt: '請輸入名稱'
+    PromptColor: 'C60000'
+    PromptSize: 1
+    Text: ''
+    TextColor: '00CACA'
+    TextSize: 1
+  #容器
+  Container11:
+    Type: Container
+    BackgroundImage: 'gui/container/background6.png'
+    Width: 100
+    Height: 60
+    BackgroundColor: 'ffbf59'
+    X: 25
+    Y: 125
+    ContentList:
+      Name:
+        Type: 'Text'
+        Text:
+        - 's99889989~~1'
+        - 's99889989~~2'
+        - 's99889989~~3'
+        - '10'
+        TextSize: '1'
+        Space: 12
+        TextColor: '000000'
+        X: '{Container11_xs}'
+        Y: '{Container11_ys}+15'
+      Button9:
+        Type: Button
+        Image: 'gui/button/button2_off.png'
+        HoverImage: 'gui/button/button2_on.png'
+        ClickImage: 'gui/button/button2_on.png'
+        Width: 20
+        Height: 12
+        Text: '設定'
+        TextColor: '00CACA'
+        TextSize: 1
+        ToMenu: 'rpg9'
+        Close: false
+        X: '{Container11_xs}'
+        Y: '{Container11_ys}'
+  #輸入框
+  AreaInput13:
+    Type: AreaInput
+    X: 25
+    Y: 190
+    Image: ''  #gui/input/input_1.png
+    BackgroundColor: '111111'
+    Width: 80
+    Height: 60
+    Text:
+    -  '第一行'
+    -  '第二行'
+    -  '第三行'
+    TextColor: '00CACA'
+    TextSize: 1
+
+  #指令測試(晚上)
+  Select1:
+    Type: Select
+    X: 25
+    Y: 190
+    Width: 20
+    Height: 12
+    Image: 'gui/button/button2_off.png'
+    HoverImage: 'gui/button/button2_on.png'
+    ClickImage: 'gui/button/button2_on.png'
+    Text: 'night'
+    TextColor: '00CACA'
+    Command: 'time set night'
+    TextSize: 1
+    Close: false
+    

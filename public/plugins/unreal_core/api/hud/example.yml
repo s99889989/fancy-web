@@ -1,0 +1,68 @@
+Image0:
+  Type: 'Image'
+  Image: 'hud/avatar_frame.png'
+  Width: '40'
+  Height: '40'
+  Position: '1'
+  X: '5'
+  Y: '6'
+
+Image2:
+  Type: 'Image'
+  Image: 'https://crafatar.com/avatars/5ee41d51-9137-4a84-8968-55676f9763a8'
+  Width: '20'
+  Height: '20'
+  Position: '1'
+  X: '15'
+  Y: '16'
+
+Image3:
+  Type: 'Image'
+  Image: 'hud/bar_air.png'
+  Width: '200'
+  Height: '5'
+  Position: '1'
+  X: '50'
+  Y: '10'
+Image4:
+  Type: 'Image'
+  Image: 'hud/bar_air.png'
+  Width: '200'
+  Height: '5'
+  Position: '1'
+  X: '50'
+  Y: '20'
+Image5:
+  Type: 'Image'
+  Image: 'hud/bar_blue.png'
+  Width: '200'
+  Height: '5'
+  Position: '1'
+  X: '50'
+  Y: '20'
+Image6:
+  Type: 'Image'
+  Image: 'hud/bar_green.png'
+  Width: '&health_width&'
+  Height: '5'
+  Position: '1'
+  X: '50'
+  Y: '10'
+#文字
+Text7:
+  Type: 'Text'
+  Text: '&gui_self_name&'
+  TextSize: '1'
+  TextColor: '2894FF'
+  Position: '1'
+  X: '14'
+  Y: '49'
+#物品
+Item8:
+  Type: 'Item'
+  Item: 'Default.Menu'
+  ItemSize: '1'
+  Position: 1
+  ItemAmount: 10
+  X: 50
+  Y: 30
