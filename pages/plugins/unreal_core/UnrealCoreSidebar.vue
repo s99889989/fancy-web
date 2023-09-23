@@ -124,15 +124,15 @@ watch(pageName, (newValue)=>{
           <ul id="hud-config" class="hidden py-2 space-y-2">
             <li>
               <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_HUD_Text')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                Button</a>
+                Text</a>
             </li>
             <li>
               <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_HUD_Image')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                MenuButton</a>
+                Image</a>
             </li>
             <li>
               <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_HUD_Item')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                CheckBox</a>
+                Item</a>
             </li>
           </ul>
         </li>

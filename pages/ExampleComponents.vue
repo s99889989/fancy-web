@@ -38,8 +38,8 @@
   </pre>
 
   <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg py-5">
+<!-- py-5-->
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 
