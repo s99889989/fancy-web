@@ -4,6 +4,12 @@
 
 <template>
 
+  <div class="grid grid-cols-1 lg:grid-cols-2">
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe src="https://www.youtube.com/embed/c_j6Nt-iwcQ?si=Ek15M3ZJOUuNOsgR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
   <div class="flex justify-center">
     <video width="1280" height="720" controls>
       <source src="/plugins/fancy_series/fancy_gui/PlayerRenderAPI.mp4" type="video/mp4">

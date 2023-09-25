@@ -101,7 +101,7 @@
           <p class="text-base dark:text-white">Image</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
+          <p class="text-base dark:text-white">物件的背景圖片。</p>
           <p class="text-base dark:text-white"></p>
         </td>
         <td class="px-6 py-4">
@@ -117,7 +117,7 @@
           <p class="text-base dark:text-white">Color</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
+          <p class="text-base dark:text-white">物件的背景顏色。(Image為空才有效)</p>
           <p class="text-base dark:text-white"></p>
         </td>
         <td class="px-6 py-4">
@@ -133,7 +133,7 @@
           <p class="text-base dark:text-white">Transparent</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
+          <p class="text-base dark:text-white">物件的背景透明度。</p>
           <p class="text-base dark:text-white"></p>
         </td>
         <td class="px-6 py-4">
@@ -149,7 +149,7 @@
           <p class="text-base dark:text-white">HoverImage</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
+          <p class="text-base dark:text-white">物件滑鼠滑過的圖片。</p>
           <p class="text-base dark:text-white"></p>
         </td>
         <td class="px-6 py-4">
@@ -165,7 +165,7 @@
           <p class="text-base dark:text-white">HoverColor</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
+          <p class="text-base dark:text-white">物件滑鼠滑過的顏色。(HoverImage為空才有效)</p>
           <p class="text-base dark:text-white"></p>
         </td>
         <td class="px-6 py-4">
@@ -181,7 +181,7 @@
           <p class="text-base dark:text-white">HoverTransparent</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
+          <p class="text-base dark:text-white">物件滑鼠滑過的透明度。</p>
           <p class="text-base dark:text-white"></p>
         </td>
         <td class="px-6 py-4">
@@ -197,7 +197,7 @@
           <p class="text-base dark:text-white">ClickImage</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
+          <p class="text-base dark:text-white">物件滑鼠點擊的圖片。</p>
           <p class="text-base dark:text-white"></p>
         </td>
         <td class="px-6 py-4">

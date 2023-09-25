@@ -1,0 +1,28 @@
+<script setup lang="ts">
+
+</script>
+
+<template>
+  <p class="text-4xl dark:text-white">Example</p>
+  <p class="text-2xl dark:text-white">去除攻擊會顯示的愛心效果。</p>
+  <p class="text-2xl dark:text-white">Remove the love effect displayed by the attack.</p>
+
+  <p class="text-3xl text-red-500 mt-10">Action:</p>
+  <pre class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <code class="dark:text-white">
+Action:
+- Action[a=Particle-Remove] ~onJoin</code>
+  </pre>
+  <pre class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <code class="dark:text-white">
+Particle-Remove:
+  Action:
+  - Particle[Function=remove;particle=DAMAGE_INDICATOR] @Self</code>
+  </pre>
+
+
+</template>
+
+<style scoped>
+
+</style>
