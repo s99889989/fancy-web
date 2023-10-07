@@ -36,6 +36,9 @@ import CDI_Character_Character from "~/pages/plugins/custom_display/pages/charac
 import CDI_Character_Placeholders from "~/pages/plugins/custom_display/pages/character/CDI_Character_Placeholders.vue";
 import CDI_Character_Attribute from "~/pages/plugins/custom_display/pages/character/CDI_Character_Attribute.vue";
 import CDI_Config from "~/pages/plugins/custom_display/pages/CDI_Config.vue";
+import CDI_Teaching from "~/pages/plugins/custom_display/pages/CDI_Teaching.vue";
+import CDI_Teach_Class from "~/pages/plugins/custom_display/pages/teach/CDI_Teach_Class.vue";
+import CDI_Teach_Skill from "~/pages/plugins/custom_display/pages/teach/CDI_Teach_Skill.vue";
 
 const currentView = computed(() => {
   switch (customDisplayPages.pageName){
@@ -45,6 +48,12 @@ const currentView = computed(() => {
       return CDI_Commands;
     case 'CDI_Item':
       return CDI_Item;
+    case 'CDI_Teaching':
+      return CDI_Teaching;
+    case 'CDI_Teach_Class':
+      return CDI_Teach_Class;
+    case 'CDI_Teach_Skill':
+      return CDI_Teach_Skill;
     case 'CDI_Config':
       return CDI_Config;
     case 'CDI_GUI':
