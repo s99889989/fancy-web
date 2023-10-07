@@ -8,7 +8,7 @@
   <p class="text-3xl text-red-500 mt-5">動作Action</p>
   <p class="text-2xl dark:text-white">主要設定會讀取的動作文件.</p>
   <p class="text-2xl dark:text-white">Mainly set the action file that will be read.</p>
-  <img class="w-100" src="/plugins/custom_display/class/custom_display_class_1.PNG" alt="">
+  <img class="w-100" src="/plugins/custom_display/class/custom_display_class_1.png" alt="">
 
   <p class="text-3xl text-red-500 mt-10">內容範例Examples</p>
   <p class="text-2xl dark:text-white">通常只會使用Action動作，來觸發Action那邊的設定。</p>
@@ -20,7 +20,7 @@
 Action:
 - Action[a=AttackDisplayUp] ~onAttack</code>
   </pre>
-  <img class="w-100" src="/plugins/custom_display/class/custom_display_class_2.PNG" alt="">
+  <img class="w-100" src="/plugins/custom_display/class/custom_display_class_2.png" alt="">
   <br/><br/><br/>
 </template>
 

@@ -7,7 +7,7 @@
 
   <p class="text-2xl dark:text-white">檔案範例</p>
 
-  <img class="w-100" src="/plugins/unreal_core/api/hud/hud-1.PNG" alt="">
+  <img class="w-100" src="/plugins/unreal_core/api/hud/hud-1.png" alt="">
 
   <p class="text-2xl dark:text-white">新增HUD至給全部在線玩家。</p>
   <pre class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">

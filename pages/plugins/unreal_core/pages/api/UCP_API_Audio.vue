@@ -13,7 +13,7 @@
   <p class="text-2xl dark:text-white">Path UnrealCore/audio_config.yml</p>
   <p class="text-2xl dark:text-white">Name: The path of the file in the UnrealCore resource package</p>
   <p class="text-2xl dark:text-white">Music currently only supports .mp3</p>
-  <img class="w-100" src="/plugins/unreal_core/api/audio/audio-1.PNG" alt="">
+  <img class="w-100" src="/plugins/unreal_core/api/audio/audio-1.png" alt="">
 
   <p class="text-3xl dark:text-white mt-5">播放聲音。</p>
   <p class="text-3xl dark:text-white">Play sound.</p>

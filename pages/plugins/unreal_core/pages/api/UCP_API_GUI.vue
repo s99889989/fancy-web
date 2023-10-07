@@ -7,7 +7,7 @@
 
   <p class="text-2xl dark:text-white">檔案範例</p>
 
-  <img class="w-100" src="/plugins/unreal_core/api/gui/gui-1.PNG" alt="">
+  <img class="w-100" src="/plugins/unreal_core/api/gui/gui-1.png" alt="">
 
   <p class="text-2xl dark:text-white">讓指定玩家打開GUI。</p>
 
