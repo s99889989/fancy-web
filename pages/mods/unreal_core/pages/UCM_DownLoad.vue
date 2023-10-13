@@ -12,20 +12,25 @@ const items = ref([{ name: 'Foo' }, { name: 'Bar' }])
 
 
   <div class="grid grid-cols-1 lg:grid-cols-4">
-    <label for="countries" class="block mb-2 text-xl font-medium text-gray-900 dark:text-white">Filter by</label>
-    <select v-model="unrealCoreModDownLoad.data.filter_minecraft_version" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-      <option value="All">All Game Versions</option>
-      <option value="1.20.2">1.20.2</option>
-      <option value="1.19.4">1.19.4</option>
-      <option value="1.18.2">1.18.2</option>
-      <option value="1.17.1">1.17.1</option>
-      <option value="1.16.5">1.16.5</option>
-    </select>
-    <select v-model="unrealCoreModDownLoad.data.filter_mod_loaders" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-      <option value="All">All Mod Loaders</option>
-      <option value="Forge">Forge</option>
-      <option value="Fabric">Fabric</option>
-    </select>
+    <div class="m-2">
+      <select v-model="unrealCoreModDownLoad.data.filter_minecraft_version" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option value="All">All Game Versions</option>
+        <option value="1.20.2">1.20.2</option>
+        <option value="1.19.4">1.19.4</option>
+        <option value="1.18.2">1.18.2</option>
+        <option value="1.17.1">1.17.1</option>
+        <option value="1.16.5">1.16.5</option>
+      </select>
+    </div>
+
+    <div class="m-2">
+      <select v-model="unrealCoreModDownLoad.data.filter_mod_loaders" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option value="All">All Mod Loaders</option>
+        <option value="Forge">Forge</option>
+        <option value="Fabric">Fabric</option>
+      </select>
+    </div>
+
   </div>
 
 
@@ -34,7 +39,7 @@ const items = ref([{ name: 'Foo' }, { name: 'Bar' }])
 
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg py-5">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 
       <tr>
         <th scope="col" class="px-6 py-3">

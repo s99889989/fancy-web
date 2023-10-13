@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import {useUnrealCorePluginDownLoad} from "~/stores/plugins/unreal_core/useUnrealCorePluginDownLoad";
+
+const unrealCorePluginDownLoad = useUnrealCorePluginDownLoad();
 
 </script>
 
 <template>
   <p class="text-4xl dark:text-white">DownLoad</p>
+
+
 
   <p class="text-2xl dark:text-white mt-5">Plugin</p>
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg py-5">
@@ -11,6 +16,10 @@
       <thead class="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 
       <tr>
+        <th scope="col" class="px-6 py-3">
+          <p class="text-base dark:text-white">名稱</p>
+          <p class="text-base dark:text-white">Name</p>
+        </th>
         <th scope="col" class="px-6 py-3">
           <p class="text-base dark:text-white">版本</p>
           <p class="text-base dark:text-white">Version</p>
@@ -29,29 +38,22 @@
       </thead>
       <tbody>
 
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <tr v-for="(item, index) in unrealCorePluginDownLoad.data.downloadList" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">1.0.7.1</p>
+          <p class="text-base dark:text-white">{{item.name}}</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white">2023/09/20</p>
+          <p class="text-base dark:text-white">{{item.plugin_version}}</p>
         </td>
         <td class="px-6 py-4">
-          <a href="https://cdn.discordapp.com/attachments/1020195382787059793/1154056047724593222/UnrealCore-Plugin-1.0.7.1.jar"><i class="text-xl dark:text-white fa-regular fa-circle-down"></i></a>
+          <p class="text-base dark:text-white">{{item.uploaded}}</p>
+        </td>
+        <td class="px-6 py-4">
+          <a :href="item.download_link"><i class="text-xl dark:text-white fa-regular fa-circle-down"></i></a>
         </td>
       </tr>
 
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">1.0.7</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">2023/08/04</p>
-        </td>
-        <td class="px-6 py-4">
-          <a href="https://cdn.discordapp.com/attachments/1020195382787059793/1136952523383652443/UnrealCore-Plugin-1.0.7.jar"><i class="text-xl dark:text-white fa-regular fa-circle-down"></i></a>
-        </td>
-      </tr>
+
 
       </tbody>
     </table>
