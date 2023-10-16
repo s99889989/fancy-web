@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia'
 
+
+
 export const useFancyCorePages = defineStore('useFancyCorePages', () => {
     const pageName = ref('FC_Commands')
 
@@ -7,6 +9,8 @@ export const useFancyCorePages = defineStore('useFancyCorePages', () => {
         pageName.value = data;
         localStorage.setItem("useFancyCorePages", data);
     }
+
+
 
     onMounted(() => {
         pageName.value = localStorage.getItem("useFancyCorePages");

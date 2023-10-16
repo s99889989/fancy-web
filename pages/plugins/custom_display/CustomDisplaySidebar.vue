@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {useCustomDisplayPages} from "~/stores/plugins/custom_display/useCustomDisplayPages";
 const customDisplayPages = useCustomDisplayPages();
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>
@@ -28,9 +33,9 @@ const customDisplayPages = useCustomDisplayPages();
             <span class="ml-3">Commands</span>
           </a>
         </li>
+
         <li>
           <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-character" data-collapse-toggle="dropdown-character">
-
             <span class="flex-1 ml-3 text-left whitespace-nowrap">Character</span>
             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
@@ -100,30 +105,33 @@ const customDisplayPages = useCustomDisplayPages();
           </button>
           <ul id="dropdown-action" class="hidden py-2 space-y-2">
             <li>
-              <a href="#" @click="customDisplayPages.setPage('FCO_Entity_List')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="customDisplayPages.setPage('CDI_Action_Entity_List')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 Entity</a>
             </li>
 
             <li>
-              <a href="#" @click="customDisplayPages.setPage('FCO_Player_List')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="customDisplayPages.setPage('CDI_Action_Player_List')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 Player</a>
             </li>
 
             <li>
-              <a href="#" @click="customDisplayPages.setPage('FCO_Location_List')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="customDisplayPages.setPage('CDI_Action_Location_List')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 Location</a>
             </li>
 
             <li>
-              <a href="#" @click="customDisplayPages.setPage('FCO_Meta_List')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="customDisplayPages.setPage('CDI_Action_Meta_List')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 Meta</a>
             </li>
 
             <li>
-              <a href="#" @click="customDisplayPages.setPage('FCO_Classes_List')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="customDisplayPages.setPage('CDI_Action_Classes_List')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 Classes</a>
             </li>
-
+            <li>
+              <a href="#" @click="customDisplayPages.setPage('CDI_MOD_ModMessage')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                MOD</a>
+            </li>
           </ul>
         </li>
         <li>

@@ -1,28 +1,30 @@
 <script setup lang="ts">
-
+import {useFancyCorePages} from "~/stores/plugins/fancy_series/fancy_core/useFancyCorePages";
+const fancyCoreSidebar = useFancyCorePages();
 </script>
 
 <template>
-  <p class="text-2xl dark:text-white">目標為實體</p>
+  <p class="text-4xl dark:text-white">目標為實體</p>
   <p class="text-2xl dark:text-white">Target entity</p>
 
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg py-5">
     <table class="w-full text-left text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base" >動作 Actions</p>
-
+          <p class="text-base" >動作</p>
+          <p class="text-base" >Actions</p>
         </th>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base">描述 Description</p>
+          <p class="text-base">描述</p>
+          <p class="text-base">Description</p>
         </th>
 
       </tr>
       </thead>
       <tbody>
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_Attribute')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Attribute</p>
 
         </th>
@@ -33,7 +35,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_CustomValue')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">CustomValue</p>
 
         </th>
@@ -44,7 +46,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_Damage')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Damage</p>
 
         </th>
@@ -55,7 +57,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_DCMessage')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">DCMessage</p>
 
         </th>
@@ -66,7 +68,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_Glow')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Glow</p>
 
         </th>
@@ -77,7 +79,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_Heal')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Heal</p>
 
         </th>
@@ -88,7 +90,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_Invisible')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Invisible</p>
 
         </th>
@@ -99,7 +101,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_LoggerInfo')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">LoggerInfo</p>
 
         </th>
@@ -110,7 +112,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_Message')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Message</p>
 
         </th>
@@ -121,7 +123,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_Move')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Move</p>
 
         </th>
@@ -132,7 +134,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_MythicSkill')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">MythicSkill</p>
 
         </th>
@@ -143,7 +145,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_Name')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Name</p>
 
         </th>
@@ -154,7 +156,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_PotionEffect')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">PotionEffect</p>
 
         </th>
@@ -165,7 +167,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_Teleport')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Teleport</p>
 
         </th>
@@ -176,7 +178,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Entity_Threat')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Threat</p>
 
         </th>

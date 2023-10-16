@@ -2,7 +2,11 @@
 
 import {useFancyActionPages} from "~/stores/plugins/fancy_series/fancy_action/useFancyActionPages";
 const fancyActionSidebar = useFancyActionPages();
-
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 
 </script>
 

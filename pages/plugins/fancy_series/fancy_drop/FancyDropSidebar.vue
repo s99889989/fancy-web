@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {useFancyDropPages} from "~/stores/plugins/fancy_series/fancy_drop/useFancyDropPages";
 const fancyDropPages = useFancyDropPages();
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>

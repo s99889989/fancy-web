@@ -8,11 +8,14 @@ import UnrealCoreSidebar from "~/pages/mods/unreal_core/UnrealCoreSidebar.vue";
 
 import UCM_Introduce from "~/pages/mods/unreal_core/pages/UCM_Introduce.vue";
 import UCM_DownLoad from "~/pages/mods/unreal_core/pages/UCM_DownLoad.vue";
+import UCM_Video from "~/pages/mods/unreal_core/pages/UCM_Video.vue";
 
 const currentView = computed(() => {
   switch (unrealCoreModPages.pageName){
     case 'UCM_Introduce':
       return UCM_Introduce;
+    case 'UCM_Video':
+      return UCM_Video;
     case 'UCM_DownLoad':
       return UCM_DownLoad;
     default:

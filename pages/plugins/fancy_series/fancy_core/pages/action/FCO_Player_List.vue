@@ -1,21 +1,23 @@
 <script setup lang="ts">
-
+import {useFancyCorePages} from "~/stores/plugins/fancy_series/fancy_core/useFancyCorePages";
+const fancyCoreSidebar = useFancyCorePages();
 </script>
 
 <template>
-  <p class="text-2xl dark:text-white">目標為玩家</p>
+  <p class="text-4xl dark:text-white">目標為玩家</p>
   <p class="text-2xl dark:text-white">The goal is the player</p>
 
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg py-5">
     <table class="w-full text-left text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base" >動作 Actions</p>
-
+          <p class="text-base" >動作</p>
+          <p class="text-base" >Actions</p>
         </th>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base">描述 Description</p>
+          <p class="text-base">描述</p>
+          <p class="text-base">Description</p>
         </th>
 
       </tr>
@@ -23,7 +25,7 @@
       <tbody>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Player_ActionBar')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">ActionBar</p>
 
         </th>
@@ -34,7 +36,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Player_BossBar')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">BossBar</p>
 
         </th>
@@ -45,7 +47,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Player_Command')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Command</p>
 
         </th>
@@ -56,7 +58,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Player_Exp')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Exp</p>
 
         </th>
@@ -67,7 +69,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Player_Item')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Item</p>
 
         </th>
@@ -78,7 +80,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Player_Inventory')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Inventory</p>
 
         </th>
@@ -89,7 +91,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Player_Level')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Level</p>
 
         </th>
@@ -100,7 +102,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Player_Mana')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Mana</p>
 
         </th>
@@ -111,7 +113,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Player_Money')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Money</p>
 
         </th>
@@ -122,7 +124,7 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Player_Title')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">Title</p>
 
         </th>

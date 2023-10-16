@@ -1,9 +1,10 @@
 <script setup lang="ts">
-
+import {useFancyCorePages} from "~/stores/plugins/fancy_series/fancy_core/useFancyCorePages";
+const fancyCoreSidebar = useFancyCorePages();
 </script>
 
 <template>
-  <p class="text-2xl dark:text-white">Class專用</p>
+  <p class="text-4xl dark:text-white">Class專用</p>
   <p class="text-2xl dark:text-white">Class dedicated</p>
 
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg py-5">
@@ -11,11 +12,12 @@
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base" >動作 Actions</p>
-
+          <p class="text-base" >動作</p>
+          <p class="text-base" >Actions</p>
         </th>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base">描述 Description</p>
+          <p class="text-base">描述</p>
+          <p class="text-base">Description</p>
         </th>
 
       </tr>
@@ -23,18 +25,7 @@
       <tbody>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base">CustomPoint</p>
-
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base">點數。(升級時所獲得的點數，可用來升級屬性點)</p>
-          <p class="text-base">Points. (The points obtained during the upgrade can be used to upgrade the attribute points)</p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Classes_AttributePoint')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">AttributePoint</p>
 
         </th>
@@ -45,7 +36,18 @@
       </tr>
 
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <th @click="fancyCoreSidebar.setPage('FCO_Classes_CustomPoint')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+          <p class="text-base">CustomPoint</p>
+
+        </th>
+        <td class="px-6 py-4">
+          <p class="text-base">點數。(升級時所獲得的點數，可用來升級屬性點)</p>
+          <p class="text-base">Points. (The points obtained during the upgrade can be used to upgrade the attribute points)</p>
+        </td>
+      </tr>
+
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        <th @click="fancyCoreSidebar.setPage('FCO_Classes_SetSkillLevel')" scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base">SetSkillLevel</p>
 
         </th>

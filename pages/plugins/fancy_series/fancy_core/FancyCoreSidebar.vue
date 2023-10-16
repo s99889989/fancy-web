@@ -2,7 +2,11 @@
 import {useFancyCorePages} from "~/stores/plugins/fancy_series/fancy_core/useFancyCorePages";
 const fancyCoreSidebar = useFancyCorePages();
 
-
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 
 </script>
 

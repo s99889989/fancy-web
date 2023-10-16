@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {useFancyChatPages} from "~/stores/plugins/fancy_series/fancy_chat/useFancyChatPages";
 const fancyChatPages = useFancyChatPages();
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>

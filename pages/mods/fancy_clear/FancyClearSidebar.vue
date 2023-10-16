@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {useFancyClearPages} from "~/stores/mods/fancy_clear/useFancyClearPages";
 const fancyClearPages = useFancyClearPages();
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>

@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import {useUnrealCoreModPages} from "~/stores/mods/unreal_core/useUnrealCoreModPages";
 const unrealCoreModPages = useUnrealCoreModPages();
-
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 
 import {integer} from "vscode-languageserver-types";
 

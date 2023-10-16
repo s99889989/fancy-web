@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {useFancyMobsPages} from "~/stores/plugins/fancy_series/fancy_mobs/useFancyMobsPages";
 const fancyMobsPages = useFancyMobsPages();
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>

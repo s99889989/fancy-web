@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {useFancyHUDPages} from "~/stores/plugins/fancy_series/fancy_hud/useFancyHUDPages";
 const fancyHUDPages = useFancyHUDPages();
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>

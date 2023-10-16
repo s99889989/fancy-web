@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import {useFancyEquipmentPages} from "~/stores/plugins/fancy_series/fancy_equipment/useFancyEquipmentPages";
 const fancyEquipmentPages = useFancyEquipmentPages();
-
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 
 </script>
 

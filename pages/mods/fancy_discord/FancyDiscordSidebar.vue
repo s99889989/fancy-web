@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {useFancyDiscordPages} from "~/stores/mods/fancy_discord/useFancyDiscordPages";
 const fancyDiscordPages = useFancyDiscordPages();
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>

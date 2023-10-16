@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {useFancyItemPages} from "~/stores/plugins/fancy_series/fancy_item/useFancyItemPages";
 const fancyItemPages = useFancyItemPages();
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>

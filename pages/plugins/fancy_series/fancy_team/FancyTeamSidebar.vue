@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {useFancyTeamPages} from "~/stores/plugins/fancy_series/fancy_team/useFancyTeamPages";
 const fancyTeamPages = useFancyTeamPages();
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>

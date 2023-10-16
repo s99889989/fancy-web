@@ -9,6 +9,7 @@ module.exports = {
     "./nuxt.config.{js,ts}",
     "./app.vue",
     "./node_modules/flowbite-react/**/*.js",
+    "./node_modules/flowbite/**/*.js",
     "./pages/**/*.{ts,tsx}",
     "./public/**/*.html",
   ],

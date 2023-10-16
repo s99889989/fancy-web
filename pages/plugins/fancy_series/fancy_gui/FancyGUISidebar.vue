@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {useFancyGUIPages} from "~/stores/plugins/fancy_series/fancy_gui/useFancyGUIPages";
 const fancyGUIPages = useFancyGUIPages();
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>
