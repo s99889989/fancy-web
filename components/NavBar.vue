@@ -170,6 +170,9 @@
                 <li>
                   <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/mods/fancy_clear/FancyClearIndex">FancyClear</NuxtLink>
                 </li>
+                <li>
+                  <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/mods/fancy_client/FancyClientIndex">FancyClient</NuxtLink>
+                </li>
               </ul>
             </div>
           </li>
