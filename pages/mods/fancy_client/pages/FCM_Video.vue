@@ -14,9 +14,9 @@
     <div class="aspect-w-16 aspect-h-9 m-10">
       <iframe src="https://www.youtube.com/embed/g61HHov6jn0?si=TTQVLhZI60HDegrW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="aspect-w-16 aspect-h-9 m-10">
-      <img class="w-100" src="http://madustrialt.asuscomm.com:9100/image/two/IMG_2880.jpg" alt="">
-    </div>
+<!--    <div class="aspect-w-16 aspect-h-9 m-10">-->
+<!--      <img class="w-100" src="http://madustrialt.asuscomm.com:9100/image/two/IMG_2880.jpg" alt="">-->
+<!--    </div>-->
   </div>
 </template>
 
