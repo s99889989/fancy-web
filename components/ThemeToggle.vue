@@ -1,7 +1,5 @@
 <script setup lang="ts">
 
-import {f} from "ofetch/dist/shared/ofetch.441891d5";
-
 const dark = ref(false);
 const handleToggleTheme = () => {
   dark.value = !dark.value;
