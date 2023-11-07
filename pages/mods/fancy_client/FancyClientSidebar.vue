@@ -21,7 +21,7 @@ onMounted(() => {
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
         <div class="flex justify-center">
-          <p class="text-3xl dark:text-white">UnrealCoreMod</p>
+          <p class="text-3xl dark:text-white">FancyClient</p>
         </div>
         <li>
           <a @click="fancyClientPages.setPage('FCM_Introduce')" href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
