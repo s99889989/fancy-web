@@ -1,5 +1,24 @@
 <script setup lang="ts">
+const photos = reactive({
+  data: [
+    {
+      image: ''
+    }
+  ],
+})
+onMounted(()=>{
+  const pathList = ['image', "2023", "第3回", "第1天"];
+  // const url2 = 'http://localhost:9100/image/'+pathList.join(',');
+  const url2 = 'http://madustrialtd.asuscomm.com:9100/image/'+pathList.join(',');
 
+  fetch(url2)
+      .then(res=>res.json())
+      .then(data=>{
+        photos.data = data;
+      })
+
+
+})
 </script>
 
 <template>
@@ -12,7 +31,7 @@
   <p class="text-2xl dark:text-white">There is no function for single player use.</p>
   <p class="text-2xl dark:text-white">There may still be many problems.</p>
 
-  <img src="http://madustrialtd.asuscomm.com:9100/image/2023/第3回/第3天/IMG_6634.jpg" alt="">
+  <p class="text-white" >{{photos}}</p>
 </template>
 
 <style scoped>
