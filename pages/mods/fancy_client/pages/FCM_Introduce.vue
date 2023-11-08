@@ -9,7 +9,7 @@ const photos = reactive({
 onMounted(()=>{
   const pathList = ['image', "2023", "第3回", "第1天"];
   // const url2 = 'http://localhost:9100/image/'+pathList.join(',');
-  const url2 = 'http://madustrialtd.asuscomm.com:9100/image/'+pathList.join(',');
+  const url2 = 'https://madustrialtd.asuscomm.com:9100/image/'+pathList.join(',');
 
   fetch(url2)
       .then(res=>res.json())
@@ -31,7 +31,7 @@ onMounted(()=>{
   <p class="text-2xl dark:text-white">There is no function for single player use.</p>
   <p class="text-2xl dark:text-white">There may still be many problems.</p>
 
-  <p class="text-white" >{{photos}}</p>
+  <img src="https://madustrialtd.asuscomm.com:9100/image/2022/第3回/第1天/9102.jpg" alt="">
 </template>
 
 <style scoped>
