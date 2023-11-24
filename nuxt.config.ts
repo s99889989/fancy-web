@@ -20,13 +20,13 @@ export default defineNuxtConfig({
         { name: 'description', content: 'FancyWeb' },
         { name: 'og:title', content: 'FancyWeb' },
         { name: 'og:description', content: 'FancyWeb' },
-        { name: 'og:image', content: '/assets/icon/hat.png' },
+        { name: 'og:image', content: '/head.png' },
 
       ],
       link: [
         {
           rel: "icon",
-          href: "/assets/icon/hat.png",
+          href: "/head.png",
         },
         {
           href: "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css",
