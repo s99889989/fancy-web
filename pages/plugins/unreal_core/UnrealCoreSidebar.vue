@@ -1,32 +1,19 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
-import {useUnrealCoreModPages} from "~/stores/mods/unreal_core/useUnrealCoreModPages";
-const unrealCoreModPages = useUnrealCoreModPages();
+import {useUnrealCorePluginPages} from "~/stores/plugins/unreal_core/useUnrealCorePluginPages";
+import {useUnrealCorePluginLanguage} from "~/stores/plugins/unreal_core/useUnrealCorePluginLanguage";
+
+
+const unrealCorePluginPages = useUnrealCorePluginPages();
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
-const languageControl = useLanguageControl()
+
 onMounted(() => {
   initFlowbite();
 })
 
-import {integer} from "vscode-languageserver-types";
-import {useUnrealCorePluginLanguage} from "~/stores/plugins/unreal_core/useUnrealCorePluginLanguage";
-import {useLanguageControl} from "~/stores/useLanguageControl";
 
-const emit = defineEmits(['update'])
 
-const currentPath = ref(0)
-const setView = (data: integer) => {
-  currentPath.value = data;
-}
-
-const pageName = computed(()=>{
-  return currentPath.value;
-})
-
-watch(pageName, (newValue)=>{
-  emit('update', newValue);
-})
 
 </script>
 
@@ -42,28 +29,28 @@ watch(pageName, (newValue)=>{
   <aside id="default-sidebar" class="container-sidebar-top fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
-        <div class="flex justify-center">
+        <li class="flex justify-center">
           <p class="text-2xl dark:text-white">{{unrealCorePluginLanguage.data.sidebar.title}}</p>
-        </div>
+        </li>
         <li>
-          <a href="#" @click="unrealCoreModPages.setPage('UnrealCoreIntroduce')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a href="#" @click="unrealCorePluginPages.setPage('UnrealCoreIntroduce')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <span class="ml-3">{{unrealCorePluginLanguage.data.sidebar.introduce}}</span>
           </a>
         </li>
         <li>
-          <a href="#" @click="unrealCoreModPages.setPage('UnrealCoreCommand')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a href="#" @click="unrealCorePluginPages.setPage('UnrealCoreCommand')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <span class="ml-3">{{unrealCorePluginLanguage.data.sidebar.commands}}</span>
           </a>
         </li>
 
         <li>
-          <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_Tooltip')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_Tooltip')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <span class="ml-3">{{unrealCorePluginLanguage.data.sidebar.tooltip_config}}</span>
           </a>
         </li>
 
         <li>
-          <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
             <span class="flex-1 ml-3 whitespace-nowrap">{{unrealCorePluginLanguage.data.sidebar.gui_config}}</span>
 
@@ -71,7 +58,7 @@ watch(pageName, (newValue)=>{
         </li>
 
         <li>
-          <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_HUD')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_HUD')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
             <span class="flex-1 ml-3 whitespace-nowrap">{{unrealCorePluginLanguage.data.sidebar.hud_config}}</span>
 
@@ -87,51 +74,51 @@ watch(pageName, (newValue)=>{
           </button>
           <ul id="gui-config" class="hidden py-2 space-y-2">
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_AreaInput')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_AreaInput')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.area_input}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Button')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Button')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.button}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Check')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Check')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.check}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Container')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Container')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.container}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Entity')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Entity')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.entity}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Image')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Image')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.image}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Input')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Input')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.input}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Item')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Item')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.item}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Range')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Range')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.range}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Select')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Select')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.select}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Slot')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Slot')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.slot}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Config_GUI_Text')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_GUI_Text')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.module_config_list.text}}</a>
             </li>
           </ul>
@@ -147,41 +134,41 @@ watch(pageName, (newValue)=>{
           </button>
           <ul id="placeholder" class="hidden py-2 space-y-2">
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Placeholder_Display')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Placeholder_Display')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.placeholder_list.display}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Placeholder_Entity')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Placeholder_Entity')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.placeholder_list.entity}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Placeholder_System')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Placeholder_System')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.placeholder_list.system}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Placeholder_Player')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Placeholder_Player')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.placeholder_list.player}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Placeholder_Resource')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Placeholder_Resource')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.placeholder_list.resource}}</a>
             </li>
             <li>
-              <a href="#" @click="unrealCoreModPages.setPage('UCP_Placeholder_Music')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                {{unrealCorePluginLanguage.data.sidebar.placeholder_list.music}}</a>
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Placeholder_Sound')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                {{unrealCorePluginLanguage.data.sidebar.placeholder_list.sound}}</a>
             </li>
           </ul>
         </li>
 
         <li>
-          <a href="#" @click="unrealCoreModPages.setPage('UnrealCoreDownLoad')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a href="#" @click="unrealCorePluginPages.setPage('UnrealCoreDownLoad')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
             <span class="flex-1 ml-3 whitespace-nowrap">{{unrealCorePluginLanguage.data.sidebar.download}}</span>
 
           </a>
         </li>
         <li>
-          <a href="#" @click="unrealCoreModPages.setPage('UnrealCoreAPI')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a href="#" @click="unrealCorePluginPages.setPage('UnrealCoreAPI')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
             <span class="flex-1 ml-3 whitespace-nowrap">{{unrealCorePluginLanguage.data.sidebar.api}}</span>
           </a>

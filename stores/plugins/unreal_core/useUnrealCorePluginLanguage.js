@@ -33,19 +33,12 @@ export const useUnrealCorePluginLanguage = defineStore('useUnrealCorePluginLangu
                 player: '',
                 resource: '',
                 system: '',
-                music: '',
+                sound: '',
             },
             download: '',
             api: '',
         },
         gui_config:{
-            attributes:{
-                head: '',
-                attribute: '',
-                description: '',
-                example: '',
-                default: '',
-            },
             common:{
                 position: {attribute: '',
                     description: [''],
@@ -118,19 +111,12 @@ export const useUnrealCorePluginLanguage = defineStore('useUnrealCorePluginLangu
                 player: 'Player',
                 resource: 'Resource',
                 system: 'System',
-                music: 'Music',
+                sound: 'Sound',
             },
             download: 'DownLoad',
             api: 'API',
         },
         gui_config:{
-            attributes:{
-                head: 'Attributes',
-                attribute: 'Attribute',
-                description: 'Description',
-                example: 'Example',
-                default: 'Default',
-            },
             common: {
                 position: {
                     attribute: 'Position',
@@ -217,19 +203,12 @@ export const useUnrealCorePluginLanguage = defineStore('useUnrealCorePluginLangu
                 player: '玩家',
                 resource: '資源',
                 system: '系統',
-                music: '音樂',
+                sound: '聲音',
             },
             download: '下載',
             api: '開發說明',
         },
         gui_config:{
-            attributes:{
-                head: '屬性',
-                attribute: '屬性名稱',
-                description: '描述',
-                example: '範例',
-                default: '預設值',
-            },
             common: {
                 position: {
                     attribute: 'Position',
@@ -286,28 +265,13 @@ export const useUnrealCorePluginLanguage = defineStore('useUnrealCorePluginLangu
         }
     })
 
-    //改變語言
-    const setLanguage = (set_language) => {
 
-
-        if(set_language === 'chinese_traditional'){
-            data.gui_config = { ...chinese_traditional.gui_config}
-            data.sidebar = { ...chinese_traditional.sidebar}
-        }else {
-            data.gui_config = { ...english.gui_config}
-            data.sidebar = { ...english.sidebar}
-        }
-        localStorage.setItem("language", set_language);
-    }
-
-    onMounted(()=>{
-
+    const getSidebarLanguage = computed(()=>{
         let language_local = localStorage.getItem("language");
         if(language_local == null){
             language_local = 'english';
             localStorage.setItem("language", 'english');
         }
-
         if(language_local === 'chinese_traditional'){
             data.gui_config = { ...chinese_traditional.gui_config}
             data.sidebar = { ...chinese_traditional.sidebar}
@@ -315,9 +279,21 @@ export const useUnrealCorePluginLanguage = defineStore('useUnrealCorePluginLangu
             data.gui_config = { ...english.gui_config}
             data.sidebar = { ...english.sidebar}
         }
-
+        return data.sidebar;
     })
 
+    //改變語言
+    const setLanguage = (set_language) => {
 
-    return { data, setLanguage }
+
+        if(set_language === 'chinese_traditional'){
+            data.gui_config = { ...chinese_traditional.gui_config}
+            data.sidebar = chinese_traditional.sidebar
+        }else {
+            data.gui_config = { ...english.gui_config}
+            data.sidebar = english.sidebar
+        }
+    }
+
+    return { data, english, chinese_traditional, setLanguage, getSidebarLanguage }
 })

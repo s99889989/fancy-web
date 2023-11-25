@@ -1,589 +1,208 @@
-<script setup lang="ts">
+<script setup lang="js">
 import {useUnrealCorePluginLanguage} from "~/stores/plugins/unreal_core/useUnrealCorePluginLanguage";
 import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
-    mask: {
-      attribute: 'Mask',
-      description: ['Whether to display dark black in unused areas.'],
-      example: 'false',
-      default: 'true',
-    },
-    tooltip: {
-      attribute: 'Tooltip',
-      description: ['The tooltip settings to use for the item.'],
-      example: '100',
-      default: '255',
-    },
-    moduleData: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
-    },
-  }
-})
-
 const language_computed = computed(()=>{
-
-  if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
-      mask: {
-        attribute: 'mask',
-        description: ['沒有用到的地方是否顯示暗黑色。'],
-        example: 'false',
-        default: 'true',
-      },
-      tooltip: {
-        attribute: 'tooltip',
-        description: ['物品要使用的工具提示設置。'],
-        example: 'maple_story',
+  let language = {
+    title: 'Display Placeholder',
+    attribute:{
+      window: {
+        attribute: 'Window',
+        description: [''],
+        example: '',
         default: '',
       },
-      moduleData: {
-        attribute: "ContentList.&lt;name>.",
-        description: ['子模塊列表。'],
+      mouse: {
+        attribute: 'Mouse',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      xs: {
+        attribute: '',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      xe: {
+        attribute: '',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      ys: {
+        attribute: '',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      ye: {
+        attribute: '',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      width: {
+        attribute: '',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      height: {
+        attribute: '',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      value: {
+        attribute: '',
+        description: [''],
         example: '',
         default: '',
       },
     }
-  }else {
-    data.language =  {
-      mask: {
-        attribute: 'Mask',
-        description: ['Whether to display dark black in unused areas.'],
-        example: 'false',
-        default: 'true',
-      },
-      tooltip: {
-        attribute: 'Tooltip',
-        description: ['The tooltip settings to use for the item.'],
-        example: '100',
-        default: '255',
-      },
-      moduleData: {
-        attribute: 'ContentList.&lt;name>.',
-        description: ['List of submodules.'],
-        example: '',
-        default: '',
-      },
+
+  }
+  if(languageControl.data.language === 'chinese_traditional'){
+    language = {
+      title: '顯示 佔位符',
+      attribute:{
+        window_width: {
+          attribute: '{display_window_w}',
+          description: ['視窗寬度。'],
+          example: '',
+          default: '',
+        },
+        window_height: {
+          attribute: '{display_window_h}',
+          description: ['視窗高度。'],
+          example: '',
+          default: '',
+        },
+        mouse_x: {
+          attribute: '{display_mouse_x}',
+          description: ['滑鼠X位置。'],
+          example: '',
+          default: '',
+        },
+        mouse_y: {
+          attribute: '{display_mouse_y}',
+          description: ['滑鼠Y位置。'],
+          example: '',
+          default: '',
+        },
+        module_x: {
+          attribute: '{display_模塊名稱_x}',
+          description: ['模塊的起始X位置。'],
+          example: '',
+          default: '',
+        },
+        module_xs: {
+          attribute: '{display_模塊名稱_xs}',
+          description: ['模塊的起始X位置。'],
+          example: '',
+          default: '',
+        },
+        module_xe: {
+          attribute: '{display_模塊名稱_xe}',
+          description: ['模塊的結束X位置。'],
+          example: '',
+          default: '',
+        },
+        module_y: {
+          attribute: '{display_模塊名稱_y}',
+          description: ['模塊的起始Y位置。'],
+          example: '',
+          default: '',
+        },
+        module_ys: {
+          attribute: '{display_模塊名稱_ys}',
+          description: ['模塊的起始Y位置。'],
+          example: '',
+          default: '',
+        },
+        module_ye: {
+          attribute: '{display_模塊名稱_ye}',
+          description: ['模塊的結束Y位置。'],
+          example: '',
+          default: '',
+        },
+        module_width: {
+          attribute: '{display_模塊名稱_width}',
+          description: ['模塊的寬度。', '實體模塊因為目前沒想到', '計算方法，所以不準確。'],
+          example: '',
+          default: '',
+        },
+        module_height: {
+          attribute: '{display_模塊名稱_height}',
+          description: ['模塊的高度。', '實體模塊因為目前沒想到', '計算方法，所以不準確。'],
+          example: '',
+          default: '',
+        },
+        module_value: {
+          attribute: '{display_模塊名稱_value}',
+          description: [
+            '模塊的值。',
+            '像是輸入模塊輸入的值。',
+            '多行值會在後面加上代表的行數數字。',
+            '例如{display_InputExample_value_1}代表第一行。',
+            '例如{display_InputExample_value_2}代表第二行。',
+          ],
+          example: '',
+          default: '',
+        },
+      }
     }
   }
-  return data.language;
+  return language;
 })
 
 </script>
 
 <template>
-  <p class="text-4xl dark:text-white">GUI Main Config</p>
+  <p class="text-4xl dark:text-white">{{language_computed.title}}</p>
 
-  <p class="text-3xl text-red-500 mt-5">{{ unrealCorePluginLanguage.data.gui_config.attributes.head}}</p>
+  <p class="text-3xl text-red-500 mt-5">{{ languageControl.data.attributes.head}}</p>
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+
       <thead class="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 
       <tr>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">{{ unrealCorePluginLanguage.data.gui_config.attributes.attribute}}</p>
+          <p class="text-base dark:text-white">{{ languageControl.data.attributes.attribute}}</p>
         </th>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">{{ unrealCorePluginLanguage.data.gui_config.attributes.description}}</p>
-        </th>
-        <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">{{ unrealCorePluginLanguage.data.gui_config.attributes.example}}</p>
-        </th>
-        <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">{{ unrealCorePluginLanguage.data.gui_config.attributes.default}}</p>
+          <p class="text-base dark:text-white">{{ languageControl.data.attributes.description}}</p>
         </th>
       </tr>
 
       </thead>
+
       <tbody>
 
-      <tr v-for="(module) in unrealCorePluginLanguage.data.gui_config.common" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <tr v-for="(module) in language_computed.attribute" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           <p class="text-base dark:text-white">{{module.attribute}}</p>
         </th>
         <td class="px-6 py-4">
           <p v-for="(descr) in module.description" class="text-base dark:text-white">{{descr}}</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">{{module.example}}</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">{{module.default}}</p>
-        </td>
-      </tr>
-
-      <tr v-for="(module) in unrealCorePluginLanguage.data.gui_config.common2" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{{module.attribute}}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p v-for="(descr) in module.description" class="text-base dark:text-white">{{descr}}</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">{{module.example}}</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">{{module.default}}</p>
-        </td>
-      </tr>
-
-      <tr v-for="(module) in  language_computed" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{{module.attribute}}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p v-for="(descr) in module.description" class="text-base dark:text-white">{{descr}}</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">{{module.example}}</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">{{module.default}}</p>
         </td>
       </tr>
 
       </tbody>
+
     </table>
   </div>
 
-  <p class="text-3xl text-red-500 mt-5">{{ unrealCorePluginLanguage.data.gui_config.attributes.example}}</p>
+  <p class="text-3xl text-red-500 mt-5">{{ languageControl.data.attributes.example}}</p>
   <pre class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
    <code class="dark:text-white">
-Gui:
-  Type: 'Inventory'
-  Position: 5
-  X: 0
-  Y: 0
-  Width: 320
-  Height: 200
-  Tooltip: example
-  Transparent: 255
-  Color: 'ffffff'
-  Image: 'gui/background/background_2.png'
-
-ContentList:
-
-  ImageExample:
-    Type: Image
-    Position: 1
-    X: 10
-    Y: 10
-    Width: 20
-    Height: 20
-    Image: 'https://minotar.net/avatar/{player_self_uuid}'
-    Color: 'e0ffff'
-    Transparent: 200
-
-  TextExample:
-    Type: 'Text'
-    Position: 1
-    X: 5
-    Y: 40
-    Text:
-    -  '自訂遊戲目錄1'
-    -  '自訂遊戲目錄2'
-    TextSize: '1.5'
-    Space: 18
-    TextColor: '6821a9'
-
-  EntityExample:
-    Type: Entity
-    Position: 2
-    EntityType: 'Player'
-    EntityName: ''
-    EntitySize: 30
-    X: 30
-    Y: 65
-
-  CheckExample:
-    Type: Check
-    Position: 1
-    X: 40
-    Y: 10
-    Check: true
-    OffImage: 'gui/check/check_off.png'
-    OnImage: 'gui/check/check_on.png'
-    Width: 20
-    Height: 20
-    Text: '選項'
-    TextColor: '00CACA'
-    TextSize: 1
-    TextPlace: 0
-    TextDistance: 0
-
-  ButtonExample:
-    Type: Button
-    Position: 3
-    X: -10
-    Y: 10
-    Image: 'gui/button/button2_off.png'
-    HoverImage: 'gui/button/button2_on.png'
-    ClickImage: 'gui/button/button2_on.png'
-    Color: '1e90ff'
-    Transparent: 255
-    Width: 25
-    Height: 14
-    Text: '個人'
-    TextColor: '00CACA'
-    TextSize: 1
-
-  InputExample:
-    Type: Input
-    Position: 4
-    X: 30
-    Y: -10
-    Width: 80
-    Height: 18
-    Image: 'gui/input/input_3.png'
-    Color: 'FFFFFF'
-    Transparent: 200
-    Title: '名稱: '
-    TitleColor: '577700'
-    TitleSize: 1
-    Prompt: '請輸入名稱'
-    PromptColor: 'daa520'
-    PromptSize: 1
-    Text: ''
-    TextColor: '00CACA'
-    TextSize: 1
-    TextMaxLength: 50
-    InputStart: 3
-    InputEnd: 0
-    CanInput: true
-
-  RangeExample:
-    Type: Range
-    Position: 2
-    X: 30
-    Y: 25
-    Image: 'gui/input/input_1.png'
-    Width: 100
-    Height: 5
-    Color: 'FFFFFF'
-    Transparent: 255
-    Straight: false
-    Option:
-      Width: 12
-      Height: 12
-      Image: 'gui/icon/i1.png'
-      Color: 'FFFFFF'
-      Transparent: 255
-      ChooseShow: true
-      ChooseColor: 'FFFFFF'
-      Choose: '日出'
-      List:
-      - 日出
-      - 早上
-      - 中午
-      - 日落
-      - 晚上
-      - 午夜
-
-  RangeStraightExample:
-    Type: Range
-    Position: 3
-    X: -20
-    Y: 50
-    Image: 'gui/input/input_1.png'
-    Width: 5
-    Height: 100
-    Color: 'FFFFFF'
-    Transparent: 255
-    Straight: true
-    Option:
-      Width: 12
-      Height: 12
-      Image: 'gui/icon/i1.png'
-      Color: 'FFFFFF'
-      Transparent: 255
-      ChooseShow: true
-      ChooseColor: '7fffd4'
-      Choose: '日出'
-      List:
-      - 日出
-      - 早上
-      - 中午
-      - 日落
-      - 晚上
-      - 午夜
-
-  SelectExample:
-    Type: Select
-    Position: 5
-    X: -5
-    Y: -40
-    Width: 80
-    Height: 20
-    CornerRadius: 10
-    Image: 'gui/button/button_default.png'
-    Color: 'ffffff'
-    Transparent: 255
-    TextSize: 1
-    TextColor: 'bdb76b'
-    Option:
-      Width: 60
-      Height: 20
-      Image: '' #
-      Color: '808080'
-      Transparent: 255
-      HoverColor: 'b0e0e6'
-      HoverTransparent: 255
-      TextColor: '000000'
-      TextHoverColor: '808000'
-      TextSize: 1
-      Direction: 1
-      Choose: 'Select desired time period'
-      List:
-      - Sunrise
-      - Morning
-      - Noon
-      - Sunset
-      - Night
-      - Midnight
-
-  AreaInputExample:
-    Type: AreaInput
-    Position: 6
-    X: -40
-    Y: 0
-    Image: ''
-    Color: 'e6e6fa'
-    Width: 80
-    Height: 100
-    Text:
-    -  '第一行'
-    -  '第二行'
-    -  '第三行'
-    TextColor: '00CACA'
-    TextSize: 1
-    TextMaxLength: 200
-    InputStart: 1
-    InputEnd: -1
-    CanInput: true
-
-  ItemExample:
-    Type: 'Item'
-    Position: 2
-    X: -40
-    Y: 18
-    Item: '{Count:1b,id:"minecraft:stone"}'
-    AngleY: 10
-    ItemSize: 2
-    ItemAmount: 10
-
-  Slot36:
-    Type: Slot
-    Position: 8
-    Image: 'gui/slot/slot.png'
-    Width: 18
-    Height: 18
-    Color: 'FFFFFF'
-    Transparent: 255
-    HoverMargin: 1
-    HoverColor: 006800
-    HoverTransparent: 255
-    Slot: 36
-    ItemSize: 1
-    X: -30
-    Y: -10
-
-  Slot37:
-    Type: Slot
-    Position: 8
-    Image: 'gui/slot/slot.png'
-    Width: 18
-    Height: 18
-    Color: 'FFFFFF'
-    Transparent: 255
-    HoverMargin: 1
-    HoverColor: 006800
-    HoverTransparent: 255
-    Slot: 37
-    ItemSize: 1
-    X: -10
-    Y: -10
-
-  Slot38:
-    Type: Slot
-    Position: 8
-    Image: 'gui/slot/slot.png'
-    Width: 18
-    Height: 18
-    Color: 'FFFFFF'
-    Transparent: 255
-    HoverMargin: 1
-    HoverColor: 006800
-    HoverTransparent: 255
-    Slot: 38
-    ItemSize: 1
-    X: 10
-    Y: -10
-
-  Slot39:
-    Type: Slot
-    Position: 8
-    Image: 'gui/slot/slot.png'
-    Width: 18
-    Height: 18
-    Color: 'FFFFFF'
-    Transparent: 255
-    HoverMargin: 1
-    HoverColor: 006800
-    HoverTransparent: 255
-    Slot: 39
-    ItemSize: 1
-    X: 30
-    Y: -10
-
-  Slot40:
-    Type: Slot
-    Position: 8
-    Image: 'gui/slot/slot.png'
-    Width: 18
-    Height: 18
-    Color: 'FFFFFF'
-    Transparent: 255
-    HoverMargin: 1
-    HoverColor: 006800
-    HoverTransparent: 255
-    Slot: 40
-    ItemSize: 1
-    X: 50
-    Y: -10
-
-  Slot41:
-    Type: Slot
-    Position: 8
-    Image: 'gui/slot/slot.png'
-    Width: 18
-    Height: 18
-    Color: 'FFFFFF'
-    Transparent: 255
-    HoverMargin: 1
-    HoverColor: 006800
-    HoverTransparent: 255
-    Slot: 41
-    ItemSize: 1
-    X: 70
-    Y: -10
-
-  Slot42:
-    Type: Slot
-    Position: 8
-    Image: 'gui/slot/slot.png'
-    Width: 18
-    Height: 18
-    Color: 'FFFFFF'
-    Transparent: 255
-    HoverMargin: 1
-    HoverColor: 006800
-    HoverTransparent: 255
-    Slot: 42
-    ItemSize: 1
-    X: 90
-    Y: -10
-
-  Slot43:
-    Type: Slot
-    Position: 8
-    Image: 'gui/slot/slot.png'
-    Width: 18
-    Height: 18
-    Color: 'FFFFFF'
-    Transparent: 255
-    HoverMargin: 1
-    HoverColor: 006800
-    HoverTransparent: 255
-    Slot: 43
-    ItemSize: 1
-    X: 110
-    Y: -10
-
-  Slot44:
-    Type: Slot
-    Position: 8
-    Image: 'gui/slot/slot.png'
-    Width: 18
-    Height: 18
-    Color: 'FFFFFF'
-    Transparent: 255
-    HoverMargin: 1
-    HoverColor: 006800
-    HoverTransparent: 255
-    Slot: 44
-    ItemSize: 1
-    X: 130
-    Y: -10
-
-  ContainerExample:
-    Type: Container
-    Position: 7
-    X: 10
-    Y: -10
-    Width: 100
-    Height: 80
-    ActualWidth: 100
-    ActualHeight: 200
-    Image: 'gui/container/container_1.png'
-    Color: 'FFFFFF'
-    Transparent: 255
-    ScrollBackgroundColor: '0F0F0A'
-    ScrollBackgroundTransparent: 255
-    ScrollColor: '1e90ff'
-    ScrollTransparent: 255
-    ScrollSidebarColor: '00bfff'
-    ScrollSidebarTransparent: 255
-    ScrollX: 0
-    ScrollY: 0
-    OverflowX: 1
-    OverflowY: 1
-    ScrollXDisplay: 1
-    ScrollYDisplay: 1
-
-    ContentList:
-      TextExample:
-        Type: 'Text'
-        Position: 1
-        X: 5
-        Y: 6
-        Text:
-        - 's99889989~~1'
-        - 's99889989~~2'
-        - 's99889989~~3'
-        - '10'
-        TextSize: 1
-        Space: 12
-        TextColor: 'd2b48c'
-
-      ButtonExample:
-        Type: Button
-        Position: 1
-        X: 5
-        Y: 40
-        Width: 30
-        Height: 15
-        Image: 'gui/button/button_default.png'
-        HoverImage: 'gui/button/button_hover.png'
-        ClickImage: 'gui/button/button_hover.png'
-        Color: 'FFFFFF'
-        Transparent: 255
-        Text: '設定'
-        TextColor: '00CACA'
-        TextSize: 1
-
-
 </code>
   </pre>
 
-  <br/>
-  <br/>
-  <br/>
 </template>
 
 <style scoped>

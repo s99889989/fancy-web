@@ -340,23 +340,23 @@ const language_computed = computed(()=>{
 <template>
   <p class="text-4xl dark:text-white">GUI Select Config</p>
 
-  <p class="text-3xl text-red-500 mt-5">{{ unrealCorePluginLanguage.data.gui_config.attributes.head}}</p>
+  <p class="text-3xl text-red-500 mt-5">{{ languageControl.data.attributes.head}}</p>
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 
       <tr>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">{{ unrealCorePluginLanguage.data.gui_config.attributes.attribute}}</p>
+          <p class="text-base dark:text-white">{{ languageControl.data.attributes.attribute}}</p>
         </th>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">{{ unrealCorePluginLanguage.data.gui_config.attributes.description}}</p>
+          <p class="text-base dark:text-white">{{ languageControl.data.attributes.description}}</p>
         </th>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">{{ unrealCorePluginLanguage.data.gui_config.attributes.example}}</p>
+          <p class="text-base dark:text-white">{{ languageControl.data.attributes.example}}</p>
         </th>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">{{ unrealCorePluginLanguage.data.gui_config.attributes.default}}</p>
+          <p class="text-base dark:text-white">{{ languageControl.data.attributes.default}}</p>
         </th>
       </tr>
 
@@ -397,7 +397,7 @@ const language_computed = computed(()=>{
     </table>
   </div>
 
-  <p class="text-3xl text-red-500 mt-5">範例Examples</p>
+  <p class="text-3xl text-red-500 mt-5">{{languageControl.data.attributes.example}}</p>
   <pre class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <code class="dark:text-white">
   SelectExample:

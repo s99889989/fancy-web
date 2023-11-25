@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import {useUnrealCoreModPages} from "~/stores/mods/unreal_core/useUnrealCoreModPages";
-const unrealCoreModPages = useUnrealCoreModPages();
+
+import {useUnrealCorePluginPages} from "~/stores/plugins/unreal_core/useUnrealCorePluginPages";
+const unrealCorePluginPages = useUnrealCorePluginPages();
 
 
 import UnrealCoreSidebar from "~/pages/plugins/unreal_core/UnrealCoreSidebar.vue";
@@ -26,16 +27,15 @@ import UCP_Config_GUI_Range from "~/pages/plugins/unreal_core/pages/config/modul
 import UCP_Config_GUI_Select from "~/pages/plugins/unreal_core/pages/config/module/UCP_Config_GUI_Select.vue";
 import UCP_Config_GUI_Slot from "~/pages/plugins/unreal_core/pages/config/module/UCP_Config_GUI_Slot.vue";
 import UCP_Config_GUI_Text from "~/pages/plugins/unreal_core/pages/config/module/UCP_Config_GUI_Text.vue";
-import UCP_Config_HUD_Text from "~/pages/plugins/unreal_core/pages/config/hud/UCP_Config_HUD_Text.vue";
-import UCP_Config_HUD_Image from "~/pages/plugins/unreal_core/pages/config/hud/UCP_Config_HUD_Image.vue";
-import UCP_Config_HUD_Item from "~/pages/plugins/unreal_core/pages/config/hud/UCP_Config_HUD_Item.vue";
+
 
 import UCP_Placeholder_Display from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_Display.vue";
 import UCP_Placeholder_Entity from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_Entity.vue";
 import UCP_Placeholder_Player from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_Player.vue";
 import UCP_Placeholder_Resource from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_Resource.vue";
 import UCP_Placeholder_System from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_System.vue";
-import UCP_Placeholder_Music from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_Music.vue";
+import UCP_Placeholder_Sound from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_Sound.vue";
+
 
 const currentPath = ref(0)
 
@@ -44,7 +44,7 @@ const setView = (data: integer) => {
 }
 
 const currentView = computed(() => {
-  switch (unrealCoreModPages.pageName) {
+  switch (unrealCorePluginPages.pageName) {
     case 'UnrealCoreIntroduce':
       return UnrealCoreIntroduce;
     case 'UnrealCoreCommand':
@@ -59,8 +59,8 @@ const currentView = computed(() => {
       return UCP_Placeholder_Resource;
     case 'UCP_Placeholder_System':
       return UCP_Placeholder_System;
-    case 'UCP_Placeholder_Music':
-      return UCP_Placeholder_Music;
+    case 'UCP_Placeholder_Sound':
+      return UCP_Placeholder_Sound;
     case 'UCP_Config_Tooltip':
       return UCP_Config_Tooltip;
     case 'UCP_Config_GUI':
@@ -91,12 +91,6 @@ const currentView = computed(() => {
       return UCP_Config_GUI_Slot;
     case 'UCP_Config_GUI_Text':
       return UCP_Config_GUI_Text;
-    case 'UCP_Config_HUD_Text':
-      return UCP_Config_HUD_Text;
-    case 'UCP_Config_HUD_Image':
-      return UCP_Config_HUD_Image;
-    case 'UCP_Config_HUD_Item':
-      return UCP_Config_HUD_Item;
     case 'UnrealCoreDownLoad':
       return UnrealCoreDownLoad;
     case 'UnrealCoreAPI':
@@ -109,7 +103,7 @@ const currentView = computed(() => {
 </script>
 
 <template>
-  <UnrealCoreSidebar @update="setView" />
+  <UnrealCoreSidebar />
   <div class="dark:bg-dark p-4 sm:ml-64 container-top">
 
     <component :is="currentView" />

@@ -6,7 +6,7 @@ const languageControl = useLanguageControl()
 
 const language_computed = computed(()=>{
   let language = {
-    title: 'System Placeholder',
+    title: 'Sound Placeholder',
     attribute:{
       text: {
         attribute: '',
@@ -19,7 +19,7 @@ const language_computed = computed(()=>{
   }
   if(languageControl.data.language === 'chinese_traditional'){
     language = {
-      title: '系統 佔位符',
+      title: '聲音 佔位符',
       attribute:{
         text: {
           attribute: '',
