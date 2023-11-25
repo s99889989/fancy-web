@@ -8,57 +8,87 @@ const language_computed = computed(()=>{
   let language = {
     title: 'Display Placeholder',
     attribute:{
-      window: {
-        attribute: 'Window',
-        description: [''],
+      window_width: {
+        attribute: '{display_window_w}',
+        description: ['Window width.'],
         example: '',
         default: '',
       },
-      mouse: {
-        attribute: 'Mouse',
-        description: [''],
+      window_height: {
+        attribute: '{display_window_h}',
+        description: ['Window height.'],
         example: '',
         default: '',
       },
-      xs: {
-        attribute: '',
-        description: [''],
+      mouse_x: {
+        attribute: '{display_mouse_x}',
+        description: ['Mouse X position.'],
         example: '',
         default: '',
       },
-      xe: {
-        attribute: '',
-        description: [''],
+      mouse_y: {
+        attribute: '{display_mouse_y}',
+        description: ['Mouse Y position.'],
         example: '',
         default: '',
       },
-      ys: {
-        attribute: '',
-        description: [''],
+      module_x: {
+        attribute: '{display_模塊名稱_x}',
+        description: ['The starting X position of the module.'],
         example: '',
         default: '',
       },
-      ye: {
-        attribute: '',
-        description: [''],
+      module_xs: {
+        attribute: '{display_模塊名稱_xs}',
+        description: ['The starting X position of the module.'],
         example: '',
         default: '',
       },
-      width: {
-        attribute: '',
-        description: [''],
+      module_xe: {
+        attribute: '{display_模塊名稱_xe}',
+        description: ['The end X position of the module.'],
         example: '',
         default: '',
       },
-      height: {
-        attribute: '',
-        description: [''],
+      module_y: {
+        attribute: '{display_模塊名稱_y}',
+        description: ['The starting Y position of the module.'],
         example: '',
         default: '',
       },
-      value: {
-        attribute: '',
-        description: [''],
+      module_ys: {
+        attribute: '{display_模塊名稱_ys}',
+        description: ['The starting Y position of the module.'],
+        example: '',
+        default: '',
+      },
+      module_ye: {
+        attribute: '{display_模塊名稱_ye}',
+        description: ['The end Y position of the module.'],
+        example: '',
+        default: '',
+      },
+      module_width: {
+        attribute: '{display_模塊名稱_width}',
+        description: ['The width of the module.', 'The entity module is not accurate because the', 'calculation method has not been thought of at present.'],
+        example: '',
+        default: '',
+      },
+      module_height: {
+        attribute: '{display_模塊名稱_height}',
+        description: ['The height of the module.', 'The entity module is not accurate because the', 'calculation method has not been thought of at present.'],
+        example: '',
+        default: '',
+      },
+      module_value: {
+        attribute: '{display_模塊名稱_value}',
+        description: [
+          'The value of the module.',
+          'Like the value entered by the input module.',
+          'Multi-line values ​​will be followed by the number of rows they represent.',
+          'For example {display_InputExample_value_1} represents the first row.',
+          'For example {display_InputExample_value_2} represents the second row.',
+        ],
         example: '',
         default: '',
       },
@@ -200,7 +230,55 @@ const language_computed = computed(()=>{
   <p class="text-3xl text-red-500 mt-5">{{ languageControl.data.attributes.example}}</p>
   <pre class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
    <code class="dark:text-white">
-</code>
+Gui:
+  Type: 'Inventory'
+  Position: 5
+  X: 0
+  Y: 0
+  Width: 320
+  Height: 200
+  Tooltip: ''
+  Transparent: 255
+  Color: 'ffffff'
+  Image: 'gui/background/background_2.png'
+
+ContentList:
+
+  InputExample:
+    Type: Input
+    Position: 4
+    X: 30
+    Y: -10
+    Width: 80
+    Height: 18
+    Image: 'gui/input/input_3.png'
+    Color: 'FFFFFF'
+    Transparent: 200
+    Title: '名稱: '
+    TitleColor: '577700'
+    TitleSize: 1
+    Prompt: '請輸入名稱'
+    PromptColor: 'daa520'
+    PromptSize: 1
+    Text: ''
+    TextColor: '00CACA'
+    TextSize: 1
+    TextMaxLength: 50
+    InputStart: 3
+    InputEnd: 0
+    CanInput: true
+
+  TextExample:
+    Type: 'Text'
+    Position: 1
+    X: 5
+    Y: 40
+    Text:
+    -  '輸入內容: {display_InputExample_value}'
+    -  'Enter content: {display_InputExample_value}'
+    TextSize: '1.5'
+    Space: 18
+    TextColor: '6821a9'</code>
   </pre>
 
 </template>

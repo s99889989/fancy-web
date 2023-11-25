@@ -8,8 +8,38 @@ const language_computed = computed(()=>{
   let language = {
     title: 'System Placeholder',
     attribute:{
-      text: {
-        attribute: '',
+      memory_use: {
+        attribute: '{system_memory_use}',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      memory_max: {
+        attribute: '{system_memory_max}',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      memory_use_percentage: {
+        attribute: '{system_memory_use%}',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      memory_off_use: {
+        attribute: '{system_memory_off_use}',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      memory_off_max: {
+        attribute: '{system_memory_off_max}',
+        description: [''],
+        example: '',
+        default: '',
+      },
+      memory_off_percentage: {
+        attribute: '{system_memory_off_use%}',
         description: [''],
         example: '',
         default: '',
@@ -21,8 +51,38 @@ const language_computed = computed(()=>{
     language = {
       title: '系統 佔位符',
       attribute:{
-        text: {
-          attribute: '',
+        memory_use: {
+          attribute: '{system_memory_use}',
+          description: [''],
+          example: '',
+          default: '',
+        },
+        memory_max: {
+          attribute: '{system_memory_max}',
+          description: [''],
+          example: '',
+          default: '',
+        },
+        memory_use_percentage: {
+          attribute: '{system_memory_use%}',
+          description: [''],
+          example: '',
+          default: '',
+        },
+        memory_off_use: {
+          attribute: '{system_memory_off_use}',
+          description: [''],
+          example: '',
+          default: '',
+        },
+        memory_off_max: {
+          attribute: '{system_memory_off_max}',
+          description: [''],
+          example: '',
+          default: '',
+        },
+        memory_off_percentage: {
+          attribute: '{system_memory_off_use%}',
           description: [''],
           example: '',
           default: '',

@@ -68,7 +68,7 @@ onMounted(()=>{
               <a href="#" @click="setLanguage('chinese_traditional')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
                 <div class="inline-flex items-center">
                   <img class="h-3.5 w-3.5 rounded-full mr-2" src="/chinese_traditional.png" alt="">
-                  中文 (台灣)
+                  中文 (繁體)
                 </div>
               </a>
             </li>

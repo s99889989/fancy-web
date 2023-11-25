@@ -61,7 +61,7 @@ export const useLanguageControl = defineStore('useLanguageControl', () => {
       data.attributes = english.attributes;
     }
     if(set_language === 'chinese_traditional'){
-      data.display = "中文 (台灣)";
+      data.display = "中文 (繁體)";
       data.navbar = chinese_traditional.navbar;
       data.attributes = chinese_traditional.attributes;
     }
