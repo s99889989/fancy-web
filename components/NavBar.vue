@@ -203,14 +203,5 @@ onMounted(()=>{
 </template>
 
 <style scoped>
-.language-style{
-  position: absolute;
-  inset: 0 auto auto 0; margin: 0;
-  transform: translate(494px, 66px);
-}
-@media (min-width: 768px) {
-  position: absolute;
-  inset: 0 auto auto 0; margin: 0;
-  transform: translate(494px, 66px);
-}
+
 </style>

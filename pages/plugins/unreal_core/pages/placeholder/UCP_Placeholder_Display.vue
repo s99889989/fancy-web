@@ -92,6 +92,47 @@ const language_computed = computed(()=>{
         example: '',
         default: '',
       },
+      hover_item_name: {
+        attribute: '{display_hover_item_name}',
+        description: ['The name of the item currently selected to view.'],
+        example: '',
+        default: '',
+      },
+      hover_item_name_width: {
+        attribute: '{display_hover_item_name_width}',
+        description: ['The name width of the item currently selected to be viewed.'],
+        example: '',
+        default: '',
+      },
+      hover_item_lore: {
+        attribute: '{display_hover_item_lore}',
+        description: [
+          'The Lore currently selected to view the item.',
+          '{display_hover_item_lore_1}Represents the first line of Lore.',
+          '{display_hover_item_lore_2}Represents the second line of Lore.',
+          'And so on.',
+        ],
+        example: '',
+        default: '',
+      },
+      hover_item_lore_size: {
+        attribute: '{display_hover_item_lore_size}',
+        description: ['The number of Lore lines currently selected to view the item.'],
+        example: '',
+        default: '',
+      },
+      hover_item_lore_width: {
+        attribute: '{display_hover_item_lore_width}',
+        description: ['Currently selected to view the Lore width of the item.'],
+        example: '',
+        default: '',
+      },
+      hover_item_nbt: {
+        attribute: '{display_hover_item_nbt}',
+        description: ['Currently selected to view the NBT of the item.'],
+        example: '',
+        default: '',
+      },
     }
 
   }
@@ -180,6 +221,47 @@ const language_computed = computed(()=>{
             '例如{display_InputExample_value_1}代表第一行。',
             '例如{display_InputExample_value_2}代表第二行。',
           ],
+          example: '',
+          default: '',
+        },
+        hover_item_name: {
+          attribute: '{display_hover_item_name}',
+          description: ['目前選擇查看物品的名稱。'],
+          example: '',
+          default: '',
+        },
+        hover_item_name_width: {
+          attribute: '{display_hover_item_name_width}',
+          description: ['目前選擇查看物品的名稱寬度。'],
+          example: '',
+          default: '',
+        },
+        hover_item_lore: {
+          attribute: '{display_hover_item_lore}',
+          description: [
+            '目前選擇查看物品的Lore。',
+            '{display_hover_item_lore_1}代表第一行Lore。',
+            '{display_hover_item_lore_2}代表第二行Lore。',
+            '以此類推。',
+          ],
+          example: '',
+          default: '',
+        },
+        hover_item_lore_size: {
+          attribute: '{display_hover_item_lore_size}',
+          description: ['目前選擇查看物品的Lore行數。'],
+          example: '',
+          default: '',
+        },
+        hover_item_lore_width: {
+          attribute: '{display_hover_item_lore_width}',
+          description: ['目前選擇查看物品的Lore寬度。'],
+          example: '',
+          default: '',
+        },
+        hover_item_nbt: {
+          attribute: '{display_hover_item_nbt}',
+          description: ['目前選擇查看物品的NBT。'],
           example: '',
           default: '',
         },

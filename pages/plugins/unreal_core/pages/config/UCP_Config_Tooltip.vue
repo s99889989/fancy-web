@@ -1,11 +1,56 @@
 <script setup lang="ts">
 import {useLanguageControl} from "~/stores/useLanguageControl";
-
+import {useUnrealCorePluginLanguage} from "~/stores/plugins/unreal_core/useUnrealCorePluginLanguage";
+const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
+
+
+const language_computed = computed(()=>{
+  let language = {
+    title: 'Display Placeholder',
+    attribute:{
+      min_height: {
+        attribute: 'MinHeight',
+        description: ['Minimum height.'],
+        example: '',
+        default: '',
+      },
+      moduleData: {
+        attribute: 'ContentList.&lt;name>.',
+        description: ['List of submodules.'],
+        example: '',
+        default: '',
+      },
+    }
+
+  }
+  if(languageControl.data.language === 'chinese_traditional'){
+    language = {
+      title: '顯示 佔位符',
+      attribute:{
+        min_height: {
+          attribute: 'MinHeight',
+          description: ['最低高度。'],
+          example: '',
+          default: '',
+        },
+        moduleData: {
+          attribute: "ContentList.&lt;name>.",
+          description: ['子模塊列表。'],
+          example: '',
+          default: '',
+        },
+      }
+    }
+  }
+  return language;
+})
+
 </script>
 
 <template>
   <p class="text-4xl dark:text-white">Tooltip Config</p>
+
 
   <p class="text-3xl text-red-500 mt-5">{{ languageControl.data.attributes.head}}</p>
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -19,569 +64,59 @@ const languageControl = useLanguageControl()
         <th scope="col" class="px-6 py-3">
           <p class="text-base dark:text-white">{{ languageControl.data.attributes.description}}</p>
         </th>
-      </tr>
-
-      </thead>
-      <tbody>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{window_w}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">視窗的寬度。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{window_h}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">視窗的高度。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{mouse_x}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">滑鼠在視窗上的X位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{mouse_y}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">滑鼠在視窗上的Y位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{tooltip_w}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">Tooltip的寬。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{tooltip_h}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">Tooltip的高。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{background_xs}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">背景的X起始位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{background_xe}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">背景的X結束位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{background_ys}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">背景的Y起始位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{background_ye}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">背景的Y結束位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{background_w}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">背景的寬度。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{background_h}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">背景的高度。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white"></p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{???_xs}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物件的X起始位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{???_xe}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物件的X結束位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{???_ys}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物件的Y起始位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{???_ye}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物件的Y結束位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{???_w}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物件的寬度。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">{???_h}</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物件的高度。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      </tbody>
-    </table>
-  </div>
-
-  <p class="text-3xl text-red-500 mt-5">屬性Attributes</p>
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-
-      <tr>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">屬性名稱</p>
-          <p class="text-base dark:text-white">Attribute</p>
+          <p class="text-base dark:text-white">{{ languageControl.data.attributes.example}}</p>
         </th>
         <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">描述</p>
-          <p class="text-base dark:text-white">Description</p>
-        </th>
-        <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">範例</p>
-          <p class="text-base dark:text-white">Example</p>
-        </th>
-        <th scope="col" class="px-6 py-3">
-          <p class="text-base dark:text-white">預設值</p>
-          <p class="text-base dark:text-white">Default</p>
+          <p class="text-base dark:text-white">{{ languageControl.data.attributes.default}}</p>
         </th>
       </tr>
 
       </thead>
       <tbody>
 
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <tr v-for="(module) in unrealCorePluginLanguage.data.gui_config.common" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">BackgroundColor</p>
+          <p class="text-base dark:text-white">{{module.attribute}}</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white">背景顏色(沒有設置圖片才有用)</p>
-          <p class="text-base dark:text-white"></p>
+          <p v-for="(descr) in module.description" class="text-base dark:text-white">{{descr}}</p>
         </td>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white">3C3C3C</p>
+          <p class="text-base dark:text-white">{{module.example}}</p>
         </td>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white">000000</p>
+          <p class="text-base dark:text-white">{{module.default}}</p>
         </td>
       </tr>
 
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <tr v-for="(module) in unrealCorePluginLanguage.data.gui_config.common2" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">BackgroundTransparent</p>
+          <p class="text-base dark:text-white">{{module.attribute}}</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white">背景透明度(沒有設置圖片才有用)</p>
-          <p class="text-base dark:text-white"></p>
+          <p v-for="(descr) in module.description" class="text-base dark:text-white">{{descr}}</p>
         </td>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white">255</p>
+          <p class="text-base dark:text-white">{{module.example}}</p>
         </td>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white">255</p>
+          <p class="text-base dark:text-white">{{module.default}}</p>
         </td>
       </tr>
 
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <tr v-for="(module) in language_computed.attribute" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">BackgroundImage</p>
+          <p class="text-base dark:text-white">{{module.attribute}}</p>
         </th>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white">背景圖片</p>
-          <p class="text-base dark:text-white"></p>
+          <p v-for="(descr) in module.description" class="text-base dark:text-white">{{descr}}</p>
         </td>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white">tooltip/background.png</p>
+          <p class="text-base dark:text-white">{{module.example}}</p>
         </td>
         <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">Width</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">GUI寬度，設-1為根據圖片尺寸。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">100</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">Height</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">GUI高度，設-1為根據圖片尺寸。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">10</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">MinHeight</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">Tooltip最低高度。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">80</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">X</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">X偏移。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">{mouse_x}+10</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">Y</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">Y偏移。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">{mouse_y}-{tooltip_h}-40</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">ItemModel.Enable</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">是否顯示物品模型。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">ItemModel.X</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物品模型的X位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">ItemModel.Y</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物品模型的Y位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">ItemModel.Size</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物品模型的大小。(預設物品大小為16X16，設的值都會乘與16)</p>
-          <p class="text-base dark:text-white">(如果設成2就會變成32X32，0.5就會變成8X8)</p>
-          <p class="text-base dark:text-white"></p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">1</p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">ItemName.X</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物品名稱的X位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">ItemName.Y</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物品名稱的Y位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">ItemName.Size</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物品名稱的大小。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">ItemName.Text</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物品名稱的內容。({item_name}代表本身內容)</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">Lore.&lt;count>.X</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">Lore的X位置。</p>
-          <p class="text-base dark:text-white">(&lt;count>的值可以隨意取，但不能重複，第一個就代表第一行)</p>
-          <p class="text-base dark:text-white"></p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">Lore.&lt;count>.Y</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">Lore的Y位置。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">Lore.&lt;count>.Size</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">Lore的大小。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">Lore.&lt;count>.Text</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">Lore的內容。({lore}代表本身內容)</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-      </tr>
-
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <p class="text-base dark:text-white">ContentList.&lt;name>.</p>
-        </th>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white">物件，支持Image和Text。</p>
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
-        </td>
-        <td class="px-6 py-4">
-          <p class="text-base dark:text-white"></p>
+          <p class="text-base dark:text-white">{{module.default}}</p>
         </td>
       </tr>
 
