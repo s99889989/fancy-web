@@ -4,6 +4,8 @@ import {useUnrealCorePluginLanguage} from "~/stores/plugins/unreal_core/useUnrea
 const languageControl = useLanguageControl()
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 
+
+//打開語言列表
 const show_language_menu = (event) => {
   const languageDropdown = document.getElementById('language-dropdown-menu');
 
@@ -20,11 +22,8 @@ const show_language_menu = (event) => {
     languageDropdown.classList.add('block')
     languageDropdown.classList.remove('hidden')
   }
-
-
-
 }
-
+//設置語言
 const setLanguage = (set_language) => {
   const languageDropdown = document.getElementById('language-dropdown-menu');
   languageDropdown.classList.remove('block')
@@ -33,6 +32,49 @@ const setLanguage = (set_language) => {
 
   unrealCorePluginLanguage.setLanguage(set_language)
 }
+const show_fancy_series_menu = (event) => {
+  // const double_dropdown_fancy_series = document.getElementById('double_dropdown_fancy_series');
+  //
+  // const dropdown_plugin = document.getElementById('dropdown_plugin');
+  //
+  // const transformValue = dropdown_plugin.style.transform;
+  // const match = transformValue.match(/translate\(([^,]+),\s*([^)]+)\)/);
+  // if (match) {
+  //   const translateX = parseFloat(match[1]); // X 軸的 translate 值
+  //   const translateY = parseFloat(match[2]); // Y 軸的 translate 值
+  //   console.log(`Translate X: ${translateX}, Y: ${translateY}`);
+  //
+  //   double_dropdown_fancy_series.style.transform = `translate(${translateX}px, ${translateY}px)`
+  // }
+  //
+  // console.log(dropdown_plugin.style.transform)
+  //
+  // // const rect = targetElement.getBoundingClientRect();
+  // //
+  // //  double_dropdown_fancy_series.style.transform = `translate(${rect.right}px, ${rect.bottom}px)`
+  //
+  //
+  // if(double_dropdown_fancy_series.classList.contains('hidden')){
+  //   double_dropdown_fancy_series.classList.add('block')
+  //   double_dropdown_fancy_series.classList.remove('hidden')
+  // }
+}
+
+//關閉選項
+const hide_menu = () => {
+  const dropdown_plugin = document.getElementById('dropdown_plugin');
+  dropdown_plugin.classList.add('hidden')
+
+  const dropdown_mods = document.getElementById('dropdown_mods');
+  dropdown_mods.classList.add('hidden')
+
+  const double_dropdown_fancy_series = document.getElementById('double_dropdown_fancy_series');
+  double_dropdown_fancy_series.classList.add('hidden')
+
+
+
+}
+
 onMounted(()=>{
   languageControl.setLocalLanguage();
   unrealCorePluginLanguage.setLanguage(languageControl.data.language)
@@ -90,69 +132,69 @@ onMounted(()=>{
         <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
 
           <li>
-            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar1" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+            <button id="dropdown_plugin_button" data-dropdown-toggle="dropdown_plugin" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
               {{languageControl.data.navbar.plugins}}<svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
             </svg></button>
 
-            <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+            <div id="dropdown_plugin" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
               <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                 <li>
-                  <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/plugins/unreal_core/UnrealCoreIndex">UnrealCore</NuxtLink>
+                  <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/plugins/unreal_core/UnrealCoreIndex">UnrealCore</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/plugins/fancy_rpg/FancyRPGIndex">FancyRPG</NuxtLink>
+                  <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/plugins/fancy_rpg/FancyRPGIndex">FancyRPG</NuxtLink>
                 </li>
 
                 <li>
-                  <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/plugins/custom_display/CustomDisplayIndex">CustomDisplay</NuxtLink>
+                  <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/plugins/custom_display/CustomDisplayIndex">CustomDisplay</NuxtLink>
                 </li>
 
                 <li aria-labelledby="dropdownNavbarLink">
-                  <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  <button @mouseenter="show_fancy_series_menu" id="double_dropdown_fancy_series_button" data-dropdown-toggle="double_dropdown_fancy_series" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                     FancySeries<svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                   </svg></button>
-                  <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                  <div style="position: absolute; inset: 0 auto auto 0; margin: 0; transform: translate(494px, 66px);" id="double_dropdown_fancy_series" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_core/FancyCoreIndex">FancyCore</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_core/FancyCoreIndex">FancyCore</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_pack/FancyPackIndex">FancyPack</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_pack/FancyPackIndex">FancyPack</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_chat/FancyChatIndex">FancyChat</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_chat/FancyChatIndex">FancyChat</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_team/FancyTeamIndex">FancyTeam</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_team/FancyTeamIndex">FancyTeam</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_mobs/FancyMobsIndex">FancyMobs</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_mobs/FancyMobsIndex">FancyMobs</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_drop/FancyDropIndex">FancyDrop</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_drop/FancyDropIndex">FancyDrop</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_action/FancyActionIndex">FancyAction</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_action/FancyActionIndex">FancyAction</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_item/FancyItemsIndex">FancyItem</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_item/FancyItemsIndex">FancyItem</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_equipment/FancyEquipmentIndex">FancyEquipment</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_equipment/FancyEquipmentIndex">FancyEquipment</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_attributes/FancyAttributesIndex">FancyAttributes</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_attributes/FancyAttributesIndex">FancyAttributes</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_gui/FancyGUIIndex">FancyGUI</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_gui/FancyGUIIndex">FancyGUI</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_classes/FancyClassesIndex">FancyClasses</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_classes/FancyClassesIndex">FancyClasses</NuxtLink>
                       </li>
                       <li>
-                        <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_hud/FancyHUDIndex">FancyHUD</NuxtLink>
+                        <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white" to="/plugins/fancy_series/fancy_hud/FancyHUDIndex">FancyHUD</NuxtLink>
                       </li>
                     </ul>
                   </div>
@@ -164,24 +206,24 @@ onMounted(()=>{
           </li>
 
           <li>
-            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+            <button id="dropdown_mods_button" data-dropdown-toggle="dropdown_mods" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
               {{languageControl.data.navbar.mods}}<svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
             </svg></button>
 
-            <div id="dropdownNavbar2" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+            <div id="dropdown_mods" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
               <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                 <li>
-                  <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/mods/unreal_core/UnrealCoreIndex">UnrealCore</NuxtLink>
+                  <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/mods/unreal_core/UnrealCoreIndex">UnrealCore</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/mods/fancy_discord/FancyDiscordIndex">FancyDiscord</NuxtLink>
+                  <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/mods/fancy_discord/FancyDiscordIndex">FancyDiscord</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/mods/fancy_clear/FancyClearIndex">FancyClear</NuxtLink>
+                  <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/mods/fancy_clear/FancyClearIndex">FancyClear</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/mods/fancy_client/FancyClientIndex">FancyClient</NuxtLink>
+                  <NuxtLink @click="hide_menu()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" to="/mods/fancy_client/FancyClientIndex">FancyClient</NuxtLink>
                 </li>
               </ul>
             </div>
