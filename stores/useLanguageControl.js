@@ -51,6 +51,21 @@ export const useLanguageControl = defineStore('useLanguageControl', () => {
     },
   })
 
+  const chinese_simplified = reactive({
+    navbar:{
+      home: '首页',
+      plugins: '插件',
+      mods: '模组',
+    },
+    attributes:{
+      head: '属性',
+      attribute: '属性名称',
+      description: '描述',
+      example: '范例',
+      default: '默认值',
+    },
+  })
+
   //改變語言
   const setLanguage = (set_language) => {
     data.language = set_language;
@@ -64,6 +79,11 @@ export const useLanguageControl = defineStore('useLanguageControl', () => {
       data.display = "中文 (繁體)";
       data.navbar = chinese_traditional.navbar;
       data.attributes = chinese_traditional.attributes;
+    }
+    if(set_language === 'chinese_simplified'){
+      data.display = "中文 (簡體)";
+      data.navbar = chinese_simplified.navbar;
+      data.attributes = chinese_simplified.attributes;
     }
   }
   const setLocalLanguage = () => {

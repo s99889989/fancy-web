@@ -4,88 +4,93 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
-    width: {attribute: '',
-      description: [''],
-      example: '', default: '',
+const language_computed = computed(()=>{
+  let language =  {
+    width: {
+      attribute: 'Width',
+      description: ['The width of the module.'],
+      example: '20',
+      default: '0',
     },
-    height: {attribute: '',
-      description: [''],
-      example: '', default: '',
+    height: {
+      attribute: 'Height',
+      description: ['The height of the module.'],
+      example: '86',
+      default: '0',
     },
     radius: {
-      attribute: '',
-      description: [''],
-      example: '',
+      attribute: 'Radius',
+      description: ['Background rounded corners.'],
+      example: '5',
+      default: '0',
+    },
+    image: {
+      attribute: 'Image',
+      description: ['The image to use for the background.', 'If not set, the set color will be displayed.'],
+      example: 'gui/background/background_2.png',
       default: '',
     },
-    image: {attribute: '',
-      description: [''],
-      example: '', default: '',
-    },
-    color: {attribute: '',
-      description: [''],
-      example: '', default: '',
+    color: {
+      attribute: 'Color',
+      description: ['The background color will affect the color of the Image after setting.'],
+      example: '',
+      default: '',
     },
     targetWidth: {
-      attribute: '',
-      description: [''],
+      attribute: 'TargetWidth',
+      description: ['Drag the block width.'],
       example: '',
-      default: '',
+      default: '10',
     },
     targetHeight: {
-      attribute: '',
-      description: [''],
+      attribute: 'TargetHeight',
+      description: ['Drag the block high.'],
       example: '',
-      default: '',
+      default: '10',
     },
     targetImage: {
-      attribute: '',
-      description: [''],
-      example: '',
+      attribute: 'TargetImage',
+      description: ['Drag blocks to use the map.'],
+      example: 'gui/button/button2_on.png',
       default: '',
     },
     targetColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TargetColor',
+      description: ['Drag the block color.'],
+      example: '0xFFFFFF',
+      default: '0x000000',
     },
     defaultOption: {
-      attribute: '',
-      description: [''],
+      attribute: 'DefaultOption',
+      description: ['Preset selected options.'],
       example: '',
       default: '',
     },
     showOptionName: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'ShowOptionName',
+      description: ['Whether to display option names.'],
+      example: 'true',
+      default: 'false',
     },
     optionList: {
-      attribute: '',
-      description: [''],
+      attribute: 'OptionList',
+      description: ['List of options.'],
       example: '',
       default: '',
     },
   }
-})
-const language_computed = computed(()=>{
-
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
+    language = {
       width: {
         attribute: 'Width',
-        description: ['The width of the module.'],
-        example: '20',
+        description: ['模塊的寬度。'],
+        example: '75',
         default: '0',
       },
       height: {
         attribute: 'Height',
-        description: ['The height of the module.'],
-        example: '86',
+        description: ['模塊的高度。'],
+        example: '60',
         default: '0',
       },
       radius: {
@@ -96,15 +101,15 @@ const language_computed = computed(()=>{
       },
       image: {
         attribute: 'Image',
-        description: ['The image to use for the background.', 'If not set, the set color will be displayed.'],
+        description: ['背景要使用的圖。', '如果沒有設置，就會顯示設置的顏色。'],
         example: 'gui/background/background_2.png',
         default: '',
       },
       color: {
         attribute: 'Color',
-        description: ['The background color will affect the color of the Image after setting.'],
-        example: '',
-        default: '',
+        description: ['背景顏色，設定後會影響Image的顏色。'],
+        example: 'C6AE98',
+        default: '0xFFFFFF',
       },
       targetWidth: {
         attribute: 'TargetWidth',
@@ -149,83 +154,84 @@ const language_computed = computed(()=>{
         default: '',
       },
     }
-  }else {
-    data.language =  {
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
       width: {
         attribute: 'Width',
-        description: ['模塊的寬度。'],
+        description: ['模块的宽度。'],
         example: '75',
         default: '0',
       },
       height: {
         attribute: 'Height',
-        description: ['模塊的高度。'],
+        description: ['模块的高度。'],
         example: '60',
         default: '0',
       },
       radius: {
         attribute: 'Radius',
-        description: ['Background rounded corners.'],
+        description: ['背景圆角。'],
         example: '5',
         default: '0',
       },
       image: {
         attribute: 'Image',
-        description: ['背景要使用的圖。', '如果沒有設置，就會顯示設置的顏色。'],
+        description: ['背景要使用的图。', '如果没有设置，就会显示设置的颜色。'],
         example: 'gui/background/background_2.png',
         default: '',
       },
       color: {
         attribute: 'Color',
-        description: ['背景顏色，設定後會影響Image的顏色。'],
+        description: ['背景颜色，设定后会影响Image的颜色。'],
         example: 'C6AE98',
         default: '0xFFFFFF',
       },
       targetWidth: {
         attribute: 'TargetWidth',
-        description: ['Drag the block width.'],
+        description: ['拖动区块宽。'],
         example: '',
         default: '10',
       },
       targetHeight: {
         attribute: 'TargetHeight',
-        description: ['Drag the block high.'],
+        description: ['拖动区块高。'],
         example: '',
         default: '10',
       },
       targetImage: {
         attribute: 'TargetImage',
-        description: ['Drag blocks to use the map.'],
+        description: ['拖动区块使用图。'],
         example: 'gui/button/button2_on.png',
         default: '',
       },
       targetColor: {
         attribute: 'TargetColor',
-        description: ['Drag the block color.'],
+        description: ['拖动区块颜色。'],
         example: '0xFFFFFF',
         default: '0x000000',
       },
       defaultOption: {
         attribute: 'DefaultOption',
-        description: ['Preset selected options.'],
+        description: ['预设选择的选项。'],
         example: '',
         default: '',
       },
       showOptionName: {
         attribute: 'ShowOptionName',
-        description: ['Whether to display option names.'],
+        description: ['是否显示选项名称。'],
         example: 'true',
         default: 'false',
       },
       optionList: {
         attribute: 'OptionList',
-        description: ['List of options.'],
+        description: ['选项列表。'],
         example: '',
         default: '',
       },
     }
   }
-  return data.language;
+  return language;
 })
 </script>
 

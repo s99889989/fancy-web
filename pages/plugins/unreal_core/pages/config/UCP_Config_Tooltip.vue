@@ -43,6 +43,25 @@ const language_computed = computed(()=>{
       }
     }
   }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
+      title: '顯示 佔位符',
+      attribute:{
+        min_height: {
+          attribute: 'MinHeight',
+          description: ['最低高度。'],
+          example: '',
+          default: '',
+        },
+        moduleData: {
+          attribute: "ContentList.&lt;name>.",
+          description: ['子模块列表。'],
+          example: '',
+          default: '',
+        },
+      }
+    }
+  }
   return language;
 })
 
@@ -130,54 +149,74 @@ const language_computed = computed(()=>{
   <pre class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <code class="dark:text-white">
 Tooltip:
-  BackgroundColor: '3C3C3C'
-  BackgroundTransparent: 255
-  BackgroundImage: 'tooltip/background.png'
-  Width: 100
-  Height: '{tooltip_h}'
-  MinHeight: '80'
-  X: '{mouse_x}+10'
-  Y: '{mouse_y}-{tooltip_h}-40'
-  ItemModel:
-    Enable: true
-    X: '{background_xs}+7'
-    Y: '{background_ys}+7'
-    Size: 1
-  ItemName:
-    X: '{background_xs}+{background_w}/2-{item_name_w}/2'
-    Y: '{background_ys}+5'
-    Size: 1
-    Text: '{item_name}'
-  Lore:
-    1:
-      X: '{background_xs}+27'
-      Y: '{background_ys}+20'
-      Size: 0.7
-      Text: '{lore}'
-    2:
-      X: '{background_xs}+63'
-      Y: '{background_ys}+20'
-      Size: 0.7
-      Text: '{lore}'
+  Color: '000000'
+  Transparent: 200
+  Image: ''
+  Width: 130
+  Height: '{display_hover_item_lore_size}*20+10'
+  MinHeight: '85'
+  X: '{display_mouse_xe}+10'
+  Y: '{display_mouse_y}-({display_tooltip_text_h}+40)/2'
 
 ContentList:
-  I1:
+
+  item_background:
     Type: Image
-    Image: 'tooltip/top_1.png'
-    Width: 100
-    Height: 28
-    X: '{background_xs}'
-    Y: '{background_ys}'
-  T1:
-    Type: Text
+    Color: 'c0c0c0'
+    Transparent: 120
+    Width: 34
+    Height: 34
+    X: '{display_tooltip_xs}+7'
+    Y: '{display_tooltip_ys}+15'
+
+  line:
+    Type: Image
+    Color: 'ffffff'
+    Transparent: 255
+    Width: 125
+    Height: 1
+    X: '{display_tooltip_xs}+2'
+    Y: '{display_tooltip_ys}+81'
+
+  ItemModel:
+    Type: Item
+    Item: '{display_hover_item_nbt}'
+    X: '{display_tooltip_xs}+15'
+    Y: '{display_tooltip_ys}+25'
+    ItemSize: 1.5
+    AngleYAdd: 0.01
+
+  ItemName:
+    Type: 'Text'
+    Position: 1
+    X: '{display_tooltip_xs}+{display_tooltip_w}/2-{display_item_name_w}/2'
+    Y: '{display_tooltip_ys}+3'
     Text:
-    - 'Name:'
-    - '&gui_self_name&'
-    TextSize: '2'
+    -  '{display_hover_item_name}'
+    TextSize: '1.5'
     Space: 18
-    TextColor: '#6821a9'
-    X: '{background_xs}+20'
-    Y: '{background_ys}+50'</code>
+    TextColor: '6821a9'
+
+  ItemLore:
+    Type: 'Text'
+    Position: 1
+    X: '{display_tooltip_xs}+50'
+    Y: '{display_tooltip_ys}+15'
+    Text:
+    -  '{display_hover_item_lore_1}'
+    -  '{display_hover_item_lore_2}'
+    -  '{display_hover_item_lore_3}'
+    -  '{display_hover_item_lore_4}'
+    -  '{display_hover_item_lore_5}'
+    -  '{display_hover_item_lore_6}'
+    -  '{display_hover_item_lore_7}'
+    -  '{display_hover_item_lore_8}'
+    -  '{display_hover_item_lore_9}'
+    -  '{display_hover_item_lore_10}'
+    TextSize: 1
+    Space: 10
+    TextColor: '6821a9'
+</code>
   </pre>
 </template>
 

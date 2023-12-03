@@ -265,6 +265,98 @@ export const useUnrealCorePluginLanguage = defineStore('useUnrealCorePluginLangu
         }
     })
 
+    const chinese_simplified = reactive({
+        sidebar:{
+            title: 'UnrealCore插件',
+            introduce: '说明',
+            commands: '指令',
+            tooltip_config: '工具提示设定',
+            gui_config: '介面设定',
+            hud_config: 'HUD设定',
+            module_config: '模块设定',
+            module_config_list: {
+                area_input: '多行输入',
+                button: '按钮',
+                check: '选取框',
+                container: '容器',
+                entity: '实体',
+                image: '图片',
+                input: '输入框',
+                item: '物品',
+                progress: '进度条',
+                range: '范围选择器',
+                select: '选项',
+                slot: '物品拦',
+                text: '文本',
+            },
+            placeholder: '占位符',
+            placeholder_list: {
+                display: '显示',
+                entity: '实体',
+                player: '玩家',
+                resource: '资源',
+                system: '系统',
+                sound: '声音',
+            },
+            download: '下载',
+            api: '开发说明',
+        },
+        gui_config:{
+            common: {
+                position: {
+                    attribute: 'Position',
+                    description: ['相对位置，使用后会以父模块为基础位置。', '(0=不使用,1=左上,2=中上,3=右上,4=左,5=中,6=右,7=左下,8=中下,9=右下)'],
+                    example: '5',
+                    default: '0',
+                },
+                x: {
+                    attribute: 'X',
+                    description: ['模块在画面上的左右位置。'],
+                    example: '30',
+                    default: '0',
+                },
+                y: {
+                    attribute: 'Y',
+                    description: ['模块在画面上的上下位置。'],
+                    example: '25',
+                    default: '0',
+                },
+            },
+            common2: {
+                width: {
+                    attribute: 'Width',
+                    description: ['模块的宽度。'],
+                    example: '75',
+                    default: '0',
+                },
+                height: {
+                    attribute: 'Height',
+                    description: ['模块的高度。'],
+                    example: '60',
+                    default: '0',
+                },
+                image: {
+                    attribute: 'Image',
+                    description: ['背景要使用的图。', '如果没有设置，就会显示设置的颜色。'],
+                    example: 'gui/background/background_2.png',
+                    default: '',
+                },
+                color: {
+                    attribute: 'Color',
+                    description: ['背景颜色，设定后会影响Image的颜色。'],
+                    example: 'C6AE98',
+                    default: '0xFFFFFF',
+                },
+                transparent: {
+                    attribute: 'Transparent',
+                    description: ['背景透明度。(0~255)'],
+                    example: '100',
+                    default: '255',
+                },
+            }
+
+        }
+    })
 
     const getSidebarLanguage = computed(()=>{
         let language_local = localStorage.getItem("language");
@@ -275,7 +367,12 @@ export const useUnrealCorePluginLanguage = defineStore('useUnrealCorePluginLangu
         if(language_local === 'chinese_traditional'){
             data.gui_config = { ...chinese_traditional.gui_config}
             data.sidebar = { ...chinese_traditional.sidebar}
-        }else {
+        }
+        if(language_local === 'chinese_simplified'){
+            data.gui_config = { ...chinese_simplified.gui_config}
+            data.sidebar = { ...chinese_simplified.sidebar}
+        }
+        if(language_local === 'english'){
             data.gui_config = { ...english.gui_config}
             data.sidebar = { ...english.sidebar}
         }
@@ -289,7 +386,12 @@ export const useUnrealCorePluginLanguage = defineStore('useUnrealCorePluginLangu
         if(set_language === 'chinese_traditional'){
             data.gui_config = { ...chinese_traditional.gui_config}
             data.sidebar = chinese_traditional.sidebar
-        }else {
+        }
+        if(set_language === 'chinese_simplified'){
+            data.gui_config = { ...chinese_simplified.gui_config}
+            data.sidebar = { ...chinese_simplified.sidebar}
+        }
+        if(set_language === 'english'){
             data.gui_config = { ...english.gui_config}
             data.sidebar = english.sidebar
         }

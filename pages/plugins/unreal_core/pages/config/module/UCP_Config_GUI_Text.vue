@@ -4,38 +4,35 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
+const language_computed = computed(()=>{
+  let language =  {
     text: {
-      attribute: '',
-      description: [''],
+      attribute: 'Text',
+      description: ['Display text content.'],
       example: '',
       default: '',
     },
     textColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextColor',
+      description: ['Show text color.'],
+      example: '0xFFFFFF',
+      default: '000000',
     },
     textSize: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextSize',
+      description: ['Display text size.'],
+      example: '0.8',
+      default: '1',
     },
     space: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'Space',
+      description: ['The distance between each line of text.'],
+      example: '15',
+      default: '10',
     },
   }
-})
-const language_computed = computed(()=>{
-
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
+    language = {
       text: {
         attribute: 'Text',
         description: ['顯示文字內容。'],
@@ -61,35 +58,36 @@ const language_computed = computed(()=>{
         default: '10',
       },
     }
-  }else {
-    data.language =  {
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
       text: {
         attribute: 'Text',
-        description: ['Display text content.'],
+        description: ['显示文字内容。'],
         example: '',
         default: '',
       },
       textColor: {
         attribute: 'TextColor',
-        description: ['Show text color.'],
+        description: ['显示文字颜色。'],
         example: '0xFFFFFF',
         default: '000000',
       },
       textSize: {
         attribute: 'TextSize',
-        description: ['Display text size.'],
+        description: ['显示文字大小。'],
         example: '0.8',
         default: '1',
       },
       space: {
         attribute: 'Space',
-        description: ['The distance between each line of text.'],
+        description: ['每行文字间的距离。'],
         example: '15',
         default: '10',
       },
     }
   }
-  return data.language;
+  return language;
 })
 </script>
 

@@ -4,70 +4,72 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
-    width: {attribute: '',
-      description: [''],
-      example: '', default: '',
+const language_computed = computed(()=>{
+  let language =  {
+    width: {
+      attribute: 'Width',
+      description: ['The width of the module.'],
+      example: '20',
+      default: '0',
     },
-    height: {attribute: '',
-      description: [''],
-      example: '', default: '',
+    height: {
+      attribute: 'Height',
+      description: ['The height of the module.'],
+      example: '86',
+      default: '0',
     },
     onImage: {
-      attribute: '',
-      description: [''],
-      example: '',
+      attribute: 'OnImage',
+      description: ['The icon displayed when selecting.'],
+      example: 'gui/check/check_on.png',
       default: '',
     },
     offImage: {
-      attribute: '',
-      description: [''],
-      example: '',
+      attribute: 'OffImage',
+      description: ['The icon shown when no selection is made.'],
+      example: 'gui/check/check_off.png',
       default: '',
     },
     text: {
-      attribute: '',
-      description: [''],
+      attribute: 'Text',
+      description: ['Display text content.'],
       example: '',
       default: '',
     },
     textColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextColor',
+      description: ['Show text color.'],
+      example: '0xFFFFFF',
+      default: '000000',
     },
     textSize: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextSize',
+      description: ['Display text size.'],
+      example: '0.8',
+      default: '1',
     },
+
     textPlace: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextPlace',
+      description: ['In which position of the diagram the text appears.', '(1 = right, 2 = bottom, 3 = left, 4 = top)'],
+      example: '3',
+      default: '1',
     },
     textDistance: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextDistance',
+      description: ['The distance between the text and the image.'],
+      example: '25',
+      default: '10',
     },
     check: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'Check',
+      description: ['Selected or not selected.'],
+      example: 'true',
+      default: 'false',
     },
   }
-})
-const language_computed = computed(()=>{
-
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
+    language = {
       width: {
         attribute: 'Width',
         description: ['模塊的寬度。'],
@@ -129,72 +131,72 @@ const language_computed = computed(()=>{
         default: 'false',
       },
     }
-  }else {
-    data.language =  {
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
       width: {
         attribute: 'Width',
-        description: ['The width of the module.'],
-        example: '20',
+        description: ['模块的宽度。'],
+        example: '75',
         default: '0',
       },
       height: {
         attribute: 'Height',
-        description: ['The height of the module.'],
-        example: '86',
+        description: ['模块的高度。'],
+        example: '60',
         default: '0',
       },
       onImage: {
         attribute: 'OnImage',
-        description: ['The icon displayed when selecting.'],
+        description: ['选取时显示的图示。'],
         example: 'gui/check/check_on.png',
         default: '',
       },
       offImage: {
         attribute: 'OffImage',
-        description: ['The icon shown when no selection is made.'],
+        description: ['没有选取时显示的图示。'],
         example: 'gui/check/check_off.png',
         default: '',
       },
       text: {
         attribute: 'Text',
-        description: ['Display text content.'],
+        description: ['显示文字内容。'],
         example: '',
         default: '',
       },
       textColor: {
         attribute: 'TextColor',
-        description: ['Show text color.'],
+        description: ['显示文字颜色。'],
         example: '0xFFFFFF',
         default: '000000',
       },
       textSize: {
         attribute: 'TextSize',
-        description: ['Display text size.'],
+        description: ['显示文字大小。'],
         example: '0.8',
         default: '1',
       },
-
       textPlace: {
         attribute: 'TextPlace',
-        description: ['In which position of the diagram the text appears.', '(1 = right, 2 = bottom, 3 = left, 4 = top)'],
+        description: ['文字显示在图示的哪个方位。', '( 1 = 右, 2 = 下, 3 = 左, 4 = 上 )'],
         example: '3',
         default: '1',
       },
       textDistance: {
         attribute: 'TextDistance',
-        description: ['The distance between the text and the image.'],
+        description: ['文字离图示的距离。'],
         example: '25',
         default: '10',
       },
       check: {
         attribute: 'Check',
-        description: ['Selected or not selected.'],
+        description: ['有选取还是没选取。'],
         example: 'true',
         default: 'false',
       },
     }
   }
-return data.language;
+  return language;
 })
 </script>
 

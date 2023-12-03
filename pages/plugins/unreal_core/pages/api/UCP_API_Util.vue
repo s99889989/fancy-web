@@ -1,4 +1,37 @@
 <script setup lang="ts">
+import {useLanguageControl} from "~/stores/useLanguageControl";
+
+const languageControl = useLanguageControl()
+
+const language_computed = computed(()=>{
+  let language = {
+    title: 'Sound Placeholder',
+    attribute:{
+      text: {
+        attribute: '',
+        description: [''],
+        example: '',
+        default: '',
+      },
+    }
+
+  }
+  if(languageControl.data.language === 'chinese_traditional'){
+    language = {
+      title: '聲音 佔位符',
+      attribute:{
+        text: {
+          attribute: '',
+          description: [''],
+          example: '',
+          default: '',
+        },
+      }
+    }
+  }
+  return language;
+})
+
 
 </script>
 

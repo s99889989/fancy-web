@@ -11,8 +11,6 @@ const language_computed = computed(()=>{
       text: {
         attribute: '',
         description: [''],
-        example: '',
-        default: '',
       },
     }
 
@@ -24,8 +22,17 @@ const language_computed = computed(()=>{
         text: {
           attribute: '',
           description: [''],
-          example: '',
-          default: '',
+        },
+      }
+    }
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
+      title: '声音 占位符',
+      attribute:{
+        text: {
+          attribute: '',
+          description: [''],
         },
       }
     }

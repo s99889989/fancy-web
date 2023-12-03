@@ -4,124 +4,131 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
-    width: {attribute: '',
-      description: [''],
-      example: '', default: '',
+const language_computed = computed(()=>{
+  let language =  {
+    width: {
+      attribute: 'Width',
+      description: ['The width of the module.'],
+      example: '20',
+      default: '0',
     },
-    height: {attribute: '',
-      description: [''],
-      example: '', default: '',
+    height: {
+      attribute: 'Height',
+      description: ['The height of the module.'],
+      example: '86',
+      default: '0',
     },
+
     radius: {
-      attribute: '',
-      description: [''],
+      attribute: 'Radius',
+      description: ['Background rounded corners.'],
+      example: '5',
+      default: '0',
+    },
+    image: {
+      attribute: 'Image',
+      description: ['The image to use for the background.', 'If not set, the set color will be displayed.'],
+      example: 'gui/background/background_2.png',
+      default: '',
+    },
+    color: {
+      attribute: 'Color',
+      description: ['The background color will affect the color of the Image after setting.'],
       example: '',
       default: '',
     },
-    image: {attribute: '',
-      description: [''],
-      example: '', default: '',
-    },
-    color: {attribute: '',
-      description: [''],
-      example: '', default: '',
-    },
-    textColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
-    },
-    textSize: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
-    },
+
     optionWidth: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'OptionWidth',
+      description: ['Options are wide.'],
+      example: '40',
+      default: '30',
     },
     optionHeight: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'OptionHeight',
+      description: ['Options are high.'],
+      example: '20',
+      default: '15',
     },
     optionImage: {
-      attribute: '',
-      description: [''],
-      example: '',
+      attribute: 'OptionImage',
+      description: ['Option background image.'],
+      example: 'gui/button/button_default.png',
       default: '',
     },
     optionColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'OptionColor',
+      description: ['Option background color.'],
+      example: '0x123456',
+      default: '0xffffff',
     },
     optionHoverColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'OptionHoverColor',
+      description: ['Option background slide color.'],
+      example: '0x123456',
+      default: '0xffffff',
     },
     optionTextColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'OptionTextColor',
+      description: ['Option text color.'],
+      example: '0x123456',
+      default: '0x000000',
     },
     optionTextHoverColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'OptionTextHoverColor',
+      description: ['Option text slides over color.'],
+      example: '0x123456',
+      default: '0xffffff',
     },
     optionTextSize: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'OptionTextSize',
+      description: ['Option text size.'],
+      example: '1.5',
+      default: '1',
     },
     optionDirection: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'OptionDirection',
+      description: ['Options popup direction.', '(1 = bottom, 2 = left, 3 = top, 4 = right)'],
+      example: '20',
+      default: '10',
     },
     defaultOption: {
-      attribute: '',
-      description: [''],
+      attribute: 'DefaultOption',
+      description: ['Selected options.'],
       example: '',
       default: '',
     },
     optionList: {
-      attribute: '',
-      description: [''],
+      attribute: 'OptionList',
+      description: ['List of options.'],
       example: '',
       default: '',
     },
+    textColor: {
+      attribute: 'TextColor',
+      description: ['Show text color.'],
+      example: '0xFFFFFF',
+      default: '000000',
+    },
+    textSize: {
+      attribute: 'TextSize',
+      description: ['Display text size.'],
+      example: '0.8',
+      default: '1',
+    },
   }
-})
-const language_computed = computed(()=>{
-
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
+    language = {
       width: {
         attribute: 'Width',
-        description: ['The width of the module.'],
-        example: '20',
+        description: ['模塊的寬度。'],
+        example: '75',
         default: '0',
       },
       height: {
         attribute: 'Height',
-        description: ['The height of the module.'],
-        example: '86',
+        description: ['模塊的高度。'],
+        example: '60',
         default: '0',
       },
       radius: {
@@ -132,15 +139,15 @@ const language_computed = computed(()=>{
       },
       image: {
         attribute: 'Image',
-        description: ['The image to use for the background.', 'If not set, the set color will be displayed.'],
+        description: ['背景要使用的圖。', '如果沒有設置，就會顯示設置的顏色。'],
         example: 'gui/background/background_2.png',
         default: '',
       },
       color: {
         attribute: 'Color',
-        description: ['The background color will affect the color of the Image after setting.'],
-        example: '',
-        default: '',
+        description: ['背景顏色，設定後會影響Image的顏色。'],
+        example: 'C6AE98',
+        default: '0xFFFFFF',
       },
       textColor: {
         attribute: 'TextColor',
@@ -221,119 +228,120 @@ const language_computed = computed(()=>{
         default: '',
       },
     }
-  }else {
-    data.language =  {
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
       width: {
         attribute: 'Width',
-        description: ['模塊的寬度。'],
+        description: ['模块的宽度。'],
         example: '75',
         default: '0',
       },
       height: {
         attribute: 'Height',
-        description: ['模塊的高度。'],
+        description: ['模块的高度。'],
         example: '60',
         default: '0',
       },
       radius: {
         attribute: 'Radius',
-        description: ['Background rounded corners.'],
+        description: ['背景圆角。'],
         example: '5',
         default: '0',
       },
       image: {
         attribute: 'Image',
-        description: ['背景要使用的圖。', '如果沒有設置，就會顯示設置的顏色。'],
+        description: ['背景要使用的图。', '如果没有设置，就会显示设置的颜色。'],
         example: 'gui/background/background_2.png',
         default: '',
       },
       color: {
         attribute: 'Color',
-        description: ['背景顏色，設定後會影響Image的顏色。'],
+        description: ['背景颜色，设定后会影响Image的颜色。'],
         example: 'C6AE98',
         default: '0xFFFFFF',
       },
-      optionWidth: {
-        attribute: 'OptionWidth',
-        description: ['Options are wide.'],
-        example: '40',
-        default: '30',
-      },
-      optionHeight: {
-        attribute: 'OptionHeight',
-        description: ['Options are high.'],
-        example: '20',
-        default: '15',
-      },
-      optionImage: {
-        attribute: 'OptionImage',
-        description: ['Option background image.'],
-        example: 'gui/button/button_default.png',
-        default: '',
-      },
-      optionColor: {
-        attribute: 'OptionColor',
-        description: ['Option background color.'],
-        example: '0x123456',
-        default: '0xffffff',
-      },
-      optionHoverColor: {
-        attribute: 'OptionHoverColor',
-        description: ['Option background slide color.'],
-        example: '0x123456',
-        default: '0xffffff',
-      },
-      optionTextColor: {
-        attribute: 'OptionTextColor',
-        description: ['Option text color.'],
-        example: '0x123456',
-        default: '0x000000',
-      },
-      optionTextHoverColor: {
-        attribute: 'OptionTextHoverColor',
-        description: ['Option text slides over color.'],
-        example: '0x123456',
-        default: '0xffffff',
-      },
-      optionTextSize: {
-        attribute: 'OptionTextSize',
-        description: ['Option text size.'],
-        example: '1.5',
-        default: '1',
-      },
-      optionDirection: {
-        attribute: 'OptionDirection',
-        description: ['Options popup direction.', '(1 = bottom, 2 = left, 3 = top, 4 = right)'],
-        example: '20',
-        default: '10',
-      },
-      defaultOption: {
-        attribute: 'DefaultOption',
-        description: ['Selected options.'],
-        example: '',
-        default: '',
-      },
-      optionList: {
-        attribute: 'OptionList',
-        description: ['List of options.'],
-        example: '',
-        default: '',
-      },
       textColor: {
         attribute: 'TextColor',
-        description: ['Show text color.'],
+        description: ['显示文字颜色。'],
         example: '0xFFFFFF',
         default: '000000',
       },
       textSize: {
         attribute: 'TextSize',
-        description: ['Display text size.'],
+        description: ['显示文字大小。'],
         example: '0.8',
         default: '1',
       },
+      optionWidth: {
+        attribute: 'OptionWidth',
+        description: ['选项宽。'],
+        example: '40',
+        default: '30',
+      },
+      optionHeight: {
+        attribute: 'OptionHeight',
+        description: ['选项高。'],
+        example: '20',
+        default: '15',
+      },
+      optionImage: {
+        attribute: 'OptionImage',
+        description: ['选项背景图。'],
+        example: 'gui/button/button_default.png',
+        default: '',
+      },
+      optionColor: {
+        attribute: 'OptionColor',
+        description: ['选项背景颜色。'],
+        example: '0x123456',
+        default: '0xffffff',
+      },
+      optionHoverColor: {
+        attribute: 'OptionHoverColor',
+        description: ['选项背景滑过颜色。'],
+        example: '0x123456',
+        default: '0xffffff',
+      },
+      optionTextColor: {
+        attribute: 'OptionTextColor',
+        description: ['选项文字颜色。'],
+        example: '0x123456',
+        default: '0x000000',
+      },
+      optionTextHoverColor: {
+        attribute: 'OptionTextHoverColor',
+        description: ['选项文字滑过颜色。'],
+        example: '0x123456',
+        default: '0xffffff',
+      },
+      optionTextSize: {
+        attribute: 'OptionTextSize',
+        description: ['选项文字大小。'],
+        example: '1.5',
+        default: '1',
+      },
+      optionDirection: {
+        attribute: 'OptionDirection',
+        description: ['选项弹出方向。', '(1 = 下, 2 = 左, 3 = 上, 4 = 右 )'],
+        example: '20',
+        default: '10',
+      },
+      defaultOption: {
+        attribute: 'DefaultOption',
+        description: ['选择的选项。'],
+        example: '',
+        default: '',
+      },
+      optionList: {
+        attribute: 'OptionList',
+        description: ['选项列表。'],
+        example: '',
+        default: '',
+      },
     }
   }
-  return data.language;
+  return language;
 })
 </script>
 

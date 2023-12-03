@@ -4,32 +4,29 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
+const language_computed = computed(()=>{
+  let language =  {
     entityType: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'EntityType',
+      description: ['Creature type.'],
+      example: 'Husk',
+      default: 'Player',
     },
     entityName: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'EntityName',
+      description: ['The name of the creature.'],
+      example: 'SourChaosCandy',
+      default: 's99889989',
     },
     entitySize: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'EntitySize',
+      description: ['The size to display.'],
+      example: '25',
+      default: '10',
     },
   }
-})
-const language_computed = computed(()=>{
-
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
+    language = {
       entityType: {
         attribute: 'EntityType',
         description: ['生物類型。'],
@@ -49,29 +46,30 @@ const language_computed = computed(()=>{
         default: '10',
       },
     }
-  }else {
-    data.language =  {
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
       entityType: {
         attribute: 'EntityType',
-        description: ['Creature type.'],
+        description: ['生物类型。'],
         example: 'Husk',
         default: 'Player',
       },
       entityName: {
         attribute: 'EntityName',
-        description: ['The name of the creature.'],
+        description: ['生物的名称。'],
         example: 'SourChaosCandy',
         default: 's99889989',
       },
       entitySize: {
         attribute: 'EntitySize',
-        description: ['The size to display.'],
+        description: ['要显示的大小。'],
         example: '25',
         default: '10',
       },
     }
   }
-  return data.language;
+  return language;
 })
 </script>
 

@@ -4,68 +4,65 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
+const language_computed = computed(()=>{
+  let language =  {
     item: {
-      attribute: '',
-      description: [''],
+      attribute: 'Item',
+      description: ['Item NBT string.'],
       example: '',
-      default: '',
+      default: `{Count:1b,id:\"minecraft:stone\"}`,
     },
     itemAmount: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'ItemAmount',
+      description: ['number of the stuffs.'],
+      example: '10',
+      default: '1',
     },
     itemSize: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'ItemSize',
+      description: ['Item scaling size.'],
+      example: '1.5',
+      default: '1',
     },
     angleX: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'AngleX',
+      description: ['The X rotation angle of the item.'],
+      example: '30',
+      default: '0',
     },
     angleY: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'AngleY',
+      description: ['The Y rotation angle of the item.'],
+      example: '45',
+      default: '0',
     },
     angleZ: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'AngleZ',
+      description: ['The Z rotation angle of the item.'],
+      example: '180',
+      default: '0',
     },
     angleXAdd: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'AngleXAdd',
+      description: ['The X rotation angle to increase for each tick of the item.'],
+      example: '10',
+      default: '0',
     },
     angleYAdd: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'AngleYAdd',
+      description: ['The Y rotation angle to increase for each tick of the item.'],
+      example: '5',
+      default: '0',
     },
     angleZAdd: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'AngleZAdd',
+      description: ['The Z rotation angle to increase for each tick of the item.'],
+      example: '1',
+      default: '0',
     },
   }
-})
-const language_computed = computed(()=>{
-
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
+    language = {
       item: {
         attribute: 'Item',
         description: ['物品NBT字串。'],
@@ -121,65 +118,66 @@ const language_computed = computed(()=>{
         default: '0',
       },
     }
-  }else {
-    data.language =  {
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
       item: {
         attribute: 'Item',
-        description: ['Item NBT string.'],
+        description: ['物品NBT字串。'],
         example: '',
         default: `{Count:1b,id:\"minecraft:stone\"}`,
       },
       itemAmount: {
         attribute: 'ItemAmount',
-        description: ['number of the stuffs.'],
+        description: ['物品数量。'],
         example: '10',
         default: '1',
       },
       itemSize: {
         attribute: 'ItemSize',
-        description: ['Item scaling size.'],
+        description: ['物品缩放大小。'],
         example: '1.5',
         default: '1',
       },
       angleX: {
         attribute: 'AngleX',
-        description: ['The X rotation angle of the item.'],
+        description: ['物品的X旋转角度。'],
         example: '30',
         default: '0',
       },
       angleY: {
         attribute: 'AngleY',
-        description: ['The Y rotation angle of the item.'],
+        description: ['物品的Y旋转角度。'],
         example: '45',
         default: '0',
       },
       angleZ: {
         attribute: 'AngleZ',
-        description: ['The Z rotation angle of the item.'],
+        description: ['物品的Z旋转角度。'],
         example: '180',
         default: '0',
       },
       angleXAdd: {
         attribute: 'AngleXAdd',
-        description: ['The X rotation angle to increase for each tick of the item.'],
+        description: ['物品每tick要增加的X旋转角度。'],
         example: '10',
         default: '0',
       },
       angleYAdd: {
         attribute: 'AngleYAdd',
-        description: ['The Y rotation angle to increase for each tick of the item.'],
+        description: ['物品每tick要增加的Y旋转角度。'],
         example: '5',
         default: '0',
       },
       angleZAdd: {
         attribute: 'AngleZAdd',
-        description: ['The Z rotation angle to increase for each tick of the item.'],
+        description: ['物品每tick要增加的Z旋转角度。'],
         example: '1',
         default: '0',
       },
     }
   }
-  return data.language;
+  return language;
 })
 </script>
 

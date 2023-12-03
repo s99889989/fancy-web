@@ -4,68 +4,65 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
+const language_computed = computed(()=>{
+  let language = {
     hoverImage: {
-      attribute: '',
-      description: [''],
-      example: '',
+      attribute: 'HoverImage',
+      description: ['Mouse over the background image address.'],
+      example: 'gui/button/button_hover.png',
       default: '',
     },
     hoverColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'HoverColor',
+      description: ['Mouse over background color.'],
+      example: '000000',
+      default: '006800',
     },
     hoverTransparent: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'HoverTransparent',
+      description: ['Mouse over background transparency.'],
+      example: '60',
+      default: '255',
     },
     clickImage: {
-      attribute: '',
-      description: [''],
-      example: '',
+      attribute: 'ClickImage',
+      description: ['Click the background image address with the mouse.'],
+      example: 'gui/button/button_hover.png',
       default: '',
     },
     clickColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'ClickColor',
+      description: ['Mouse click background color.'],
+      example: '000000',
+      default: '000068',
     },
     clickTransparent: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'ClickTransparent',
+      description: ['Mouse click background transparency.'],
+      example: '120',
+      default: '255',
     },
     text: {
-      attribute: '',
-      description: [''],
+      attribute: 'Text',
+      description: ['Display text content.'],
       example: '',
       default: '',
     },
     textColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextColor',
+      description: ['Show text color.'],
+      example: '0xFFFFFF',
+      default: '000000',
     },
     textSize: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextSize',
+      description: ['Display text size.'],
+      example: '0.8',
+      default: '1',
     },
   }
-})
-const language_computed = computed(()=>{
-
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
+    language = {
       hoverImage: {
         attribute: 'HoverImage',
         description: ['滑鼠滑過背景圖片位址。'],
@@ -121,65 +118,66 @@ const language_computed = computed(()=>{
         default: '1',
       },
     }
-  }else {
-    data.language =  {
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
       hoverImage: {
         attribute: 'HoverImage',
-        description: ['Mouse over the background image address.'],
+        description: ['滑鼠滑过背景图片位址。'],
         example: 'gui/button/button_hover.png',
         default: '',
       },
       hoverColor: {
         attribute: 'HoverColor',
-        description: ['Mouse over background color.'],
+        description: ['滑鼠滑过背景颜色。'],
         example: '000000',
         default: '006800',
       },
       hoverTransparent: {
         attribute: 'HoverTransparent',
-        description: ['Mouse over background transparency.'],
+        description: ['滑鼠滑过背景透明度。'],
         example: '60',
         default: '255',
       },
       clickImage: {
         attribute: 'ClickImage',
-        description: ['Click the background image address with the mouse.'],
+        description: ['滑鼠点击背景图片位址。'],
         example: 'gui/button/button_hover.png',
         default: '',
       },
       clickColor: {
         attribute: 'ClickColor',
-        description: ['Mouse click background color.'],
+        description: ['滑鼠点击背景颜色。'],
         example: '000000',
         default: '000068',
       },
       clickTransparent: {
         attribute: 'ClickTransparent',
-        description: ['Mouse click background transparency.'],
+        description: ['滑鼠点击背景透明度。'],
         example: '120',
         default: '255',
       },
       text: {
         attribute: 'Text',
-        description: ['Display text content.'],
+        description: ['显示文字内容。'],
         example: '',
         default: '',
       },
       textColor: {
         attribute: 'TextColor',
-        description: ['Show text color.'],
+        description: ['显示文字颜色。'],
         example: '0xFFFFFF',
         default: '000000',
       },
       textSize: {
         attribute: 'TextSize',
-        description: ['Display text size.'],
+        description: ['显示文字大小。'],
         example: '0.8',
         default: '1',
       },
     }
   }
-  return data.language;
+  return language;
 })
 </script>
 

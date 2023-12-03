@@ -4,55 +4,53 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
+const language_computed = computed(()=>{
+  let language = {
     text: {
-      attribute: '',
-      description: [''],
+      attribute: 'Text',
+      description: ['Enter content.'],
       example: '',
       default: '',
     },
     textColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextColor',
+      description: ['Enter the content text color.'],
+      example: '0xFFFFFF',
+      default: '000000',
     },
     textSize: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextSize',
+      description: ['Enter the content text size.'],
+      example: '0.8',
+      default: '1',
     },
     textMaxLength: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'TextMaxLength',
+      description: ['Enter a few words at most.'],
+      example: '100',
+      default: '256',
     },
     inputStart: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'InputStart',
+      description: ['Adjust the input starting position.', 'Some basemap borders may be wider.'],
+      example: '2',
+      default: '1',
     },
     inputEnd: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'InputEnd',
+      description: ['Adjust the input end position.', 'Some basemap borders may be wider.'],
+      example: '-3',
+      default: '-1',
     },
     canInput: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'CanInput',
+      description: ['Whether it is possible to enter.', 'If set to false, it can be used for display.'],
+      example: 'false',
+      default: 'true',
     },
   }
-})
-const language_computed = computed(()=>{
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
+    language = {
       text: {
         attribute: 'Text',
         description: ['輸入內容。'],
@@ -96,53 +94,54 @@ const language_computed = computed(()=>{
         default: 'true',
       },
     }
-  }else {
-    data.language =  {
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
       text: {
         attribute: 'Text',
-        description: ['Enter content.'],
+        description: ['输入内容。'],
         example: '',
         default: '',
       },
       textColor: {
         attribute: 'TextColor',
-        description: ['Enter the content text color.'],
+        description: ['输入内容文字颜色。'],
         example: '0xFFFFFF',
         default: '000000',
       },
       textSize: {
         attribute: 'TextSize',
-        description: ['Enter the content text size.'],
+        description: ['输入内容文字大小。'],
         example: '0.8',
         default: '1',
       },
       textMaxLength: {
         attribute: 'TextMaxLength',
-        description: ['Enter a few words at most.'],
+        description: ['最多输入几个字。'],
         example: '100',
         default: '256',
       },
       inputStart: {
         attribute: 'InputStart',
-        description: ['Adjust the input starting position.', 'Some basemap borders may be wider.'],
+        description: ['调整输入起始位置。', '有些底图边框可能比较宽。'],
         example: '2',
         default: '1',
       },
       inputEnd: {
         attribute: 'InputEnd',
-        description: ['Adjust the input end position.', 'Some basemap borders may be wider.'],
+        description: ['调整输入结束位置。', '有些底图边框可能比较宽。'],
         example: '-3',
         default: '-1',
       },
       canInput: {
         attribute: 'CanInput',
-        description: ['Whether it is possible to enter.', 'If set to false, it can be used for display.'],
+        description: ['是否可以输入。', '如果设为false可以当作显示用。'],
         example: 'false',
         default: 'true',
       },
     }
   }
-  return data.language;
+  return language;
 })
 </script>
 

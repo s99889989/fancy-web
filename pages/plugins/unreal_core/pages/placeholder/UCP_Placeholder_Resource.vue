@@ -11,44 +11,30 @@ const language_computed = computed(()=>{
       download_progress: {
         attribute: '{resource_download_progress}',
         description: ['The percentage of resources downloaded.', '0~100'],
-        example: '',
-        default: '',
       },
       load_progress: {
         attribute: '{resource_load_progress}',
         description: ['The percentage of resources read.', '0~100'],
-        example: '',
-        default: '',
       },
       load_name_1: {
         attribute: '{resource_load_name_1}',
         description: ['Read the first line of resource content.'],
-        example: '',
-        default: '',
       },
       load_name_2: {
         attribute: '{resource_load_name_2}',
         description: ['Read the second line of resource content.'],
-        example: '',
-        default: '',
       },
       load_name_3: {
         attribute: '{resource_load_name_3}',
         description: ['Read the third line of resource content.'],
-        example: '',
-        default: '',
       },
       load_name_4: {
         attribute: '{resource_load_name_4}',
         description: ['Read the fourth line of resource content.'],
-        example: '',
-        default: '',
       },
       load_name_5: {
         attribute: '{resource_load_name_5}',
         description: ['Read the fifth line of the resource content.'],
-        example: '',
-        default: '',
       },
     }
 
@@ -60,44 +46,65 @@ const language_computed = computed(()=>{
         download_progress: {
           attribute: '{resource_download_progress}',
           description: ['下載資源的百分比。', '0~100'],
-          example: '',
-          default: '',
         },
         load_progress: {
           attribute: '{resource_load_progress}',
           description: ['讀取資源的百分比。', '0~100'],
-          example: '',
-          default: '',
         },
         load_name_1: {
           attribute: '{resource_load_name_1}',
           description: ['讀取資源內容的第一行。'],
-          example: '',
-          default: '',
         },
         load_name_2: {
           attribute: '{resource_load_name_2}',
           description: ['讀取資源內容的第二行。'],
-          example: '',
-          default: '',
         },
         load_name_3: {
           attribute: '{resource_load_name_3}',
           description: ['讀取資源內容的第三行。'],
-          example: '',
-          default: '',
         },
         load_name_4: {
           attribute: '{resource_load_name_4}',
           description: ['讀取資源內容的第四行。'],
-          example: '',
-          default: '',
         },
         load_name_5: {
           attribute: '{resource_load_name_5}',
           description: ['讀取資源內容的第五行。'],
-          example: '',
-          default: '',
+        },
+      }
+    }
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
+      title: '资源 占位符',
+      attribute:{
+        download_progress: {
+          attribute: '{resource_download_progress}',
+          description: ['下载资源的百分比。', '0~100'],
+        },
+        load_progress: {
+          attribute: '{resource_load_progress}',
+          description: ['读取资源的百分比。', '0~100'],
+        },
+        load_name_1: {
+          attribute: '{resource_load_name_1}',
+          description: ['读取资源内容的第一行。'],
+        },
+        load_name_2: {
+          attribute: '{resource_load_name_2}',
+          description: ['读取资源内容的第二行。'],
+        },
+        load_name_3: {
+          attribute: '{resource_load_name_3}',
+          description: ['读取资源内容的第三行。'],
+        },
+        load_name_4: {
+          attribute: '{resource_load_name_4}',
+          description: ['读取资源内容的第四行。'],
+        },
+        load_name_5: {
+          attribute: '{resource_load_name_5}',
+          description: ['读取资源内容的第五行。'],
         },
       }
     }

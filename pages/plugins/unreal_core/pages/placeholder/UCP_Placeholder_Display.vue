@@ -9,100 +9,60 @@ const language_computed = computed(()=>{
     title: 'Display Placeholder',
     attribute:{
       window_width: {
-        attribute: '{display_window_w}',
-        description: ['Window width.'],
-        example: '',
-        default: '',
+        attribute: '{display_window_w}', description: ['Window width.'],
       },
       window_height: {
-        attribute: '{display_window_h}',
-        description: ['Window height.'],
-        example: '',
-        default: '',
+        attribute: '{display_window_h}', description: ['Window height.'],
       },
       mouse_x: {
-        attribute: '{display_mouse_x}',
-        description: ['Mouse X position.'],
-        example: '',
-        default: '',
+        attribute: '{display_mouse_x}', description: ['Mouse X position.'],
       },
       mouse_y: {
-        attribute: '{display_mouse_y}',
-        description: ['Mouse Y position.'],
-        example: '',
-        default: '',
+        attribute: '{display_mouse_y}', description: ['Mouse Y position.'],
       },
       module_x: {
-        attribute: '{display_模塊名稱_x}',
-        description: ['The starting X position of the module.'],
-        example: '',
-        default: '',
+        attribute: '{display_ModuleName_x}', description: ['The starting X position of the module.'],
       },
       module_xs: {
-        attribute: '{display_模塊名稱_xs}',
-        description: ['The starting X position of the module.'],
-        example: '',
-        default: '',
+        attribute: '{display_ModuleName_xs}', description: ['The starting X position of the module.'],
       },
       module_xe: {
-        attribute: '{display_模塊名稱_xe}',
-        description: ['The end X position of the module.'],
-        example: '',
-        default: '',
+        attribute: '{display_ModuleName_xe}', description: ['The end X position of the module.'],
       },
       module_y: {
-        attribute: '{display_模塊名稱_y}',
-        description: ['The starting Y position of the module.'],
-        example: '',
-        default: '',
+        attribute: '{display_ModuleName_y}', description: ['The starting Y position of the module.'],
       },
       module_ys: {
-        attribute: '{display_模塊名稱_ys}',
-        description: ['The starting Y position of the module.'],
-        example: '',
-        default: '',
+        attribute: '{display_ModuleName_ys}', description: ['The starting Y position of the module.'],
       },
       module_ye: {
-        attribute: '{display_模塊名稱_ye}',
-        description: ['The end Y position of the module.'],
-        example: '',
-        default: '',
+        attribute: '{display_ModuleName_ye}', description: ['The end Y position of the module.'],
       },
       module_width: {
-        attribute: '{display_模塊名稱_width}',
+        attribute: '{display_ModuleName_width}',
         description: ['The width of the module.', 'The entity module is not accurate because the', 'calculation method has not been thought of at present.'],
-        example: '',
-        default: '',
       },
       module_height: {
-        attribute: '{display_模塊名稱_height}',
+        attribute: '{display_ModuleName_height}',
         description: ['The height of the module.', 'The entity module is not accurate because the', 'calculation method has not been thought of at present.'],
-        example: '',
-        default: '',
       },
       module_value: {
-        attribute: '{display_模塊名稱_value}',
+        attribute: '{display_ModuleName_value}',
         description: [
           'The value of the module.',
           'Like the value entered by the input module.',
-          'Multi-line values ​​will be followed by the number of rows they represent.',
+          'Multi-line values will be followed by the number of rows they represent.',
           'For example {display_InputExample_value_1} represents the first row.',
           'For example {display_InputExample_value_2} represents the second row.',
         ],
-        example: '',
-        default: '',
       },
       hover_item_name: {
         attribute: '{display_hover_item_name}',
         description: ['The name of the item currently selected to view.'],
-        example: '',
-        default: '',
       },
       hover_item_name_width: {
         attribute: '{display_hover_item_name_width}',
         description: ['The name width of the item currently selected to be viewed.'],
-        example: '',
-        default: '',
       },
       hover_item_lore: {
         attribute: '{display_hover_item_lore}',
@@ -112,26 +72,18 @@ const language_computed = computed(()=>{
           '{display_hover_item_lore_2}Represents the second line of Lore.',
           'And so on.',
         ],
-        example: '',
-        default: '',
       },
       hover_item_lore_size: {
         attribute: '{display_hover_item_lore_size}',
         description: ['The number of Lore lines currently selected to view the item.'],
-        example: '',
-        default: '',
       },
       hover_item_lore_width: {
         attribute: '{display_hover_item_lore_width}',
         description: ['Currently selected to view the Lore width of the item.'],
-        example: '',
-        default: '',
       },
       hover_item_nbt: {
         attribute: '{display_hover_item_nbt}',
         description: ['Currently selected to view the NBT of the item.'],
-        example: '',
-        default: '',
       },
     }
 
@@ -143,74 +95,50 @@ const language_computed = computed(()=>{
         window_width: {
           attribute: '{display_window_w}',
           description: ['視窗寬度。'],
-          example: '',
-          default: '',
         },
         window_height: {
           attribute: '{display_window_h}',
           description: ['視窗高度。'],
-          example: '',
-          default: '',
         },
         mouse_x: {
           attribute: '{display_mouse_x}',
           description: ['滑鼠X位置。'],
-          example: '',
-          default: '',
         },
         mouse_y: {
           attribute: '{display_mouse_y}',
           description: ['滑鼠Y位置。'],
-          example: '',
-          default: '',
         },
         module_x: {
           attribute: '{display_模塊名稱_x}',
           description: ['模塊的起始X位置。'],
-          example: '',
-          default: '',
         },
         module_xs: {
           attribute: '{display_模塊名稱_xs}',
           description: ['模塊的起始X位置。'],
-          example: '',
-          default: '',
         },
         module_xe: {
           attribute: '{display_模塊名稱_xe}',
           description: ['模塊的結束X位置。'],
-          example: '',
-          default: '',
         },
         module_y: {
           attribute: '{display_模塊名稱_y}',
           description: ['模塊的起始Y位置。'],
-          example: '',
-          default: '',
         },
         module_ys: {
           attribute: '{display_模塊名稱_ys}',
           description: ['模塊的起始Y位置。'],
-          example: '',
-          default: '',
         },
         module_ye: {
           attribute: '{display_模塊名稱_ye}',
           description: ['模塊的結束Y位置。'],
-          example: '',
-          default: '',
         },
         module_width: {
           attribute: '{display_模塊名稱_width}',
           description: ['模塊的寬度。', '實體模塊因為目前沒想到', '計算方法，所以不準確。'],
-          example: '',
-          default: '',
         },
         module_height: {
           attribute: '{display_模塊名稱_height}',
           description: ['模塊的高度。', '實體模塊因為目前沒想到', '計算方法，所以不準確。'],
-          example: '',
-          default: '',
         },
         module_value: {
           attribute: '{display_模塊名稱_value}',
@@ -221,20 +149,14 @@ const language_computed = computed(()=>{
             '例如{display_InputExample_value_1}代表第一行。',
             '例如{display_InputExample_value_2}代表第二行。',
           ],
-          example: '',
-          default: '',
         },
         hover_item_name: {
           attribute: '{display_hover_item_name}',
           description: ['目前選擇查看物品的名稱。'],
-          example: '',
-          default: '',
         },
         hover_item_name_width: {
           attribute: '{display_hover_item_name_width}',
           description: ['目前選擇查看物品的名稱寬度。'],
-          example: '',
-          default: '',
         },
         hover_item_lore: {
           attribute: '{display_hover_item_lore}',
@@ -244,26 +166,112 @@ const language_computed = computed(()=>{
             '{display_hover_item_lore_2}代表第二行Lore。',
             '以此類推。',
           ],
-          example: '',
-          default: '',
         },
         hover_item_lore_size: {
           attribute: '{display_hover_item_lore_size}',
           description: ['目前選擇查看物品的Lore行數。'],
-          example: '',
-          default: '',
         },
         hover_item_lore_width: {
           attribute: '{display_hover_item_lore_width}',
           description: ['目前選擇查看物品的Lore寬度。'],
-          example: '',
-          default: '',
         },
         hover_item_nbt: {
           attribute: '{display_hover_item_nbt}',
           description: ['目前選擇查看物品的NBT。'],
-          example: '',
-          default: '',
+        },
+      }
+    }
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
+      title: '显示 占位符',
+      attribute:{
+        window_width: {
+          attribute: '{display_window_w}',
+          description: ['视窗宽度。'],
+        },
+        window_height: {
+          attribute: '{display_window_h}',
+          description: ['视窗高度。'],
+        },
+        mouse_x: {
+          attribute: '{display_mouse_x}',
+          description: ['滑鼠X位置。'],
+        },
+        mouse_y: {
+          attribute: '{display_mouse_y}',
+          description: ['滑鼠Y位置。'],
+        },
+        module_x: {
+          attribute: '{display_模块名称_x}',
+          description: ['模块的起始X位置。'],
+        },
+        module_xs: {
+          attribute: '{display_模块名称_xs}',
+          description: ['模块的起始X位置。'],
+        },
+        module_xe: {
+          attribute: '{display_模块名称_xe}',
+          description: ['模块的结束X位置。'],
+        },
+        module_y: {
+          attribute: '{display_模块名称_y}',
+          description: ['模块的起始Y位置。'],
+        },
+        module_ys: {
+          attribute: '{display_模块名称_ys}',
+          description: ['模块的起始Y位置。'],
+        },
+        module_ye: {
+          attribute: '{display_模块名称_ye}',
+          description: ['模块的结束Y位置。'],
+        },
+        module_width: {
+          attribute: '{display_模块名称_width}',
+          description: ['模块的宽度。', '实体模块因为目前没想到', '计算方法，所以不准确。'],
+        },
+        module_height: {
+          attribute: '{display_模块名称_height}',
+          description: ['模块的高度。', '实体模块因为目前没想到', '计算方法，所以不准确。'],
+        },
+        module_value: {
+          attribute: '{display_模块名称_value}',
+          description: [
+            '模块的值。',
+            '像是输入模块输入的值。',
+            '多行值会在后面加上代表的行数数字。',
+            '例如{display_InputExample_value_1}代表第一行。',
+            '例如{display_InputExample_value_2}代表第二行。',
+          ],
+        },
+        hover_item_name: {
+          attribute: '{display_hover_item_name}',
+          description: ['目前选择查看物品的名称。'],
+        },
+        hover_item_name_width: {
+          attribute: '{display_hover_item_name_width}',
+          description: ['目前选择查看物品的名称宽度。'],
+        },
+        hover_item_lore: {
+          attribute: '{display_hover_item_lore}',
+          description: [
+            '目前选择查看物品的Lore。',
+            '{display_hover_item_lore_1}代表第一行Lore。',
+            '{display_hover_item_lore_2}代表第二行Lore。',
+            '以此类推。',
+          ],
+        },
+        hover_item_lore_size: {
+          attribute: '{display_hover_item_lore_size}',
+          description: ['目前选择查看物品的Lore行数。'],
+        },
+        hover_item_lore_width: {
+          attribute: '{display_hover_item_lore_width}',
+          description: ['目前选择查看物品的Lore宽度。'],
+        },
+        hover_item_nbt: {
+          attribute: '{display_hover_item_nbt}',
+          description: ['目前选择查看物品的NBT。'],
         },
       }
     }

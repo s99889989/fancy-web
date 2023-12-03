@@ -4,44 +4,41 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
+const language_computed = computed(()=>{
+  let language =  {
     hoverMargin: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'HoverMargin',
+      description: ['Move the mouse over to display the indentation distance of the color.'],
+      example: '3',
+      default: '1',
     },
     hoverColor: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'HoverColor',
+      description: ['Mouse over background color.'],
+      example: '000000',
+      default: '006800',
     },
     hoverTransparent: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'HoverTransparent',
+      description: ['Mouse over background transparency.'],
+      example: '60',
+      default: '255',
     },
     slot: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'Slot',
+      description: ['Slot ID.'],
+      example: '12',
+      default: '1',
     },
     itemSize: {
-      attribute: '',
-      description: [''],
-      example: '',
-      default: '',
+      attribute: 'ItemSize',
+      description: ['Item scaling size.'],
+      example: '1.5',
+      default: '1',
     },
   }
-})
-const language_computed = computed(()=>{
-
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
+    language = {
       hoverMargin: {
         attribute: 'HoverMargin',
         description: ['滑鼠滑過，顯示顏色的內縮距離。'],
@@ -73,41 +70,42 @@ const language_computed = computed(()=>{
         default: '1',
       },
     }
-  }else {
-    data.language =  {
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
       hoverMargin: {
         attribute: 'HoverMargin',
-        description: ['Move the mouse over to display the indentation distance of the color.'],
+        description: ['滑鼠滑过，显示颜色的内缩距离。'],
         example: '3',
         default: '1',
       },
       hoverColor: {
         attribute: 'HoverColor',
-        description: ['Mouse over background color.'],
+        description: ['滑鼠滑过背景颜色。'],
         example: '000000',
         default: '006800',
       },
       hoverTransparent: {
         attribute: 'HoverTransparent',
-        description: ['Mouse over background transparency.'],
+        description: ['滑鼠滑过背景透明度。'],
         example: '60',
         default: '255',
       },
       slot: {
         attribute: 'Slot',
-        description: ['Slot ID.'],
+        description: ['物品格ID。'],
         example: '12',
         default: '1',
       },
       itemSize: {
         attribute: 'ItemSize',
-        description: ['Item scaling size.'],
+        description: ['物品缩放大小。'],
         example: '1.5',
         default: '1',
       },
     }
   }
-  return data.language;
+  return language;
 })
 </script>
 

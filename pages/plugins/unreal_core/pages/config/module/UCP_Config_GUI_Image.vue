@@ -4,8 +4,8 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
+const language_computed = computed(()=>{
+  let language =  {
     a: {
       attribute: '',
       description: [''],
@@ -13,20 +13,8 @@ const data = reactive({
       default: '',
     },
   }
-})
-const language_computed = computed(()=>{
-
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
-      a: {
-        attribute: '',
-        description: [''],
-        example: '',
-        default: '',
-      },
-    }
-  }else {
-    data.language =  {
+    language = {
       a: {
         attribute: '',
         description: [''],
@@ -35,7 +23,17 @@ const language_computed = computed(()=>{
       },
     }
   }
-  return data.language;
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
+      a: {
+        attribute: '',
+        description: [''],
+        example: '',
+        default: '',
+      },
+    }
+  }
+  return language;
 })
 </script>
 

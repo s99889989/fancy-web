@@ -11,38 +11,26 @@ const language_computed = computed(()=>{
       memory_use: {
         attribute: '{system_memory_use}',
         description: [''],
-        example: '',
-        default: '',
       },
       memory_max: {
         attribute: '{system_memory_max}',
         description: [''],
-        example: '',
-        default: '',
       },
       memory_use_percentage: {
         attribute: '{system_memory_use%}',
         description: [''],
-        example: '',
-        default: '',
       },
       memory_off_use: {
         attribute: '{system_memory_off_use}',
         description: [''],
-        example: '',
-        default: '',
       },
       memory_off_max: {
         attribute: '{system_memory_off_max}',
         description: [''],
-        example: '',
-        default: '',
       },
       memory_off_percentage: {
         attribute: '{system_memory_off_use%}',
         description: [''],
-        example: '',
-        default: '',
       },
     }
 
@@ -54,38 +42,57 @@ const language_computed = computed(()=>{
         memory_use: {
           attribute: '{system_memory_use}',
           description: [''],
-          example: '',
-          default: '',
         },
         memory_max: {
           attribute: '{system_memory_max}',
           description: [''],
-          example: '',
-          default: '',
         },
         memory_use_percentage: {
           attribute: '{system_memory_use%}',
           description: [''],
-          example: '',
-          default: '',
         },
         memory_off_use: {
           attribute: '{system_memory_off_use}',
           description: [''],
-          example: '',
-          default: '',
         },
         memory_off_max: {
           attribute: '{system_memory_off_max}',
           description: [''],
-          example: '',
-          default: '',
         },
         memory_off_percentage: {
           attribute: '{system_memory_off_use%}',
           description: [''],
-          example: '',
-          default: '',
+        },
+      }
+    }
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
+      title: '系统 占位符',
+      attribute:{
+        memory_use: {
+          attribute: '{system_memory_use}',
+          description: [''],
+        },
+        memory_max: {
+          attribute: '{system_memory_max}',
+          description: [''],
+        },
+        memory_use_percentage: {
+          attribute: '{system_memory_use%}',
+          description: [''],
+        },
+        memory_off_use: {
+          attribute: '{system_memory_off_use}',
+          description: [''],
+        },
+        memory_off_max: {
+          attribute: '{system_memory_off_max}',
+          description: [''],
+        },
+        memory_off_percentage: {
+          attribute: '{system_memory_off_use%}',
+          description: [''],
         },
       }
     }

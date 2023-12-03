@@ -4,8 +4,10 @@ import {useLanguageControl} from "~/stores/useLanguageControl";
 const unrealCorePluginLanguage = useUnrealCorePluginLanguage();
 const languageControl = useLanguageControl()
 
-const data = reactive({
-  language:{
+
+
+const language_computed = computed(()=>{
+  let language =  {
     mask: {
       attribute: 'Mask',
       description: ['Whether to display dark black in unused areas.'],
@@ -19,18 +21,14 @@ const data = reactive({
       default: '255',
     },
     moduleData: {
-      attribute: '',
-      description: [''],
+      attribute: 'ContentList.&lt;name>.',
+      description: ['List of submodules.'],
       example: '',
       default: '',
     },
   }
-})
-
-const language_computed = computed(()=>{
-
   if(languageControl.data.language === 'chinese_traditional'){
-    data.language = {
+    language = {
       mask: {
         attribute: 'mask',
         description: ['沒有用到的地方是否顯示暗黑色。'],
@@ -50,29 +48,30 @@ const language_computed = computed(()=>{
         default: '',
       },
     }
-  }else {
-    data.language =  {
+  }
+  if(languageControl.data.language === 'chinese_simplified'){
+    language = {
       mask: {
-        attribute: 'Mask',
-        description: ['Whether to display dark black in unused areas.'],
+        attribute: 'mask',
+        description: ['没有用到的地方是否显示暗黑色。'],
         example: 'false',
         default: 'true',
       },
       tooltip: {
-        attribute: 'Tooltip',
-        description: ['The tooltip settings to use for the item.'],
-        example: '100',
-        default: '255',
+        attribute: 'tooltip',
+        description: ['物品要使用的工具提示设置。'],
+        example: 'maple_story',
+        default: '',
       },
       moduleData: {
-        attribute: 'ContentList.&lt;name>.',
-        description: ['List of submodules.'],
+        attribute: "ContentList.&lt;name>.",
+        description: ['子模块列表。'],
         example: '',
         default: '',
       },
     }
   }
-  return data.language;
+  return language;
 })
 
 </script>
