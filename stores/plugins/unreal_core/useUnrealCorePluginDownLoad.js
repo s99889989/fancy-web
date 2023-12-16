@@ -9,6 +9,13 @@ export const useUnrealCorePluginDownLoad = defineStore('useUnrealCorePluginDownL
         filter_plugin_version: "All",
         downloadList: [
             {
+                name: "UnrealCore-Plugin-2.0",
+                plugin_version: "2.0-beta1",
+                uploaded: "2023/12/16",
+                download_link: "https://cdn.discordapp.com/attachments/1020195382787059793/1185551325069590528/UnrealCore-Plugin-2.0-beta1.jar?ex=659005b6&is=657d90b6&hm=a8012cb9a44ef0f8ee12fabc8afec41d442d2d68a2f5c6b878d13703dfeb7c35&",
+                download_times: ""
+            },
+            {
                 name: "UnrealCore-Plugin-1.0.8",
                 plugin_version: "1.0.8",
                 uploaded: "2023/10/13",
