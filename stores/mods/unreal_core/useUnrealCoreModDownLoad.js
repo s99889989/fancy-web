@@ -24,6 +24,15 @@ export const useUnrealCoreModDownLoad = defineStore('useUnrealCoreModDownLoad', 
         downloadList: [
             {
                 name: "UnrealCore-Forge-1.20.2-2.0",
+                mod_version: "2.0-beta3",
+                minecraft_version: "1.20.2",
+                mod_loaders: "Forge",
+                uploaded: "2023/12/16",
+                download_link: "https://cdn.discordapp.com/attachments/1020195382787059793/1185584031358787614/UnrealCore-Forge-1.20.2-2.0-beta3.jar?ex=6590242c&is=657daf2c&hm=81ed774b1e91d9433dd0e80e082f186709136f2aad2db419cd2f21ba9b192ad5&",
+                download_times: ""
+            },
+            {
+                name: "UnrealCore-Forge-1.20.2-2.0",
                 mod_version: "2.0-beta2",
                 minecraft_version: "1.20.2",
                 mod_loaders: "Forge",
