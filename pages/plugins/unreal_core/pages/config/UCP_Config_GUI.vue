@@ -7,7 +7,7 @@ const languageControl = useLanguageControl()
 
 
 const language_computed = computed(()=>{
-  let language =  {
+  let language = {
     mask: {
       attribute: 'Mask',
       description: ['Whether to display dark black in unused areas.'],

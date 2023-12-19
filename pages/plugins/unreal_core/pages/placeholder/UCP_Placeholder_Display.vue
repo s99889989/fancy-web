@@ -39,11 +39,11 @@ const language_computed = computed(()=>{
         attribute: '{display_ModuleName_ye}', description: ['The end Y position of the module.'],
       },
       module_width: {
-        attribute: '{display_ModuleName_width}',
+        attribute: '{display_ModuleName_w}',
         description: ['The width of the module.', 'The entity module is not accurate because the', 'calculation method has not been thought of at present.'],
       },
       module_height: {
-        attribute: '{display_ModuleName_height}',
+        attribute: '{display_ModuleName_h}',
         description: ['The height of the module.', 'The entity module is not accurate because the', 'calculation method has not been thought of at present.'],
       },
       module_value: {
@@ -133,11 +133,11 @@ const language_computed = computed(()=>{
           description: ['模塊的結束Y位置。'],
         },
         module_width: {
-          attribute: '{display_模塊名稱_width}',
+          attribute: '{display_模塊名稱_w}',
           description: ['模塊的寬度。', '實體模塊因為目前沒想到', '計算方法，所以不準確。'],
         },
         module_height: {
-          attribute: '{display_模塊名稱_height}',
+          attribute: '{display_模塊名稱_h}',
           description: ['模塊的高度。', '實體模塊因為目前沒想到', '計算方法，所以不準確。'],
         },
         module_value: {
@@ -227,11 +227,11 @@ const language_computed = computed(()=>{
           description: ['模块的结束Y位置。'],
         },
         module_width: {
-          attribute: '{display_模块名称_width}',
+          attribute: '{display_模块名称_w}',
           description: ['模块的宽度。', '实体模块因为目前没想到', '计算方法，所以不准确。'],
         },
         module_height: {
-          attribute: '{display_模块名称_height}',
+          attribute: '{display_模块名称_h}',
           description: ['模块的高度。', '实体模块因为目前没想到', '计算方法，所以不准确。'],
         },
         module_value: {
