@@ -37,13 +37,13 @@ onMounted(() => {
 
           </a>
         </li>
-        <li>
-          <a @click="unrealCoreModPages.setPage('UCM_DownLoad')" href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+<!--        <li>-->
+<!--          <a @click="unrealCoreModPages.setPage('UCM_DownLoad')" href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">-->
 
-            <span class="flex-1 ml-3 whitespace-nowrap">DownLoad</span>
+<!--            <span class="flex-1 ml-3 whitespace-nowrap">DownLoad</span>-->
 
-          </a>
-        </li>
+<!--          </a>-->
+<!--        </li>-->
 
         <li>
           <a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/geckolib/files" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">

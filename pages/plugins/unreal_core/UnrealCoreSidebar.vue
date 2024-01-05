@@ -37,11 +37,11 @@ onMounted(() => {
             <span class="ml-3">{{unrealCorePluginLanguage.data.sidebar.introduce}}</span>
           </a>
         </li>
-        <li>
-          <a href="#" @click="unrealCorePluginPages.setPage('UnrealCoreCommand')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <span class="ml-3">{{unrealCorePluginLanguage.data.sidebar.commands}}</span>
-          </a>
-        </li>
+<!--        <li>-->
+<!--          <a href="#" @click="unrealCorePluginPages.setPage('UnrealCoreCommand')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">-->
+<!--            <span class="ml-3">{{unrealCorePluginLanguage.data.sidebar.commands}}</span>-->
+<!--          </a>-->
+<!--        </li>-->
 
         <li>
           <a href="#" @click="unrealCorePluginPages.setPage('UCP_Config_Tooltip')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -160,13 +160,13 @@ onMounted(() => {
           </ul>
         </li>
 
-        <li>
-          <a href="#" @click="unrealCorePluginPages.setPage('UnrealCoreDownLoad')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+<!--        <li>-->
+<!--          <a href="#" @click="unrealCorePluginPages.setPage('UnrealCoreDownLoad')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">-->
 
-            <span class="flex-1 ml-3 whitespace-nowrap">{{unrealCorePluginLanguage.data.sidebar.download}}</span>
+<!--            <span class="flex-1 ml-3 whitespace-nowrap">{{unrealCorePluginLanguage.data.sidebar.download}}</span>-->
 
-          </a>
-        </li>
+<!--          </a>-->
+<!--        </li>-->
 <!--        <li>-->
 <!--          <a href="#" @click="unrealCorePluginPages.setPage('UnrealCoreAPI')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">-->
 
