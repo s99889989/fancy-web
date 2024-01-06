@@ -8,6 +8,9 @@ const language_computed = computed(()=>{
   let language = {
     title: 'Display Placeholder',
     attribute:{
+      window_scale: {
+        attribute: '{display_scale}', description: ['Scaling factor.'],
+      },
       window_width: {
         attribute: '{display_window_w}', description: ['Window width.'],
       },
@@ -92,6 +95,9 @@ const language_computed = computed(()=>{
     language = {
       title: '顯示 佔位符',
       attribute:{
+        window_scale: {
+          attribute: '{display_scale}', description: ['縮放係數。'],
+        },
         window_width: {
           attribute: '{display_window_w}',
           description: ['視窗寬度。'],
@@ -186,6 +192,9 @@ const language_computed = computed(()=>{
     language = {
       title: '显示 占位符',
       attribute:{
+        window_scale: {
+          attribute: '{display_scale}', description: ['縮放係數。'],
+        },
         window_width: {
           attribute: '{display_window_w}',
           description: ['视窗宽度。'],
