@@ -16,8 +16,8 @@ const currentView = computed(() => {
       return UCM_Introduce;
     case 'UCM_Video':
       return UCM_Video;
-    case 'UCM_DownLoad':
-      return UCM_DownLoad;
+    // case 'UCM_DownLoad':
+    //   return UCM_DownLoad;
     default:
       return UCM_Introduce;
   }
