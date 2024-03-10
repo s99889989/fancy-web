@@ -17,6 +17,12 @@ const language_computed = computed(()=>{
       window_height: {
         attribute: '{display_window_h}', description: ['Window height.'],
       },
+      window_real_width: {
+        attribute: '{display_window_real_w}', description: ['The actual width of the window.'],
+      },
+      window_real_height: {
+        attribute: '{display_window_real_h}', description: ['The actual height of the window.'],
+      },
       mouse_x: {
         attribute: '{display_mouse_x}', description: ['Mouse X position.'],
       },
@@ -105,6 +111,12 @@ const language_computed = computed(()=>{
         window_height: {
           attribute: '{display_window_h}',
           description: ['視窗高度。'],
+        },
+        window_real_width: {
+          attribute: '{display_window_real_w}', description: ['視窗實際寬度。'],
+        },
+        window_real_height: {
+          attribute: '{display_window_real_h}', description: ['視窗實際高度。'],
         },
         mouse_x: {
           attribute: '{display_mouse_x}',
@@ -202,6 +214,12 @@ const language_computed = computed(()=>{
         window_height: {
           attribute: '{display_window_h}',
           description: ['视窗高度。'],
+        },
+        window_real_width: {
+          attribute: '{display_window_real_w}', description: ['视窗实际宽度。'],
+        },
+        window_real_height: {
+          attribute: '{display_window_real_h}', description: ['视窗实际高度。'],
         },
         mouse_x: {
           attribute: '{display_mouse_x}',
