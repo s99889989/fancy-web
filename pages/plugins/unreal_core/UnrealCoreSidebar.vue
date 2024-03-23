@@ -157,6 +157,25 @@ onMounted(() => {
               <a href="#" @click="unrealCorePluginPages.setPage('UCP_Placeholder_Sound')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 {{unrealCorePluginLanguage.data.sidebar.placeholder_list.sound}}</a>
             </li>
+            <li>
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Placeholder_Math')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                {{unrealCorePluginLanguage.data.sidebar.placeholder_list.math}}</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="model" data-collapse-toggle="model">
+            <span class="flex-1 ml-3 text-left whitespace-nowrap">{{unrealCorePluginLanguage.data.sidebar.model}}</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
+          </button>
+          <ul id="model" class="hidden py-2 space-y-2">
+            <li>
+              <a href="#" @click="unrealCorePluginPages.setPage('UCP_Model_Molang')" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                {{unrealCorePluginLanguage.data.sidebar.model_list.molang}}</a>
+            </li>
           </ul>
         </li>
 

@@ -12,6 +12,26 @@ const language_computed = computed(()=>{
         attribute: '{player_self_uuid}',
         description: ['own UUID.'],
       },
+      self_x: {
+        attribute: '{player_self_x}',
+        description: ['The X coordinate of itself in the world.'],
+      },
+      self_y: {
+        attribute: '{player_self_y}',
+        description: ['The Y coordinate of itself in the world.'],
+      },
+      self_z: {
+        attribute: '{player_self_z}',
+        description: ['The Z coordinate of itself in the world.'],
+      },
+      self_yaw: {
+        attribute: '{player_self_yaw}',
+        description: ['The yaw angle of your own head.'],
+      },
+      self_pitch: {
+        attribute: '{player_self_pitch}',
+        description: ['The elevation angle of your own head.'],
+      },
       self_skin_url: {
         attribute: '{player_self_skin_url}',
         description: ['own skin texture.'],
@@ -67,6 +87,26 @@ const language_computed = computed(()=>{
           attribute: '{player_self_uuid}',
           description: ['自己的UUID。'],
         },
+        self_x: {
+          attribute: '{player_self_x}',
+          description: ['自身在世界的X座標。'],
+        },
+        self_y: {
+          attribute: '{player_self_y}',
+          description: ['自身在世界的Y座標。'],
+        },
+        self_z: {
+          attribute: '{player_self_z}',
+          description: ['自身在世界的Z座標。'],
+        },
+        self_yaw: {
+          attribute: '{player_self_yaw}',
+          description: ['自己頭的偏航角。'],
+        },
+        self_pitch: {
+          attribute: '{player_self_pitch}',
+          description: ['自己頭的仰角。'],
+        },
         self_skin_url: {
           attribute: '{player_self_skin_url}',
           description: ['自己的皮膚材質。'],
@@ -121,6 +161,26 @@ const language_computed = computed(()=>{
         self_uuid: {
           attribute: '{player_self_uuid}',
           description: ['自己的UUID。'],
+        },
+        self_x: {
+          attribute: '{player_self_x}',
+          description: ['自身在世界的X座标。'],
+        },
+        self_y: {
+          attribute: '{player_self_y}',
+          description: ['自身在世界的Y座标。'],
+        },
+        self_z: {
+          attribute: '{player_self_z}',
+          description: ['自身在世界的Z座标。'],
+        },
+        self_yaw: {
+          attribute: '{player_self_yaw}',
+          description: ['自己头的偏航角。'],
+        },
+        self_pitch: {
+          attribute: '{player_self_pitch}',
+          description: ['自己头的仰角。'],
         },
         self_skin_url: {
           attribute: '{player_self_skin_url}',

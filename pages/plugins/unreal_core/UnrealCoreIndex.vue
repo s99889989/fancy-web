@@ -35,7 +35,9 @@ import UCP_Placeholder_Player from "~/pages/plugins/unreal_core/pages/placeholde
 import UCP_Placeholder_Resource from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_Resource.vue";
 import UCP_Placeholder_System from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_System.vue";
 import UCP_Placeholder_Sound from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_Sound.vue";
+import UCP_Placeholder_Math from "~/pages/plugins/unreal_core/pages/placeholder/UCP_Placeholder_Math.vue";
 
+import UCP_Model_Molang from "~/pages/plugins/unreal_core/pages/model/UCP_Model_Molang.vue"
 
 const currentPath = ref(0)
 
@@ -49,6 +51,8 @@ const currentView = computed(() => {
       return UnrealCoreIntroduce;
     case 'UnrealCoreCommand':
       return UnrealCoreCommand;
+    case 'UCP_Model_Molang':
+      return UCP_Model_Molang;
     case 'UCP_Placeholder_Display':
       return UCP_Placeholder_Display;
     case 'UCP_Placeholder_Entity':
@@ -61,6 +65,8 @@ const currentView = computed(() => {
       return UCP_Placeholder_System;
     case 'UCP_Placeholder_Sound':
       return UCP_Placeholder_Sound;
+    case 'UCP_Placeholder_Math':
+      return UCP_Placeholder_Math;
     case 'UCP_Config_Tooltip':
       return UCP_Config_Tooltip;
     case 'UCP_Config_GUI':
