@@ -109,15 +109,15 @@ const language_computed = computed(()=>{
         description: ['Convert angle values to radians.'],
       },
       clamp: {
-        attribute: 'radians(x, min, max)',
+        attribute: 'clamp(x, min, max)',
         description: ['If x is less than min, it is equal to min, and if it is greater than max, it is equal to max.'],
       },
       min: {
-        attribute: 'radians(x, y)',
+        attribute: 'min(x, y)',
         description: ['Compare the x and y values and take the larger value.'],
       },
       max: {
-        attribute: 'radians(x, y)',
+        attribute: 'max(x, y)',
         description: ['Compare the x and y values and take the larger value.'],
       },
     }
@@ -228,15 +228,15 @@ const language_computed = computed(()=>{
           description: ['將角度值轉換為弧度。'],
         },
         clamp: {
-          attribute: 'radians(x, min, max)',
+          attribute: 'clamp(x, min, max)',
           description: ['x如果小於min就等於min，如果大於max就等於max。'],
         },
         min: {
-          attribute: 'radians(x, y)',
+          attribute: 'min(x, y)',
           description: ['x和y值比較取較小值。'],
         },
         max: {
-          attribute: 'radians(x, y)',
+          attribute: 'max(x, y)',
           description: ['x和y值比較取較大值。'],
         },
       }
@@ -347,15 +347,15 @@ const language_computed = computed(()=>{
           description: ['将角度值转换为弧度。'],
         },
         clamp: {
-          attribute: 'radians(x, min, max)',
+          attribute: 'clamp(x, min, max)',
           description: ['x如果小于min就等于min，如果大于max就等于max。'],
         },
         min: {
-          attribute: 'radians(x, y)',
+          attribute: 'min(x, y)',
           description: ['x和y值比较取较小值。'],
         },
         max: {
-          attribute: 'radians(x, y)',
+          attribute: 'max(x, y)',
           description: ['x和y值比较取较大值。'],
         },
       }
