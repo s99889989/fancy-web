@@ -94,6 +94,38 @@ const language_computed = computed(()=>{
         attribute: '{display_hover_item_nbt}',
         description: ['Currently selected to view the NBT of the item.'],
       },
+      hover_slot_name: {
+          attribute: '{display_slot_item_name_Slot}',
+          description: [
+            'Specify Slot, the name of the item.',
+            '{display_slot_item_name_36}'
+        ],
+        },
+        hover_slot_name_width: {
+          attribute: '{display_slot_item_name_width_Slot}',
+          description: ['Specify Slot, the name width of the item.'],
+        },
+        hover_slot_lore: {
+          attribute: '{display_slot_item_lore_Slot}',
+          description: [
+            'Specify the Slot and Lore of the item.',
+            '{display_slot_item_lore_0_1}Represents Lore in the first row of the first Slot.',
+            '{display_slot_item_lore_0_2}Represents the Lore in the second row of the first Slot.',
+            'And so on.',
+          ],
+        },
+        hover_slot_lore_size: {
+          attribute: '{display_slot_item_lore_size_Slot}',
+          description: ['Specify the Slot and the number of Lore rows of the item.'],
+        },
+        hover_slot_lore_width: {
+          attribute: '{display_slot_item_lore_width_Slot}',
+          description: ['Specify the Slot and Lore width of the item.'],
+        },
+        hover_slot_nbt: {
+          attribute: '{display_slot_item_nbt_Slot}',
+          description: ['Specify the Slot and NBT of the item.'],
+        },
     }
 
   }
@@ -197,6 +229,38 @@ const language_computed = computed(()=>{
           attribute: '{display_hover_item_nbt}',
           description: ['目前選擇查看物品的NBT。'],
         },
+        hover_slot_name: {
+          attribute: '{display_slot_item_name_位置}',
+          description: [
+            '指定Slot，物品的名稱。',
+            '{display_slot_item_name_36}'
+        ],
+        },
+        hover_slot_name_width: {
+          attribute: '{display_slot_item_name_width_位置}',
+          description: ['指定Slot，物品的名稱寬度。'],
+        },
+        hover_slot_lore: {
+          attribute: '{display_slot_item_lore_位置}',
+          description: [
+            '指定Slot，物品的Lore。',
+            '{display_slot_item_lore_0_1}代表第一個Slot第一行Lore。',
+            '{display_slot_item_lore_0_2}代表第一個Slot第二行Lore。',
+            '以此類推。',
+          ],
+        },
+        hover_slot_lore_size: {
+          attribute: '{display_slot_item_lore_size_位置}',
+          description: ['指定Slot，物品的Lore行數。'],
+        },
+        hover_slot_lore_width: {
+          attribute: '{display_slot_item_lore_width_位置}',
+          description: ['指定Slot，物品的Lore寬度。'],
+        },
+        hover_slot_nbt: {
+          attribute: '{display_slot_item_nbt_位置}',
+          description: ['指定Slot，物品的NBT。'],
+        },
       }
     }
   }
@@ -299,6 +363,38 @@ const language_computed = computed(()=>{
         hover_item_nbt: {
           attribute: '{display_hover_item_nbt}',
           description: ['目前选择查看物品的NBT。'],
+        },
+        hover_slot_name: {
+          attribute: '{display_slot_item_name_位置}',
+          description: [
+            '指定Slot，物品的名称。',
+            '{display_slot_item_name_36}'
+        ],
+        },
+        hover_slot_name_width: {
+          attribute: '{display_slot_item_name_width_位置}',
+          description: ['指定Slot，物品的名称宽度。'],
+        },
+        hover_slot_lore: {
+          attribute: '{display_slot_item_lore_位置}',
+          description: [
+            '指定Slot，物品的Lore。',
+            '{display_slot_item_lore_0_1}代表第一个Slot第一行Lore。',
+            '{display_slot_item_lore_0_2}代表第一个Slot第二行Lore。',
+            '以此类推。',
+          ],
+        },
+        hover_slot_lore_size: {
+          attribute: '{display_slot_item_lore_size_位置}',
+          description: ['指定Slot，物品的Lore行数。'],
+        },
+        hover_slot_lore_width: {
+          attribute: '{display_slot_item_lore_width_位置}',
+          description: ['指定Slot，物品的Lore宽度。'],
+        },
+        hover_slot_nbt: {
+          attribute: '{display_slot_item_nbt_位置}',
+          description: ['指定Slot，物品的NBT。'],
         },
       }
     }
