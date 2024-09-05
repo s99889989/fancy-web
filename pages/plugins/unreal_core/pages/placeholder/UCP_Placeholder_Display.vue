@@ -9,8 +9,14 @@ const language_computed = computed(()=>{
     title: 'Display Placeholder',
     attribute:{
       window_scale: {
-        attribute: '{display_scale}', description: ['Scaling factor.'],
-      },
+                attribute: '{display_scale}', description: [
+                'Scaling factor.',
+                 'The width is greater than 640, the height is greater than 480, and the coefficient is 2.',
+                 'The width is greater than 960, the height is greater than 720, and the coefficient is 3.',
+                 'The width is greater than 1280, the height is greater than 960, and the coefficient is 4.',
+                 'The width is greater than 1600, the height is greater than 1200, and the coefficient is 5.'
+                ],
+              },
       window_width: {
         attribute: '{display_window_w}', description: ['Window width.'],
       },
@@ -134,7 +140,13 @@ const language_computed = computed(()=>{
       title: '顯示 佔位符',
       attribute:{
         window_scale: {
-          attribute: '{display_scale}', description: ['縮放係數。', '寬大於 640 高大於 480 係數是 2。'],
+          attribute: '{display_scale}', description: [
+          '縮放係數。',
+           '寬大於640，高大於480，係數是 2。',
+           '寬大於960，高大於720，係數是 3。',
+           '寬大於1280，高大於960，係數是 4。',
+           '寬大於1600，高大於1200，係數是 5。'
+          ],
         },
         window_width: {
           attribute: '{display_window_w}',
@@ -269,8 +281,14 @@ const language_computed = computed(()=>{
       title: '显示 占位符',
       attribute:{
         window_scale: {
-          attribute: '{display_scale}', description: ['縮放係數。'],
-        },
+                  attribute: '{display_scale}', description: [
+                  '缩放系数。',
+                   '宽大于640，高大于480，系数是 2。',
+                   '宽大于960，高大于720，系数是 3。',
+                   '宽大于1280，高大于960，系数是 4。',
+                   '宽大于1600，高大于1200，系数是 5。'
+                  ],
+                },
         window_width: {
           attribute: '{display_window_w}',
           description: ['视窗宽度。'],
