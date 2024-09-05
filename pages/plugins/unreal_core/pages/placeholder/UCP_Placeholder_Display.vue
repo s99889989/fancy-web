@@ -134,7 +134,7 @@ const language_computed = computed(()=>{
       title: '顯示 佔位符',
       attribute:{
         window_scale: {
-          attribute: '{display_scale}', description: ['縮放係數。'],
+          attribute: '{display_scale}', description: ['縮放係數。', '寬大於 640 高大於 480 係數是 2。'],
         },
         window_width: {
           attribute: '{display_window_w}',
