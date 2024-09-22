@@ -10,31 +10,31 @@ const language_computed = computed(()=>{
     attribute:{
       location_x: {
         attribute: '{entity_x_UUID}',
-        description: ['實體在世界的X座標。'],
+        description: ['The X coordinate of the entity in the world.'],
       },
       location_y: {
         attribute: '{entity_y_UUID}',
-        description: ['實體在世界的Y座標。'],
+        description: ['The Y coordinate of the entity in the world.'],
       },
       location_z: {
         attribute: '{entity_z_UUID}',
-        description: ['實體在世界的Z座標。'],
+        description: ['The Z coordinate of the entity in the world.'],
       },
       name: {
         attribute: '{entity_name_UUID}',
-        description: ['實體的名稱。'],
+        description: ['The name of the entity.'],
       },
       health_now: {
         attribute: '{entity_health_now_UUID}',
-        description: ['實體目前的血量。'],
+        description: ['The entity\'s current health volume.'],
       },
       health_max: {
         attribute: '{entity_health_max_UUID}',
-        description: ['實體總血量。'],
+        description: ['The total health of the entity.'],
       },
       body_yaw: {
         attribute: '{entity_body_yaw_UUID}',
-        description: ['實體身體的轉向。'],
+        description: ['The turning of the physical body.'],
       }
     }
 
@@ -80,31 +80,31 @@ const language_computed = computed(()=>{
       attribute:{
         location_x: {
           attribute: '{entity_x_UUID}',
-          description: ['實體在世界的X座標。'],
+          description: ['实体在世界的X座标。'],
         },
         location_y: {
           attribute: '{entity_y_UUID}',
-          description: ['實體在世界的Y座標。'],
+          description: ['实体在世界的Y座标。'],
         },
         location_z: {
           attribute: '{entity_z_UUID}',
-          description: ['實體在世界的Z座標。'],
+          description: ['实体在世界的Z座标。'],
         },
         name: {
           attribute: '{entity_name_UUID}',
-          description: ['實體的名稱。'],
+          description: ['实体的名称。'],
         },
         health_now: {
           attribute: '{entity_health_now_UUID}',
-          description: ['實體目前的血量。'],
+          description: ['实体目前的血量。'],
         },
         health_max: {
           attribute: '{entity_health_max_UUID}',
-          description: ['實體總血量。'],
+          description: ['实体总血量。'],
         },
         body_yaw: {
           attribute: '{entity_body_yaw_UUID}',
-          description: ['實體身體的轉向。'],
+          description: ['实体身体的转向。'],
         }
       }
     }
