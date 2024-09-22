@@ -8,10 +8,34 @@ const language_computed = computed(()=>{
   let language = {
     title: 'Entity Placeholder',
     attribute:{
-      text: {
-        attribute: '',
-        description: [''],
+      location_x: {
+        attribute: '{entity_x_UUID}',
+        description: ['實體在世界的X座標。'],
       },
+      location_y: {
+        attribute: '{entity_y_UUID}',
+        description: ['實體在世界的Y座標。'],
+      },
+      location_z: {
+        attribute: '{entity_z_UUID}',
+        description: ['實體在世界的Z座標。'],
+      },
+      name: {
+        attribute: '{entity_name_UUID}',
+        description: ['實體的名稱。'],
+      },
+      health_now: {
+        attribute: '{entity_health_now_UUID}',
+        description: ['實體目前的血量。'],
+      },
+      health_max: {
+        attribute: '{entity_health_max_UUID}',
+        description: ['實體總血量。'],
+      },
+      body_yaw: {
+        attribute: '{entity_body_yaw_UUID}',
+        description: ['實體身體的轉向。'],
+      }
     }
 
   }
@@ -19,10 +43,34 @@ const language_computed = computed(()=>{
     language = {
       title: '實體 佔位符',
       attribute:{
-        text: {
-          attribute: '',
-          description: [''],
+        location_x: {
+          attribute: '{entity_x_UUID}',
+          description: ['實體在世界的X座標。'],
         },
+        location_y: {
+          attribute: '{entity_y_UUID}',
+          description: ['實體在世界的Y座標。'],
+        },
+        location_z: {
+          attribute: '{entity_z_UUID}',
+          description: ['實體在世界的Z座標。'],
+        },
+        name: {
+          attribute: '{entity_name_UUID}',
+          description: ['實體的名稱。'],
+        },
+        health_now: {
+          attribute: '{entity_health_now_UUID}',
+          description: ['實體目前的血量。'],
+        },
+        health_max: {
+          attribute: '{entity_health_max_UUID}',
+          description: ['實體總血量。'],
+        },
+        body_yaw: {
+          attribute: '{entity_body_yaw_UUID}',
+          description: ['實體身體的轉向。'],
+        }
       }
     }
   }
@@ -30,10 +78,34 @@ const language_computed = computed(()=>{
     language = {
       title: '实体 占位符',
       attribute:{
-        text: {
-          attribute: '',
-          description: [''],
+        location_x: {
+          attribute: '{entity_x_UUID}',
+          description: ['實體在世界的X座標。'],
         },
+        location_y: {
+          attribute: '{entity_y_UUID}',
+          description: ['實體在世界的Y座標。'],
+        },
+        location_z: {
+          attribute: '{entity_z_UUID}',
+          description: ['實體在世界的Z座標。'],
+        },
+        name: {
+          attribute: '{entity_name_UUID}',
+          description: ['實體的名稱。'],
+        },
+        health_now: {
+          attribute: '{entity_health_now_UUID}',
+          description: ['實體目前的血量。'],
+        },
+        health_max: {
+          attribute: '{entity_health_max_UUID}',
+          description: ['實體總血量。'],
+        },
+        body_yaw: {
+          attribute: '{entity_body_yaw_UUID}',
+          description: ['實體身體的轉向。'],
+        }
       }
     }
   }
@@ -81,6 +153,8 @@ const language_computed = computed(()=>{
   <p class="text-3xl text-red-500 mt-5">{{ languageControl.data.attributes.example}}</p>
   <pre class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
    <code class="dark:text-white">
+    {entity_x_01986ee6-ca3c-3b64-bdcd-02039da5963f}
+    {entity_name_01986ee6-ca3c-3b64-bdcd-02039da5963f}
 </code>
   </pre>
 
