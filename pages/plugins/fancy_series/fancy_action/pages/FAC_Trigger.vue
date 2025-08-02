@@ -224,8 +224,8 @@
           <p>~onCommand</p>
         </th>
         <td class="px-6 py-4">
-          <p>當輸入指定指令時.</p>
-          <p>When entering a specified command.</p>
+          <p>當輸入/faction cast指令時.</p>
+          <p>When typing the /faction cast command.</p>
         </td>
       </tr>
 
